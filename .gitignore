@@ -1,34 +1,31 @@
-# --- Compiled Binaries & Build Directories ---
-# Ignore the folders where CMake compiles your code
-cmake-build-*/
-bin/
-obj/
-out/
+# Build
+build/
 
-# --- IDE Specific (CLion / JetBrains) ---
-# Ignore local IDE settings that are unique to your machine
-.idea/
-*.iws
-*.iml
-*.ipr
-# Exception: You might want to track runConfigurations if you share them, 
-# but usually, it's safer to ignore the whole .idea folder.
+# Visual Studio
+.vs/
+*.vcxproj.user
+*.suo
+*.sdf
+*.opensdf
+*.db
+*.opendb
+Debug/
+Release/
+x64/
+x86/
 
-# --- System Files ---
+# Compiled
+*.exe
+*.obj
+*.o
+*.pdb
+*.ilk
+*.lib
+*.dll
+
+# OS
 .DS_Store
 Thumbs.db
-*.swp
-*~
-
-# --- Documentation Output ---
-# Since you're using Doxygen, ignore the generated HTML/Latex folders [cite: 56]
-html/
-latex/
-doxygen_sqlite.db
-
-# --- Docker ---
-# If you use Docker for deployment, ignore local data volumes [cite: 65]
-.docker/
 
 # --- Project Specific Notes ---
 # DO NOT ignore the following (Ensure these are NOT in this file):
