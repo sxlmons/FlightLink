@@ -13,13 +13,13 @@
 
 class BoundedQueue {
 public:
-	explicit BoundedQueue(size_t capacity) : capacity_(capacity), shutdown_false {}
+	explicit BoundedQueue(size_t capacity) : capacity_(capacity), shutdown_(false) {}
 
 	// Blocks until space is available, then enques the socket
 	void push(SOCKET socket) {
 		std::unique_lock<std::mutex> lock(mutex_);
 		not_full_.wait(lock, [this]() {
-			return queue_.size() < capacity || shutdown_;
+			return queue_.size() < capacity_ || shutdown_;
 		});
 
 		if (shutdown_) return;
@@ -31,7 +31,7 @@ public:
 	// Blocks until a socket is available, then dequeues and returns it
 	SOCKET pop() {
 		std::unique_lock<std::mutex> lock(mutex_);
-		not_full_.wait(lock, [this]() {
+		not_empty_.wait(lock, [this]() {
 			return !queue_.empty() || shutdown_;
 		});
 
@@ -39,7 +39,7 @@ public:
 
 		SOCKET socket = queue_.front();
 		queue_.pop();
-		not_full_.notify_all();
+		not_full_.notify_one();
 		return socket;
 	}
 
@@ -58,7 +58,7 @@ private:
 
 	std::mutex				mutex_;
 	std::condition_variable not_full_;
-	std::condition_variable not_empty;
+	std::condition_variable not_empty_;
 		
 
 

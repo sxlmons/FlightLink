@@ -38,7 +38,7 @@ void ConnectionManager::shutdown() {
 	// wait for every worker to finish its current client
 	for (auto& worker : workers_) {
 		if (worker.joinable()) {
-			worker.join;
+			worker.join();
 		}
 	}
 }

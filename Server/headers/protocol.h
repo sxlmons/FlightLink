@@ -1,6 +1,6 @@
 #pragma once
 
-#include <cstint>
+#include <cstdint>
 
 // Protocol.h 
 // Defines the binary packet format for the FlightLink protocol
@@ -23,9 +23,9 @@ struct PacketHeader {
 };
 
 struct TelemetryData {
-	uint32_t plane id;
+	uint32_t plane_id;
 	double timestamp;
-	double fuel_remianing;
+	double fuel_remaining;
 };
 
 # pragma(pop)
