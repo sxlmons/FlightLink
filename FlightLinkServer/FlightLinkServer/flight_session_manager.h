@@ -17,6 +17,7 @@ struct FlightSession {
     uint32_t plane_id;
     double   prev_fuel;
     double   fuel_sum;
+    double   current_avg;
     int      packet_count;
     bool     has_baseline;
 };

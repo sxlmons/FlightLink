@@ -1,6 +1,9 @@
 #include "flight_session_manager.h"
+#include <fstream>
 
 // flight_session_manager.cpp
+
+static const char* CSV_FILE = "flight_log.csv";
 
 // shared per-aircraft aggregate store
 static std::unordered_map<uint32_t, AircraftStats> aircraft_map;
@@ -31,6 +34,7 @@ void process_telemetry(FlightSession& session, double fuel_remaining) {
 	session.fuel_sum += delta;
 	session.packet_count++;
 	session.prev_fuel = fuel_remaining;
+	session.current_avg = session.fuel_sum / (session.packet_count - 1);  
 }
 
 void finalize_session(FlightSession& session) {
@@ -63,6 +67,25 @@ void finalize_session(FlightSession& session) {
 			<< " | cumulative avg: " << stats.cumulative_avg
 			<< " | flights: " << stats.flight_count
 			<< std::endl;
+
+		// Persist to CSV 
+		std::ifstream check(CSV_FILE);
+		bool file_exists = check.good();
+		check.close();
+		std::ofstream csv(CSV_FILE, std::ios::app);
+		if (csv.is_open()) {
+			if (!file_exists) {
+				csv << "plane_id,avg_consumption,total_consumed,"
+					<< "readings,cumulative_avg,flight_count\n";
+			}
+			csv << session.plane_id
+				<< "," << avg_consumption
+				<< "," << session.fuel_sum
+				<< "," << session.packet_count
+				<< "," << stats.cumulative_avg
+				<< "," << stats.flight_count
+				<< "\n";
+		}
+
 	}
-	
 }
