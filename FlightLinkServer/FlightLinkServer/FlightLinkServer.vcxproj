@@ -21,11 +21,13 @@
   <ItemGroup>
     <ClInclude Include="bounded_queue.h" />
     <ClInclude Include="connection_manager.h" />
+    <ClInclude Include="flight_session_manager.h" />
     <ClInclude Include="protocol.h" />
     <ClInclude Include="stream_processor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="connection_manager.cpp" />
+    <ClCompile Include="flight_session_manager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stream_processor.cpp" />
   </ItemGroup>

@@ -1,0 +1,68 @@
+#include "flight_session_manager.h"
+
+// flight_session_manager.cpp
+
+// shared per-aircraft aggregate store
+static std::unordered_map<uint32_t, AircraftStats> aircraft_map;
+static std::mutex aircraft_mutex;
+
+FlightSession start_session(uint32_t plane_id) {
+	FlightSession session{};
+	session.plane_id	 = plane_id;
+	session.prev_fuel	 = 0.0;
+	session.fuel_sum	 = 0.0;
+	session.packet_count = 0;
+	session.has_baseline = false;
+
+	std::cout << "[flight] Session started | plane_id: " << plane_id << std::endl;
+	return session;
+}
+
+void process_telemetry(FlightSession& session, double fuel_remaining) {
+	if (!session.has_baseline) {
+		// First packet establishes the baseline lol - no delta
+		session.prev_fuel = fuel_remaining;
+		session.has_baseline = true;
+		session.packet_count = 1;
+		return;
+	}
+
+	double delta = session.prev_fuel - fuel_remaining;
+	session.fuel_sum += delta;
+	session.packet_count++;
+	session.prev_fuel = fuel_remaining;
+}
+
+void finalize_session(FlightSession& session) {
+	// need at least 2 readings before computing an average
+	if (session.packet_count < 2) {
+		std::cout << "[flight] Session ended | plane_id: " << session.plane_id
+			<< " | not enough data for average"
+			<< std::endl;
+		
+		return;
+	}
+
+	double avg_consumption = session.fuel_sum / (session.packet_count - 1);
+
+	std::cout << "[flight] Completed | plane_id: " << session.plane_id
+		<< " | avg consumption: " << avg_consumption
+		<< " | total consumed: " << session.fuel_sum
+		<< " | readings: " << session.packet_count
+		<< std::endl;
+
+	// Update shared per-aircraft stats under lock
+	{
+		std::lock_guard<std::mutex> lock(aircraft_mutex);
+		AircraftStats& stats = aircraft_map[session.plane_id];
+		stats.cumulative_avg = (stats.cumulative_avg * stats.flight_count + avg_consumption) / (stats.flight_count + 1);
+		stats.flight_count++;
+
+		std::cout << "[fleet]  Aircraft "
+			<< session.plane_id
+			<< " | cumulative avg: " << stats.cumulative_avg
+			<< " | flights: " << stats.flight_count
+			<< std::endl;
+	}
+	
+}

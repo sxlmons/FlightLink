@@ -1,9 +1,12 @@
 #include "stream_processor.h"
 #include "protocol.h"
+#include "flight_session_manager.h"
 #include <iostream>
 
 // stream_processor.cpp
 
+// This function helps maintain data integrity as with TCP we can't guarantee 20 bytes
+// will be sent in one packet, it may split into two
 static bool recv_exact(SOCKET socket, char* buffer, size_t length) {
 	size_t received = 0;
 
@@ -22,6 +25,8 @@ static bool recv_exact(SOCKET socket, char* buffer, size_t length) {
 void process_client(SOCKET client) {
 	std::cout << "[stream] Client connected" << std::endl;
 
+	FlightSession session{};
+
 	while (true) {
 		// read first byte
 		uint8_t msg_type;
@@ -38,9 +43,7 @@ void process_client(SOCKET client) {
 				return;
 			}
 
-			// TODO: Create flight session
-
-			std::cout << "[stream] Flight started | plane_id: " << header.plane_id << std::endl;
+			session = start_session(header.plane_id);
 			break;
 		}
 		case MSG_TELEMETRY: {
@@ -50,13 +53,7 @@ void process_client(SOCKET client) {
 				return;
 			}
 
-			// TODO: Pass to FlightSessionManager for fuel calculation.
-
-			std::cout << "[stream] Telemetry | plane_id: "
-				<< telemetry.plane_id << " | timestamp: "
-				<< telemetry.timestamp << " | fuel: "
-				<< telemetry.fuel_remaining
-				<< std::endl;
+			process_telemetry(session, telemetry.fuel_remaining);
 			break;
 		}
 		case MSG_FLIGHT_END: {
@@ -66,10 +63,8 @@ void process_client(SOCKET client) {
 				return;
 			}
 
-			// TODO: Finalize flight session via FlightSessionManager.
-			std::cout << "[stream] Flight ended  | plane_id: " << header.plane_id << std::endl;
+			finalize_session(session);
 			break;
-
 		}
 		default: {
 			std::cout << "[stream] Malformed packet | unknown type: 0x"
