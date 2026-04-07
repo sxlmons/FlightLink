@@ -1,23 +1,22 @@
 #!/bin/bash
-# launch_clients.sh
-# Launches 100 client instances for load/endurance testing.
-#
-# Usage: ./launch_clients.sh
-#        ./launch_clients.sh 50        (custom count)
 
 COUNT=${1:-100}
-CLIENT_PATH="./build/Client/Client"
+IP_ADDR=$2
+CLIENT_NAME="main" # The name of your executable
 
-if [ ! -f "$CLIENT_PATH" ]; then
-    echo "Error: Client not found at: $CLIENT_PATH"
-    exit 1
-fi
+while true; do
+    # Count how many processes with this name are currently running
+    CURRENT_RUNNING=$(pgrep -c -x "$CLIENT_NAME")
+    
+    # Calculate how many more we need
+    NEEDED=$((COUNT - CURRENT_RUNNING))
+    
+    if [ "$NEEDED" -gt 0 ]; then
+        echo "Running: $CURRENT_RUNNING. Spawning $NEEDED more..."
+        for (( i=1; i<=NEEDED; i++ )); do
+            ./Client/main "$IP_ADDR" > /dev/null 2>&1 &
+        done
+    fi
 
-echo "Launching $COUNT clients..."
-
-for (( i=1; i<=COUNT; i++ )); do
-    $CLIENT_PATH &
-    echo "  Started client $i / $COUNT"
+    sleep 1 # Check once per second
 done
-
-echo "All $COUNT clients launched."
