@@ -1,4 +1,5 @@
 #include "flight_session_manager.h"
+#include "sqlite3.h"
 #include <fstream>
 
 // flight_session_manager.cpp
@@ -8,6 +9,46 @@ static const char* CSV_FILE = "flight_log.csv";
 // shared per-aircraft aggregate store
 static std::unordered_map<uint32_t, AircraftStats> aircraft_map;
 static std::mutex aircraft_mutex;
+static std::mutex db_mutex;
+static sqlite3* g_db = nullptr;
+
+bool init_database() {
+	int rc = sqlite3_open("flight_logs.db", &g_db);
+	if (rc != SQLITE_OK) {
+		std::cerr << "Failed to open db: " << sqlite3_errmsg(g_db) << std::endl;
+		return false;
+	}
+
+	sqlite3_exec(g_db, "PRAGMA journal_mode=WAL;", nullptr, nullptr, nullptr);
+
+	sqlite3_exec(g_db,
+		"CREATE TABLE IF NOT EXISTS flight_sessions ("
+		"id INTEGER PRIMARY KEY AUTOINCREMENT,"
+		"plane_id INTEGER NOT NULL,"
+		"fuel_sum REAL,"
+		"current_avg REAL,"
+		"packet_count INTEGER,"
+		"status TEXT DEFAULT 'active'"
+		");",
+		nullptr, nullptr, nullptr);
+
+	sqlite3_exec(g_db,
+		"CREATE TABLE IF NOT EXISTS aircraft_stats ("
+		"plane_id INTEGER PRIMARY KEY,"
+		"cumulative_avg REAL,"
+		"flight_count INTEGER NOT NULL"
+		");",
+		nullptr, nullptr, nullptr);
+
+	return true;
+}
+
+void close_database() {
+	if (g_db) {
+		sqlite3_close(g_db);
+		g_db = nullptr;
+	}
+}
 
 FlightSession start_session(uint32_t plane_id) {
 	FlightSession session{};
