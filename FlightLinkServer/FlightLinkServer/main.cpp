@@ -4,6 +4,7 @@
 #include <string>
 #include <optional>
 
+#include "sqlite3.h"
 #include "connection_manager.h"
 #include "stream_processor.h"
 
@@ -21,6 +22,14 @@ int main(int argc, char* argv[]) {
 
     int port = config->port;
     int pool_size = config->pool_size;
+
+    // Opens or creates sqlite db file
+    sqlite3* db = nullptr;
+    int rc = sqlite3_open("flight_logs.db", &db);
+    if (rc != SQLITE_OK) {
+        std::cerr << "Failed to open db: " << sqlite3_errmsg(db) << std::endl;
+        return 1;
+    }
 
     WSADATA wsaData;
     if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
