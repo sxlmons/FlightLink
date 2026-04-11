@@ -61,7 +61,7 @@ FlightSession start_session(uint32_t plane_id) {
 			"INSERT INTO flight_sessions (plane_id, fuel_sum, current_avg, packet_count, status) "
 			"VALUES (?, 0.0, 0.0, 0, 'active');",
 			-1, &stmt, nullptr);
-		sqlite3_bind_int(stmt, 1, session.plane_id);
+		sqlite3_bind_int64(stmt, 1, static_cast<int64_t>(session.plane_id));
 		sqlite3_step(stmt);
 		sqlite3_finalize(stmt);
 
@@ -163,7 +163,7 @@ void finalize_session(FlightSession& session) {
 			"INSERT OR REPLACE INTO aircraft_stats (plane_id, cumulative_avg, flight_count) "
 			"VALUES (?, ?, ?);",
 			-1, &stats_stmt, nullptr);
-		sqlite3_bind_int(stats_stmt, 1, session.plane_id);
+		sqlite3_bind_int64(stmt, 1, static_cast<int64_t>(session.plane_id));
 		sqlite3_bind_double(stats_stmt, 2, final_cumulative_avg);
 		sqlite3_bind_int(stats_stmt, 3, final_flight_count);
 

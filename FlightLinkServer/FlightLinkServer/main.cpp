@@ -81,7 +81,7 @@ int main(int argc, char* argv[]) {
     manager.shutdown();
     WSACleanup();
 
-    close_database;
+    close_database();
 
     return 0;
 }
