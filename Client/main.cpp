@@ -24,8 +24,8 @@ struct AircraftPacket {
 
 int getRandomNumber();
 uint32_t generateGlobalUniqueId();
-void sendPacket(int socket, uint8_t type, uint32_t id, double timestamp, double fuel_remaining);
-void processTelemetryFile(const std::string& filename, int socket, uint32_t planeId);
+bool sendPacket(int socket, uint8_t type, uint32_t id, double timestamp, double fuel_remaining);
+bool processTelemetryFile(const std::string& filename, int socket, uint32_t planeId);
 string getProjectPath();
 
 int main(int argc, char* argv[])
@@ -49,21 +49,23 @@ int main(int argc, char* argv[])
     sockaddr_in SvrAddr;
     SvrAddr.sin_family = AF_INET;						//Address family type internet
     SvrAddr.sin_port = htons(27000);					//port (host to network conversion)
-    SvrAddr.sin_addr.s_addr = inet_addr("127.0.0.1");	//IP address
+    SvrAddr.sin_addr.s_addr = inet_addr(argv[1]);	//IP address 10.144.114.37
     if ((connect(ClientSocket, (struct sockaddr*)&SvrAddr, sizeof(SvrAddr))) == -1) {
         close(ClientSocket);
         return 0;
     }
 
     // Send Start Packet
-    sendPacket(ClientSocket, 0x01, clientId, 0x00, 0x00);
-    // Receive confirming ready for telemetry data?
+    if (!sendPacket(ClientSocket, 0x01, clientId, 0x00, 0x00))
+        return 0;
 
     // Telemetry Data Send
-    processTelemetryFile(path, ClientSocket, clientId);
+    if (!processTelemetryFile(path, ClientSocket, clientId))
+        return 0;
 
     // Send End Packet
-    sendPacket(ClientSocket, 0x03, clientId, 0x00, 0x00);
+    if (!sendPacket(ClientSocket, 0x03, clientId, 0x00, 0x00))
+        return 0;
 
     close(ClientSocket);
 
@@ -84,7 +86,7 @@ string getProjectPath() {
     return projectPath;
 }
 
-void sendPacket(int socket, uint8_t type, uint32_t id, double timestamp = 0.0, double fuel_remaining = 0.0) {
+bool sendPacket(int socket, uint8_t type, uint32_t id, double timestamp = 0.0, double fuel_remaining = 0.0) {
     AircraftPacket pkt;
     pkt.message_type = type;
     pkt.plane_id = id;
@@ -96,9 +98,9 @@ void sendPacket(int socket, uint8_t type, uint32_t id, double timestamp = 0.0, d
     size_t bytesToSend = (type == 0x02) ? 21 : 5;
 
     if (send(socket, (char*)&pkt, bytesToSend, 0) == -1) {
-        cout << "Sending Error" << endl;
-        // Handle error
+        return false;
     }
+    return true;
 }
 
 int getRandomNumber() {
@@ -123,15 +125,17 @@ uint32_t generateGlobalUniqueId() {
     return distrib(gen);
 }
 
-void processTelemetryFile(const std::string& filename, int socket, uint32_t planeId) {
+bool processTelemetryFile(const std::string& filename, int socket, uint32_t planeId) {
     std::ifstream file(filename);
 
     if (!file.is_open()) {
         std::cerr << "Error: Could not open telemetry file: " << filename << std::endl;
-        return;
+        return false;
     }
 
     std::string line;
+    int failedPacketCounter = 0;
+
     while (std::getline(file, line)) {
         if (line.empty()) continue;
 
@@ -143,7 +147,11 @@ void processTelemetryFile(const std::string& filename, int socket, uint32_t plan
                 double timestamp = std::stod(ts_str);
                 double fuelRemaining = std::stod(fuel_str);
 
-                sendPacket(socket, 0x02, planeId, timestamp, fuelRemaining);
+                if (!sendPacket(socket, 0x02, planeId, timestamp, fuelRemaining))
+                    failedPacketCounter++;
+
+                if (failedPacketCounter == 5)
+                    return false;
                 // 0.75s sleep
                 std::this_thread::sleep_for(std::chrono::milliseconds(750));
             }
@@ -155,4 +163,5 @@ void processTelemetryFile(const std::string& filename, int socket, uint32_t plan
     }
 
     file.close();
+    return true;
 }
