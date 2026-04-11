@@ -95,7 +95,7 @@ void process_telemetry(FlightSession& session, double fuel_remaining) {
 
 		sqlite3_prepare_v2(g_db,
 			"UPDATE flight_sessions SET "
-			"fuel_sum = ?, current_avg = ?, packet_count = ?, WHERE id = ?;",
+			"fuel_sum = ?, current_avg = ?, packet_count = ? WHERE id = ?;",
 			-1, &stmt, nullptr);
 
 		sqlite3_bind_double(stmt, 1, session.fuel_sum);
