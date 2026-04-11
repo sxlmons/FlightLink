@@ -14,6 +14,7 @@
 
 // Per flight in-progress state (not shared between threads)
 struct FlightSession {
+    int64_t  db_row_id;
     uint32_t plane_id;
     double   prev_fuel;
     double   fuel_sum;
@@ -28,6 +29,8 @@ struct AircraftStats {
     int    flight_count;
 };
 
+bool init_database();
+void close_database();
 FlightSession start_session(uint32_t plane_id);
 void process_telemetry(FlightSession& session, double fuel_remianing);
 void finalize_session(FlightSession& session);

@@ -8,6 +8,7 @@
 #include "protocol.h"
 #include "connection_manager.h"
 #include "stream_processor.h"
+#include "flight_session_manager.h"
 
 struct ServerConfig {
     int port;
@@ -24,7 +25,7 @@ int main(int argc, char* argv[]) {
     int port = config->port;
     int pool_size = config->pool_size;
 
-    
+    init_database(); 
 
     WSADATA wsaData;
     if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
@@ -79,6 +80,8 @@ int main(int argc, char* argv[]) {
     closesocket(listen_socket);
     manager.shutdown();
     WSACleanup();
+
+    close_database;
 
     return 0;
 }
