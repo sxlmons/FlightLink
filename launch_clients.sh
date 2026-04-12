@@ -2,21 +2,26 @@
 
 COUNT=${1:-100}
 IP_ADDR=$2
-CLIENT_NAME="main" # The name of your executable
+BATCH_SIZE=${3:-50}
+CLIENT_NAME="Client"
 
 while true; do
-    # Count how many processes with this name are currently running
-    CURRENT_RUNNING=$(pgrep -c -x "$CLIENT_NAME")
-    
-    # Calculate how many more we need
+    CURRENT_RUNNING=$(pgrep -x "$CLIENT_NAME" | wc -l | tr -d ' ')
     NEEDED=$((COUNT - CURRENT_RUNNING))
-    
+
     if [ "$NEEDED" -gt 0 ]; then
-        echo "Running: $CURRENT_RUNNING. Spawning $NEEDED more..."
-        for (( i=1; i<=NEEDED; i++ )); do
-            ./Client/main "$IP_ADDR" > /dev/null 2>&1 &
+
+        if [ "$NEEDED" -gt "$BATCH_SIZE" ]; then
+            SPAWN=$BATCH_SIZE
+        else
+            SPAWN=$NEEDED
+        fi
+
+        echo "Running: $CURRENT_RUNNING. Spawning $SPAWN more..."
+        for (( i=1; i<=SPAWN; i++ )); do
+            ./Client/build/Client "$IP_ADDR" > /dev/null 2>&1 &
         done
     fi
 
-    sleep 1 # Check once per second
+    sleep 1
 done

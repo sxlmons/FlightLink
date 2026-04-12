@@ -23,6 +23,7 @@
   */
 
 struct FlightSession {
+    int64_t  db_row_id;
     uint32_t plane_id;
     double   prev_fuel;
     double   fuel_sum;
@@ -43,14 +44,8 @@ struct AircraftStats {
     int    flight_count;
 };
 
-/**
- * @brief Initializes a new flight session for an aircraft
- *
- * Creates and returns a new FlightSession structure with initial values.
- *
- * @param plane_id Unique identifier for the aircraft
- * @return Initialized FlightSession structure
- */
+bool init_database();
+void close_database();
 FlightSession start_session(uint32_t plane_id);
 
 /**

@@ -111,7 +111,7 @@ int main(int argc, char* argv[])
     sockaddr_in SvrAddr;
     SvrAddr.sin_family = AF_INET;						//Address family type internet
     SvrAddr.sin_port = htons(27000);					//port (host to network conversion)
-    SvrAddr.sin_addr.s_addr = inet_addr(argv[1]);	//IP address 10.144.114.37
+    SvrAddr.sin_addr.s_addr = inet_addr(argv[1]);	    //IP address 10.144.114.37
     if ((connect(ClientSocket, (struct sockaddr*)&SvrAddr, sizeof(SvrAddr))) == -1) {
         close(ClientSocket);
         return 0;

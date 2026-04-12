@@ -31,3 +31,7 @@ Thumbs.db
 # DO NOT ignore the following (Ensure these are NOT in this file):
 # /telemetry/   <-- We want to track the CSV files for the group
 # /docs/        <-- We want to track the SRS and SDD PDFs
+.idea
+cmake-build-debug
+*.db-wal
+*.db-shm
