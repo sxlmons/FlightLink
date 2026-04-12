@@ -1,12 +1,20 @@
+/**
+ * @file flight_session_manager.cpp
+ * @brief Implementation of flight session management and statistics tracking
+ */
+
 #include "flight_session_manager.h"
 #include <fstream>
 
 // flight_session_manager.cpp
 
+/** @brief CSV log file path for persistent storage */
 static const char* CSV_FILE = "flight_log.csv";
 
-// shared per-aircraft aggregate store
+/** @brief Shared per-aircraft aggregate statistics store */
 static std::unordered_map<uint32_t, AircraftStats> aircraft_map;
+
+/** @brief Mutex protecting access to the shared aircraft_map */
 static std::mutex aircraft_mutex;
 
 FlightSession start_session(uint32_t plane_id) {
