@@ -1,0 +1,15 @@
+<map id="openDirectory" name="openDirectory">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,108,57"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a0eb989e531821c6a1deb85a3ba0021c0" title=" " alt="" coords="164,5,256,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,33,152,28,147,30,109,38"/>
+<area shape="rect" id="Node000007" href="$sqlite3_8c.html#aa2695a752e971577f5784122f2013c40" title=" " alt="" coords="156,56,265,83"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="108,50,143,57,138,58,108,55"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a298c9699bf9c143662c6b1fec4b2dc3b" title=" " alt="" coords="313,5,396,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="257,16,300,18,295,19,257,21"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#adb7f26b10ac1b847db6f000ef4c2e2ba" title=" " alt="" coords="444,5,597,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="397,16,431,18,426,19,397,21"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#adf72e809d4f4d34b3256e2d29769c64a" title=" " alt="" coords="645,5,810,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="597,16,631,19,626,19,597,21"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#ab9e9d3dc2dd748199ab1439b90a30905" title=" " alt="" coords="858,5,975,32"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="810,16,845,19,840,19,811,21"/>
+</map>

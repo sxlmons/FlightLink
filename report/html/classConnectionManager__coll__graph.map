@@ -1,0 +1,5 @@
+<map id="ConnectionManager" name="ConnectionManager">
+<area shape="rect" id="Node000001" title="Manages a thread pool for processing client connections." alt="" coords="5,104,143,131"/>
+<area shape="rect" id="Node000002" href="$classBoundedQueue.html" title="A thread&#45;safe queue with bounded capacity." alt="" coords="19,5,129,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,46,77,104,71,103,72,49"/>
+</map>

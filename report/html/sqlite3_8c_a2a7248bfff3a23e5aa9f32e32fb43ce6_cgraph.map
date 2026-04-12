@@ -1,0 +1,9 @@
+<map id="btreeCursor" name="btreeCursor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,95,57"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a5f24e824623e9677347137ba6aaff030" title=" " alt="" coords="143,5,278,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,34,130,31,125,33,96,40"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a9cc4ac11752c088db89d551ec1495a15" title=" " alt="" coords="154,56,266,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="95,48,142,57,137,59,95,54"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#af05f296695d164316d4666a76d07f1f0" title=" " alt="" coords="326,5,453,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="278,16,313,18,308,19,279,21"/>
+</map>

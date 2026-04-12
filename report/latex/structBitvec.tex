@@ -1,0 +1,113 @@
+\doxysection{Bitvec Struct Reference}
+\hypertarget{structBitvec}{}\label{structBitvec}\index{Bitvec@{Bitvec}}
+
+
+Collaboration diagram for Bitvec:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{structBitvec__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} \doxymbox{\hyperlink{structBitvec_ab36df8ece98aee080bae6de28c237de8}{i\+Size}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} \doxymbox{\hyperlink{structBitvec_ad6811debae9b972f2d94d667e994e3f6}{n\+Set}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} \doxymbox{\hyperlink{structBitvec_a22cdb23eb424e07b6ce922de018a83d9}{i\+Divisor}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\doxymbox{\hyperlink{sqlite3_8c_a1529231c74dd2f84855767bd45a4a128}{BITVEC\_TELEM}} \doxymbox{\hyperlink{structBitvec_ad0c8d2bbafe74c346a007004086fb56d}{aBitmap}} \+[\doxymbox{\hyperlink{sqlite3_8c_a88b5a6f3a5220c5b59494a0945b25300}{BITVEC\_NELEM}}]\+\\
+\>\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} \doxymbox{\hyperlink{structBitvec_adcaa47179c109270041bf59f8fe9f8ff}{aHash}} \+[\doxymbox{\hyperlink{sqlite3_8c_a6631a81736378abeb3cd82ff1d373c7f}{BITVEC\_NINT}}]\+\\
+\>\doxymbox{\hyperlink{structBitvec}{Bitvec}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structBitvec_ab4942527f1862bbd8e1ffe45486d1541}{apSub}} \+[\doxymbox{\hyperlink{sqlite3_8c_ac3a46fc9cd900e383c175cdd5eb3f633}{BITVEC\_NPTR}}]\+\\
+\} \doxymbox{\hyperlink{structBitvec_ac511185d81ab52439a8f4eb9578cbaa4}{u}}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l56855}{56855}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{structBitvec_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structBitvec_ad0c8d2bbafe74c346a007004086fb56d}\index{Bitvec@{Bitvec}!aBitmap@{aBitmap}}
+\index{aBitmap@{aBitmap}!Bitvec@{Bitvec}}
+\doxysubsubsection{\texorpdfstring{aBitmap}{aBitmap}}
+{\footnotesize\ttfamily \label{structBitvec_ad0c8d2bbafe74c346a007004086fb56d} 
+\doxymbox{\hyperlink{sqlite3_8c_a1529231c74dd2f84855767bd45a4a128}{BITVEC\+\_\+\+TELEM}} Bitvec::\+a\+Bitmap\+[\doxymbox{\hyperlink{sqlite3_8c_a88b5a6f3a5220c5b59494a0945b25300}{BITVEC\+\_\+\+NELEM}}]\+}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l56865}{56865}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structBitvec_adcaa47179c109270041bf59f8fe9f8ff}\index{Bitvec@{Bitvec}!aHash@{aHash}}
+\index{aHash@{aHash}!Bitvec@{Bitvec}}
+\doxysubsubsection{\texorpdfstring{aHash}{aHash}}
+{\footnotesize\ttfamily \label{structBitvec_adcaa47179c109270041bf59f8fe9f8ff} 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} Bitvec::\+a\+Hash\+[\doxymbox{\hyperlink{sqlite3_8c_a6631a81736378abeb3cd82ff1d373c7f}{BITVEC\+\_\+\+NINT}}]\+}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l56866}{56866}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structBitvec_ab4942527f1862bbd8e1ffe45486d1541}\index{Bitvec@{Bitvec}!apSub@{apSub}}
+\index{apSub@{apSub}!Bitvec@{Bitvec}}
+\doxysubsubsection{\texorpdfstring{apSub}{apSub}}
+{\footnotesize\ttfamily \label{structBitvec_ab4942527f1862bbd8e1ffe45486d1541} 
+\doxymbox{\hyperlink{structBitvec}{Bitvec}}\texorpdfstring{$\ast$}{*} Bitvec::\+ap\+Sub\+[\doxymbox{\hyperlink{sqlite3_8c_ac3a46fc9cd900e383c175cdd5eb3f633}{BITVEC\+\_\+\+NPTR}}]\+}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l56867}{56867}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structBitvec_a22cdb23eb424e07b6ce922de018a83d9}\index{Bitvec@{Bitvec}!iDivisor@{iDivisor}}
+\index{iDivisor@{iDivisor}!Bitvec@{Bitvec}}
+\doxysubsubsection{\texorpdfstring{iDivisor}{iDivisor}}
+{\footnotesize\ttfamily \label{structBitvec_a22cdb23eb424e07b6ce922de018a83d9} 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} Bitvec::\+i\+Divisor}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l56860}{56860}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structBitvec_ab36df8ece98aee080bae6de28c237de8}\index{Bitvec@{Bitvec}!iSize@{iSize}}
+\index{iSize@{iSize}!Bitvec@{Bitvec}}
+\doxysubsubsection{\texorpdfstring{iSize}{iSize}}
+{\footnotesize\ttfamily \label{structBitvec_ab36df8ece98aee080bae6de28c237de8} 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} Bitvec::\+i\+Size}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l56856}{56856}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structBitvec_ad6811debae9b972f2d94d667e994e3f6}\index{Bitvec@{Bitvec}!nSet@{nSet}}
+\index{nSet@{nSet}!Bitvec@{Bitvec}}
+\doxysubsubsection{\texorpdfstring{nSet}{nSet}}
+{\footnotesize\ttfamily \label{structBitvec_ad6811debae9b972f2d94d667e994e3f6} 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} Bitvec::\+n\+Set}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l56857}{56857}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structBitvec_ac511185d81ab52439a8f4eb9578cbaa4}\index{Bitvec@{Bitvec}!u@{u}}
+\index{u@{u}!Bitvec@{Bitvec}}
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily \label{structBitvec_ac511185d81ab52439a8f4eb9578cbaa4} 
+union  \{ ... \}  Bitvec::\+u}
+
+
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Flight\+Link\+Server/\+\+Flight\+Link\+Server/\+\doxymbox{\hyperlink{sqlite3_8c}{sqlite3.\+c}}\end{DoxyCompactItemize}

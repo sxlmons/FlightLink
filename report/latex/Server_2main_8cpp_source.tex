@@ -1,0 +1,119 @@
+\doxysection{main.\+cpp}
+\hypertarget{Server_2main_8cpp_source}{}\label{Server_2main_8cpp_source}\index{Server/main.cpp@{Server/main.cpp}}
+\doxymbox{\hyperlink{Server_2main_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <winsock2.h>}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <ws2tcpip.h>}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}connection\_manager.h"{}}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}stream\_processor.h"{}}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00031}00031\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structServerConfig}{ServerConfig}}\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{structServerConfig_ae459946703124ef5a1d98dba38a8b493}{port}};}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{structServerConfig_a4f3046fdd5b949132287fa9b73ddf571}{pool\_size}};}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00034}00034\ \};}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00046}00046\ std::optional<ServerConfig>\ \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2main_8cpp_aae0e40629e5409b4240aeefe8dcfb104}{parse\_args}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[]);}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00059}\doxymbox{\hyperlink{Server_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00059}}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{auto}\ config\ =\ \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2main_8cpp_aae0e40629e5409b4240aeefe8dcfb104}{parse\_args}}(argc,\ argv);}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (!config)}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00063}00063\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{int}\ port\ =\ config-\/>port;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{int}\ pool\_size\ =\ config-\/>pool\_size;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00067}00067\ \ \ \ \ WSADATA\ wsaData;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (WSAStartup(MAKEWORD(2,\ 2),\ \&wsaData)\ !=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}WSAStartup\ failed."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00073}00073\ \ \ \ \ SOCKET\ listen\_socket\ =\ socket(AF\_INET,\ SOCK\_STREAM,\ IPPROTO\_TCP);}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (listen\_socket\ ==\ INVALID\_SOCKET)\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Socket\ creation\ failed:\ "{}}\ <<\ WSAGetLastError()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ WSACleanup();}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00080}00080\ \ \ \ \ sockaddr\_in\ server\_addr\{\};}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00081}00081\ \ \ \ \ server\_addr.sin\_family\ =\ AF\_INET;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00082}00082\ \ \ \ \ server\_addr.sin\_addr.s\_addr\ =\ INADDR\_ANY;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00083}00083\ \ \ \ \ server\_addr.sin\_port\ =\ htons(\textcolor{keyword}{static\_cast<}u\_short\textcolor{keyword}{>}(port));}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{if}\ (bind(listen\_socket,\ \textcolor{keyword}{reinterpret\_cast<}sockaddr*\textcolor{keyword}{>}(\&server\_addr),}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{sizeof}(server\_addr))\ ==\ SOCKET\_ERROR)\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Bind\ failed:\ "{}}\ <<\ WSAGetLastError()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ closesocket(listen\_socket);}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ WSACleanup();}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{keywordflow}{if}\ (listen(listen\_socket,\ SOMAXCONN)\ ==\ SOCKET\_ERROR)\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Listen\ failed:\ "{}}\ <<\ WSAGetLastError()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ closesocket(listen\_socket);}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ WSACleanup();}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00099}00099\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00100}00100\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Server\ listening\ on\ port\ "{}}\ <<\ port\ <<\ \textcolor{stringliteral}{"{}\ with\ "{}}\ <<\ pool\_size\ <<\ \textcolor{stringliteral}{"{}\ worker\ threads."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{comment}{//\ Start\ ConnectionManager}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00103}00103\ \ \ \ \ \doxymbox{\hyperlink{classConnectionManager}{ConnectionManager}}\ manager(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(pool\_size),\doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2stream__processor_8cpp_a6f9656db2bdac318c54f4d2c58bc9c9a}{process\_client}});}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{comment}{//\ Accept\ Loop}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ SOCKET\ client\ =\ accept(listen\_socket,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (client\ ==\ INVALID\_SOCKET)\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Accept\ failed:\ "{}}\ <<\ WSAGetLastError()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ manager.\doxymbox{\hyperlink{classConnectionManager_a5aebb6bc179e5147e823edacd44d83a7}{enqueue}}(client);}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00115}00115\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00117}00117\ \ \ \ \ closesocket(listen\_socket);}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00118}00118\ \ \ \ \ manager.\doxymbox{\hyperlink{classConnectionManager_a72dd3483d46b34877e893027d08ee2b4}{shutdown}}();}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00119}00119\ \ \ \ \ WSACleanup();}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00122}00122\ \}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00126}\doxymbox{\hyperlink{Server_2main_8cpp_aae0e40629e5409b4240aeefe8dcfb104}{00126}}\ std::optional<ServerConfig>\ \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2main_8cpp_aae0e40629e5409b4240aeefe8dcfb104}{parse\_args}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{if}\ (argc\ !=\ 3)\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Usage:\ server.exe\ <port>\ <pool\_size>"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::nullopt;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00130}00130\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{keywordtype}{int}\ port;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{keywordtype}{int}\ pool\_size;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00134}00134\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ port\ =\ std::stoi(argv[1]);}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ pool\_size\ =\ std::stoi(argv[2]);}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00137}00137\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00138}00138\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Invalid\ arguments:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::nullopt;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00141}00141\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{if}\ (port\ <=\ 0\ ||\ port\ >\ 65535\ ||\ pool\_size\ <=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Port\ must\ be\ 1-\/65535\ and\ pool\ size\ must\ "{}}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}be\ a\ positive\ integer."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::nullopt;}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00147}00147\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00149}00149\ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{structServerConfig}{ServerConfig}}\{\ port,\ pool\_size\ \};}
+\DoxyCodeLine{\Hypertarget{Server_2main_8cpp_source_l00150}00150\ \}}
+
+\end{DoxyCode}

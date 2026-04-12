@@ -1,0 +1,15 @@
+<map id="pagerWalFrames" name="pagerWalFrames">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,125,108"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#afd08ca92c5087db71f9b3a7cd9343057" title=" " alt="" coords="173,5,353,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,78,172,42,195,36,190,39,174,46,94,83"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a928fd0b03c8d689beb3b81d73e9c713c" title=" " alt="" coords="190,56,336,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="124,85,177,79,172,82,126,90"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#a9fe5b4991391ec26e75fb59ee72704db" title=" " alt="" coords="187,107,339,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="125,100,174,107,169,109,125,105"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#af9606aac275558d3b96c83b2bff2d717" title=" " alt="" coords="200,157,326,184"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="93,106,174,143,195,152,190,152,172,148,92,111"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a2924627e99ca211030e954405a10f5e8" title=" " alt="" coords="401,5,513,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="353,16,388,18,383,19,354,21"/>
+<area shape="rect" id="Node000007" href="$sqlite3_8c.html#ae97eea370a9efa1d1dcde58fa9584680" title=" " alt="" coords="414,157,500,184"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="326,168,402,171,396,171,326,173"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Server/headers/bounded_queue.h" name="Server/headers/bounded_queue.h">
+<area shape="rect" id="Node000001" title="Thread&#45;safe bounded queue implementation for socket distribution." alt="" coords="12,5,175,48"/>
+<area shape="rect" id="Node000002" href="$Server_2headers_2connection__manager_8h.html" title="Worker thread pool manager for client connection handling." alt="" coords="5,96,182,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,62,96,97,91,95,92,66"/>
+</map>

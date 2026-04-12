@@ -1,0 +1,19 @@
+<map id="sqlite3_trace" name="sqlite3_trace">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,101,57"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a1c12cde690bd89f104de5cbad12a6bf5" title=" " alt="" coords="156,5,294,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,34,143,30,138,32,102,40"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#ab15308423296d719d75dca4c0ef182a7" title=" " alt="" coords="149,56,301,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,48,136,55,131,57,101,54"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a8aa249fac852b22bb1227e2bc2921f11" title=" " alt="" coords="382,31,509,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="301,58,369,53,363,53,301,63"/>
+<area shape="rect" id="Node000009" href="$sqlite3_8c.html#ac1fff729aec147d9825a4930042a626b" title=" " alt="" coords="349,81,541,108"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="301,75,336,82,331,82,301,81"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#a298c9699bf9c143662c6b1fec4b2dc3b" title=" " alt="" coords="589,31,673,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="509,41,576,44,571,44,509,47"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#adb7f26b10ac1b847db6f000ef4c2e2ba" title=" " alt="" coords="721,31,873,57"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="673,41,708,44,702,44,673,47"/>
+<area shape="rect" id="Node000007" href="$sqlite3_8c.html#adf72e809d4f4d34b3256e2d29769c64a" title=" " alt="" coords="921,31,1086,57"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="874,41,908,44,902,44,874,47"/>
+<area shape="rect" id="Node000008" href="$sqlite3_8c.html#ab9e9d3dc2dd748199ab1439b90a30905" title=" " alt="" coords="1134,31,1252,57"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1087,41,1122,44,1116,44,1087,47"/>
+</map>

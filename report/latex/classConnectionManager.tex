@@ -1,0 +1,317 @@
+\doxysection{Connection\+Manager Class Reference}
+\hypertarget{classConnectionManager}{}\label{classConnectionManager}\index{ConnectionManager@{ConnectionManager}}
+
+
+Manages a thread pool for processing client connections.  
+
+
+
+
+{\ttfamily \+\#include $<$connection\+\_\+manager.\+h$>$}
+
+
+
+Collaboration diagram for Connection\+Manager:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classConnectionManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classConnectionManager_a24f6f3ab6338f292753db25d39014afd}{Connection\+Manager}} (size\+\_\+t pool\+\_\+size, std::\+function$<$ void(SOCKET)$>$ handler)
+\item 
+void \doxymbox{\hyperlink{classConnectionManager_a5aebb6bc179e5147e823edacd44d83a7}{enqueue}} (SOCKET client)
+\item 
+void \doxymbox{\hyperlink{classConnectionManager_a72dd3483d46b34877e893027d08ee2b4}{shutdown}} ()
+\item 
+\doxymbox{\hyperlink{classConnectionManager_a5c2a49d02244fc399deba3ce6ffe77ac}{\texorpdfstring{$\sim$}{\string~}\+Connection\+Manager}} ()
+\item 
+\doxymbox{\hyperlink{classConnectionManager_ac11f40feecc9e07c530348771a4f98c5}{Connection\+Manager}} (const \doxymbox{\hyperlink{classConnectionManager}{Connection\+Manager}} \&)=delete
+\item 
+\doxymbox{\hyperlink{classConnectionManager}{Connection\+Manager}} \& \doxymbox{\hyperlink{classConnectionManager_a396ee462037bfb20d5cd52bd077673c5}{operator=}} (const \doxymbox{\hyperlink{classConnectionManager}{Connection\+Manager}} \&)=delete
+\item 
+\doxymbox{\hyperlink{classConnectionManager_a24f6f3ab6338f292753db25d39014afd}{Connection\+Manager}} (size\+\_\+t pool\+\_\+size, std::\+function$<$ void(SOCKET)$>$ handler)
+\begin{DoxyCompactList}\small\item\em Constructs the connection manager and starts worker threads. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classConnectionManager_a5aebb6bc179e5147e823edacd44d83a7}{enqueue}} (SOCKET client)
+\begin{DoxyCompactList}\small\item\em Enqueues a client socket for processing. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classConnectionManager_a72dd3483d46b34877e893027d08ee2b4}{shutdown}} ()
+\begin{DoxyCompactList}\small\item\em Initiates graceful shutdown of all worker threads. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classConnectionManager_a5c2a49d02244fc399deba3ce6ffe77ac}{\texorpdfstring{$\sim$}{\string~}\+Connection\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destructor -\/ ensures proper shutdown. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classConnectionManager_ac11f40feecc9e07c530348771a4f98c5}{Connection\+Manager}} (const \doxymbox{\hyperlink{classConnectionManager}{Connection\+Manager}} \&)=delete
+\item 
+\doxymbox{\hyperlink{classConnectionManager}{Connection\+Manager}} \& \doxymbox{\hyperlink{classConnectionManager_a396ee462037bfb20d5cd52bd077673c5}{operator=}} (const \doxymbox{\hyperlink{classConnectionManager}{Connection\+Manager}} \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+function$<$ void(SOCKET)$>$ \doxymbox{\hyperlink{classConnectionManager_a1128aed94bdaaaa935b09e9665017310}{handler\+\_\+}}
+\item 
+\doxymbox{\hyperlink{classBoundedQueue}{Bounded\+Queue}} \doxymbox{\hyperlink{classConnectionManager_a46c6be9b71612306cf5ca50cd6fcd5e2}{queue\+\_\+}}
+\item 
+std::\+vector$<$ std::\+thread $>$ \doxymbox{\hyperlink{classConnectionManager_a28f01fa38c2bbffbadd03c1b00769570}{workers\+\_\+}}
+\item 
+bool \doxymbox{\hyperlink{classConnectionManager_a6fb2c030e68fda79ab3d51d8b98097af}{shutdown\+\_\+called\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a thread pool for processing client connections. 
+
+This class creates and manages a pool of worker threads that process client connections from a bounded queue. It provides graceful shutdown capabilities and ensures all connections are properly cleaned up.
+
+The queue capacity is set to 2 \texorpdfstring{$\ast$}{*} pool\+\_\+size to provide buffering while preventing unbounded queue growth. 
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8h_source_l00013}{13}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8h_source}{connection\+\_\+manager.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classConnectionManager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classConnectionManager_a24f6f3ab6338f292753db25d39014afd}\index{ConnectionManager@{ConnectionManager}!ConnectionManager@{ConnectionManager}}
+\index{ConnectionManager@{ConnectionManager}!ConnectionManager@{ConnectionManager}}
+\doxysubsubsection{\texorpdfstring{ConnectionManager()}{ConnectionManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{classConnectionManager_a24f6f3ab6338f292753db25d39014afd} 
+Connection\+Manager::\+\+Connection\+Manager (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pool\+\_\+size}{, }\item[{std::\+function$<$ void(SOCKET)$>$}]{handler}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8cpp_source_l00005}{5}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8cpp_source}{connection\+\_\+manager.\+cpp}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classConnectionManager_a24f6f3ab6338f292753db25d39014afd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classConnectionManager_a5c2a49d02244fc399deba3ce6ffe77ac}\index{ConnectionManager@{ConnectionManager}!````~ConnectionManager@{\texorpdfstring{$\sim$}{\string~}ConnectionManager}}
+\index{````~ConnectionManager@{\texorpdfstring{$\sim$}{\string~}ConnectionManager}!ConnectionManager@{ConnectionManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ConnectionManager()}{\string~ConnectionManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classConnectionManager_a5c2a49d02244fc399deba3ce6ffe77ac} 
+Connection\+Manager::\+\texorpdfstring{$\sim$}{\string~}\+Connection\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8cpp_source_l00046}{46}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8cpp_source}{connection\+\_\+manager.\+cpp}}.
+
+Here is the call graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classConnectionManager_a5c2a49d02244fc399deba3ce6ffe77ac_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classConnectionManager_ac11f40feecc9e07c530348771a4f98c5}\index{ConnectionManager@{ConnectionManager}!ConnectionManager@{ConnectionManager}}
+\index{ConnectionManager@{ConnectionManager}!ConnectionManager@{ConnectionManager}}
+\doxysubsubsection{\texorpdfstring{ConnectionManager()}{ConnectionManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{classConnectionManager_ac11f40feecc9e07c530348771a4f98c5} 
+Connection\+Manager::\+\+Connection\+Manager (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classConnectionManager}{Connection\+Manager}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classConnectionManager_ac11f40feecc9e07c530348771a4f98c5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classConnectionManager_a24f6f3ab6338f292753db25d39014afd}\index{ConnectionManager@{ConnectionManager}!ConnectionManager@{ConnectionManager}}
+\index{ConnectionManager@{ConnectionManager}!ConnectionManager@{ConnectionManager}}
+\doxysubsubsection{\texorpdfstring{ConnectionManager()}{ConnectionManager()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{classConnectionManager_a24f6f3ab6338f292753db25d39014afd} 
+Connection\+Manager::\+\+Connection\+Manager (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pool\+\_\+size}{, }\item[{std::\+function$<$ void(SOCKET)$>$}]{handler}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the connection manager and starts worker threads. 
+
+Creates a bounded queue with capacity = 2 \texorpdfstring{$\ast$}{*} pool\+\_\+size and spins up the specified number of worker threads.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pool\+\_\+size} & Number of worker threads to create \\
+\hline
+{\em handler} & Function to process each client connection \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classConnectionManager_a5c2a49d02244fc399deba3ce6ffe77ac}\index{ConnectionManager@{ConnectionManager}!````~ConnectionManager@{\texorpdfstring{$\sim$}{\string~}ConnectionManager}}
+\index{````~ConnectionManager@{\texorpdfstring{$\sim$}{\string~}ConnectionManager}!ConnectionManager@{ConnectionManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ConnectionManager()}{\string~ConnectionManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classConnectionManager_a5c2a49d02244fc399deba3ce6ffe77ac} 
+Connection\+Manager::\+\texorpdfstring{$\sim$}{\string~}\+Connection\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor -\/ ensures proper shutdown. 
+
+\Hypertarget{classConnectionManager_ac11f40feecc9e07c530348771a4f98c5}\index{ConnectionManager@{ConnectionManager}!ConnectionManager@{ConnectionManager}}
+\index{ConnectionManager@{ConnectionManager}!ConnectionManager@{ConnectionManager}}
+\doxysubsubsection{\texorpdfstring{ConnectionManager()}{ConnectionManager()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{classConnectionManager_ac11f40feecc9e07c530348771a4f98c5} 
+Connection\+Manager::\+\+Connection\+Manager (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classConnectionManager}{Connection\+Manager}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classConnectionManager_ac11f40feecc9e07c530348771a4f98c5_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{classConnectionManager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classConnectionManager_a5aebb6bc179e5147e823edacd44d83a7}\index{ConnectionManager@{ConnectionManager}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!ConnectionManager@{ConnectionManager}}
+\doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classConnectionManager_a5aebb6bc179e5147e823edacd44d83a7} 
+void Connection\+Manager::\+enqueue (\begin{DoxyParamCaption}\item[{SOCKET}]{client}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8cpp_source_l00025}{25}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8cpp_source}{connection\+\_\+manager.\+cpp}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classConnectionManager_a5aebb6bc179e5147e823edacd44d83a7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classConnectionManager_a5aebb6bc179e5147e823edacd44d83a7}\index{ConnectionManager@{ConnectionManager}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!ConnectionManager@{ConnectionManager}}
+\doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classConnectionManager_a5aebb6bc179e5147e823edacd44d83a7} 
+void Connection\+Manager::\+enqueue (\begin{DoxyParamCaption}\item[{SOCKET}]{client}{}\end{DoxyParamCaption})}
+
+
+
+Enqueues a client socket for processing. 
+
+This method may block if the queue is full. The socket will be picked up by an available worker thread and passed to the handler.
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & The accepted client socket to enqueue \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classConnectionManager_a396ee462037bfb20d5cd52bd077673c5}\index{ConnectionManager@{ConnectionManager}!operator=@{operator=}}
+\index{operator=@{operator=}!ConnectionManager@{ConnectionManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classConnectionManager_a396ee462037bfb20d5cd52bd077673c5} 
+\doxymbox{\hyperlink{classConnectionManager}{Connection\+Manager}} \& Connection\+Manager::\+operator= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classConnectionManager}{Connection\+Manager}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classConnectionManager_a396ee462037bfb20d5cd52bd077673c5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classConnectionManager_a396ee462037bfb20d5cd52bd077673c5}\index{ConnectionManager@{ConnectionManager}!operator=@{operator=}}
+\index{operator=@{operator=}!ConnectionManager@{ConnectionManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classConnectionManager_a396ee462037bfb20d5cd52bd077673c5} 
+\doxymbox{\hyperlink{classConnectionManager}{Connection\+Manager}} \& Connection\+Manager::\+operator= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classConnectionManager}{Connection\+Manager}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classConnectionManager_a396ee462037bfb20d5cd52bd077673c5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classConnectionManager_a72dd3483d46b34877e893027d08ee2b4}\index{ConnectionManager@{ConnectionManager}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!ConnectionManager@{ConnectionManager}}
+\doxysubsubsection{\texorpdfstring{shutdown()}{shutdown()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classConnectionManager_a72dd3483d46b34877e893027d08ee2b4} 
+void Connection\+Manager::\+shutdown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8cpp_source_l00029}{29}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8cpp_source}{connection\+\_\+manager.\+cpp}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classConnectionManager_a72dd3483d46b34877e893027d08ee2b4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classConnectionManager_a72dd3483d46b34877e893027d08ee2b4}\index{ConnectionManager@{ConnectionManager}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!ConnectionManager@{ConnectionManager}}
+\doxysubsubsection{\texorpdfstring{shutdown()}{shutdown()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classConnectionManager_a72dd3483d46b34877e893027d08ee2b4} 
+void Connection\+Manager::\+shutdown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initiates graceful shutdown of all worker threads. 
+
+Wakes all waiting workers, allows them to finish their current client, and then joins all threads. This method is idempotent. 
+
+\label{doc-variable-members}
+\Hypertarget{classConnectionManager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classConnectionManager_a1128aed94bdaaaa935b09e9665017310}\index{ConnectionManager@{ConnectionManager}!handler\_@{handler\_}}
+\index{handler\_@{handler\_}!ConnectionManager@{ConnectionManager}}
+\doxysubsubsection{\texorpdfstring{handler\_}{handler\_}}
+{\footnotesize\ttfamily \label{classConnectionManager_a1128aed94bdaaaa935b09e9665017310} 
+std::\+function$<$ void(SOCKET)$>$ Connection\+Manager::\+handler\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8h_source_l00031}{31}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8h_source}{connection\+\_\+manager.\+h}}.
+
+\Hypertarget{classConnectionManager_a46c6be9b71612306cf5ca50cd6fcd5e2}\index{ConnectionManager@{ConnectionManager}!queue\_@{queue\_}}
+\index{queue\_@{queue\_}!ConnectionManager@{ConnectionManager}}
+\doxysubsubsection{\texorpdfstring{queue\_}{queue\_}}
+{\footnotesize\ttfamily \label{classConnectionManager_a46c6be9b71612306cf5ca50cd6fcd5e2} 
+\doxymbox{\hyperlink{classBoundedQueue}{Bounded\+Queue}} Connection\+Manager::\+queue\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8h_source_l00032}{32}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8h_source}{connection\+\_\+manager.\+h}}.
+
+\Hypertarget{classConnectionManager_a6fb2c030e68fda79ab3d51d8b98097af}\index{ConnectionManager@{ConnectionManager}!shutdown\_called\_@{shutdown\_called\_}}
+\index{shutdown\_called\_@{shutdown\_called\_}!ConnectionManager@{ConnectionManager}}
+\doxysubsubsection{\texorpdfstring{shutdown\_called\_}{shutdown\_called\_}}
+{\footnotesize\ttfamily \label{classConnectionManager_a6fb2c030e68fda79ab3d51d8b98097af} 
+bool Connection\+Manager::\+shutdown\+\_\+called\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8h_source_l00034}{34}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8h_source}{connection\+\_\+manager.\+h}}.
+
+\Hypertarget{classConnectionManager_a28f01fa38c2bbffbadd03c1b00769570}\index{ConnectionManager@{ConnectionManager}!workers\_@{workers\_}}
+\index{workers\_@{workers\_}!ConnectionManager@{ConnectionManager}}
+\doxysubsubsection{\texorpdfstring{workers\_}{workers\_}}
+{\footnotesize\ttfamily \label{classConnectionManager_a28f01fa38c2bbffbadd03c1b00769570} 
+std::\+vector$<$ std::\+thread $>$ Connection\+Manager::\+workers\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8h_source_l00033}{33}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8h_source}{connection\+\_\+manager.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Flight\+Link\+Server/\+\+Flight\+Link\+Server/\+\doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8h}{connection\+\_\+manager.\+h}}\item 
+Server/\+headers/\+\doxymbox{\hyperlink{Server_2headers_2connection__manager_8h}{connection\+\_\+manager.\+h}}\item 
+Flight\+Link\+Server/\+\+Flight\+Link\+Server/\+\doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2connection__manager_8cpp}{connection\+\_\+manager.\+cpp}}\item 
+Server/\+source/\+\doxymbox{\hyperlink{Server_2source_2connection__manager_8cpp}{connection\+\_\+manager.\+cpp}}\end{DoxyCompactItemize}

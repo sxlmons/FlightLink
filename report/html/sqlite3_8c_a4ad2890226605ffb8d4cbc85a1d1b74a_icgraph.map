@@ -1,0 +1,11 @@
+<map id="sqlite3BtreeIsInBackup" name="sqlite3BtreeIsInBackup">
+<area shape="rect" id="Node000001" title=" " alt="" coords="567,5,723,32"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a2b3dd04cb87abd088926ab0082a60b77" title=" " alt="" coords="429,5,519,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="548,19,519,21,519,16,554,19"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#ab1a5a0b01c7560aef5e0b8603a68747d" title=" " alt="" coords="280,5,381,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="411,19,382,21,382,16,416,19"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#afbb7bb5727c7c10f77634667a3fb5f3a" title=" " alt="" coords="151,5,232,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="262,19,232,21,232,16,267,19"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#a0327d71a5fabe0b6a343d78a2602e72a" title=" " alt="" coords="5,5,103,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="133,19,103,21,103,16,138,18"/>
+</map>

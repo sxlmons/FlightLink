@@ -1,0 +1,13 @@
+<map id="vdbePmaReadVarint" name="vdbePmaReadVarint">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1043,5,1183,32"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a721a310daa0db281ae2ec97c1e330853" title=" " alt="" coords="859,5,995,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1025,19,995,21,995,16,1030,19"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a5b84168cf5b5c64218810fbc3182b95f" title=" " alt="" coords="647,5,811,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="840,19,811,21,811,16,846,19"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a7af2bdcef74d6ae7b6c04a2a7d171f33" title=" " alt="" coords="424,5,599,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="629,19,600,21,600,16,635,19"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#a82088507aafeedcc04af031f7ea0bbd8" title=" " alt="" coords="222,5,376,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="406,19,377,21,377,16,411,19"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#a31677d178ebf96ee6034a05660e1f4bf" title=" " alt="" coords="5,5,174,32"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="203,19,174,21,174,16,209,19"/>
+</map>

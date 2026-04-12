@@ -1,0 +1,16 @@
+<map id="sqlite3PagerWalSupported" name="sqlite3PagerWalSupported">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1017,31,1191,57"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a5e4116ab2def31c2c36e557fc6811d0d" title=" " alt="" coords="823,31,969,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="999,44,969,47,969,41,1004,44"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a5b808194d3178be15705a420265cee9d" title=" " alt="" coords="225,5,302,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="807,43,302,23,302,17,808,38"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#a53aeec46642c01ab2de938e8bd00b0e3" title=" " alt="" coords="615,56,775,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="810,55,775,62,775,57,805,55"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a2eb598df08b5317511aab819b4be2c8a" title=" " alt="" coords="5,5,122,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="208,20,123,21,122,16,212,17"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#a58c197b629fb6eaacf96c7add57c70df" title=" " alt="" coords="405,56,567,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="597,69,568,72,568,67,603,69"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="407,52,301,30,302,25,412,52"/>
+<area shape="rect" id="Node000007" href="$sqlite3_8c.html#afb929a0a4553cda84de16180ddbd09f7" title=" " alt="" coords="170,56,357,83"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="387,69,357,72,357,67,392,69"/>
+</map>

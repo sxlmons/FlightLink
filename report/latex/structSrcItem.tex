@@ -1,0 +1,482 @@
+\doxysection{Src\+Item Struct Reference}
+\hypertarget{structSrcItem}{}\label{structSrcItem}\index{SrcItem@{SrcItem}}
+
+
+Collaboration diagram for Src\+Item:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structSrcItem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structSrcItem_a8f8be9c45763fefeebd92acf8702d640}{z\+Name}}
+\item 
+char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structSrcItem_a88defa197cbf16068887c2a316aa850b}{z\+Alias}}
+\item 
+\doxymbox{\hyperlink{structTable}{Table}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structSrcItem_a18979c51016bcea1fc71aca9da1bb190}{p\+STab}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} \doxymbox{\hyperlink{structSrcItem_a2eafa800b828ace03575c55237bd65c3}{jointype}}\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_a2802c9ac695d746aee94c8782ed9e23a}{notIndexed}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_a965b54cd484e6c2c2331b93bdc3e86f7}{isIndexedBy}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_a81b9f962f39d5dd2821090781a4c02ae}{isSubquery}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_a4bf74cdcf192f23cd3767465f8b14503}{isTabFunc}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_a049b95a79d9cb565a189cd71fe6b77bc}{isCorrelated}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_accb61f180009d5e81a2bbbdfac1c167f}{isMaterialized}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_ab92ddd3738c486deaa42f469b7ea1b33}{viaCoroutine}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_aaa56ec3f68465462bf70fec32b4918f0}{isRecursive}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_aa262fc2c4a6b5051ec7f1df6e367083c}{fromDDL}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_aca1b9eb73c86bce791be27d26f3de8d9}{isCte}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_a4fab3d4415b1efeddd98f3ba3d68d532}{notCte}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_adda398ec4dabf1a0b5d022434c7d6e95}{isUsing}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_a95fe9f96fbef97f97a3f6b43fc45dc6f}{isOn}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_ad4bdb02c2c1ab627a73fc828fd05043c}{isSynthUsing}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_a94054ef21d022c2afd94fea20c469b84}{isNestedFrom}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_abaa8f11e825941970b7ca274a229a78e}{rowidUsed}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_a77652cc50be8c2400355e816ba4b857e}{fixedSchema}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_a1134911935b56269c2ad308fb2ec012d}{hadSchema}}: 1\\
+\>unsigned \doxymbox{\hyperlink{structSrcItem_a48929ea571d94567b51acbfa28f34aed}{fromExists}}: 1\\
+\} \doxymbox{\hyperlink{structSrcItem_a3df553e4ef0c13504deabd897edd2fb6}{fg}}\\
+
+\end{tabbing}\item 
+int \doxymbox{\hyperlink{structSrcItem_a6d54c09f58c35057b41d9091dbb2e64f}{i\+Cursor}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_afa77b629897c4457bfdc47d364ba5c3f}{Bitmask}} \doxymbox{\hyperlink{structSrcItem_a95cc4352dae584c5abeaf28c5dbdc6bf}{col\+Used}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structSrcItem_a845b578ba01d857111f9e0010850ebed}{zIndexedBy}}\\
+\>\doxymbox{\hyperlink{structExprList}{ExprList}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structSrcItem_a11976ca3f28a6ef25c11abfa753355eb}{pFuncArg}}\\
+\>\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} \doxymbox{\hyperlink{structSrcItem_a82258c8c38344e3172f0db098cb23909}{nRow}}\\
+\} \doxymbox{\hyperlink{structSrcItem_a2aad8c48b80760b8e684202ba25689c6}{u1}}\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\doxymbox{\hyperlink{structIndex}{Index}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structSrcItem_a1df9de568f7642398e227e76d6ced423}{pIBIndex}}\\
+\>\doxymbox{\hyperlink{structCteUse}{CteUse}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structSrcItem_a6b5adebb6ca58248df2dc1046084cc8a}{pCteUse}}\\
+\} \doxymbox{\hyperlink{structSrcItem_ac22cb4f07eda3a66b4e6fb14d309a0ba}{u2}}\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\doxymbox{\hyperlink{structExpr}{Expr}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structSrcItem_a9b3d3251eef82ac0ca687864d36632b4}{pOn}}\\
+\>\doxymbox{\hyperlink{structIdList}{IdList}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structSrcItem_a57bd1836a3e369ba1657e65d73a0adc8}{pUsing}}\\
+\} \doxymbox{\hyperlink{structSrcItem_a74d7063230e2f5cbe43ea68cdb65a48a}{u3}}\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\doxymbox{\hyperlink{structSchema}{Schema}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structSrcItem_ac0fb7ed36a99df6c91adee1d4f0bd545}{pSchema}}\\
+\>char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structSrcItem_ae93f739e4463fba8072a60b6f132e07b}{zDatabase}}\\
+\>\doxymbox{\hyperlink{structSubquery}{Subquery}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structSrcItem_a187df7eef6781ec0ad1dc2d2d4541b76}{pSubq}}\\
+\} \doxymbox{\hyperlink{structSrcItem_af28972c71e5297f4eeb66a06c762c290}{u4}}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20346}{20346}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{structSrcItem_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structSrcItem_a95cc4352dae584c5abeaf28c5dbdc6bf}\index{SrcItem@{SrcItem}!colUsed@{colUsed}}
+\index{colUsed@{colUsed}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{colUsed}{colUsed}}
+{\footnotesize\ttfamily \label{structSrcItem_a95cc4352dae584c5abeaf28c5dbdc6bf} 
+\doxymbox{\hyperlink{sqlite3_8c_afa77b629897c4457bfdc47d364ba5c3f}{Bitmask}} Src\+Item::\+col\+Used}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20373}{20373}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a3df553e4ef0c13504deabd897edd2fb6}\index{SrcItem@{SrcItem}!fg@{fg}}
+\index{fg@{fg}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily \label{structSrcItem_a3df553e4ef0c13504deabd897edd2fb6} 
+struct  \{ ... \}  Src\+Item::\+fg}
+
+\Hypertarget{structSrcItem_a77652cc50be8c2400355e816ba4b857e}\index{SrcItem@{SrcItem}!fixedSchema@{fixedSchema}}
+\index{fixedSchema@{fixedSchema}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{fixedSchema}{fixedSchema}}
+{\footnotesize\ttfamily \label{structSrcItem_a77652cc50be8c2400355e816ba4b857e} 
+unsigned Src\+Item::\+fixed\+Schema}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20368}{20368}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_aa262fc2c4a6b5051ec7f1df6e367083c}\index{SrcItem@{SrcItem}!fromDDL@{fromDDL}}
+\index{fromDDL@{fromDDL}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{fromDDL}{fromDDL}}
+{\footnotesize\ttfamily \label{structSrcItem_aa262fc2c4a6b5051ec7f1df6e367083c} 
+unsigned Src\+Item::\+from\+DDL}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20360}{20360}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a48929ea571d94567b51acbfa28f34aed}\index{SrcItem@{SrcItem}!fromExists@{fromExists}}
+\index{fromExists@{fromExists}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{fromExists}{fromExists}}
+{\footnotesize\ttfamily \label{structSrcItem_a48929ea571d94567b51acbfa28f34aed} 
+unsigned Src\+Item::\+from\+Exists}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20370}{20370}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a1134911935b56269c2ad308fb2ec012d}\index{SrcItem@{SrcItem}!hadSchema@{hadSchema}}
+\index{hadSchema@{hadSchema}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{hadSchema}{hadSchema}}
+{\footnotesize\ttfamily \label{structSrcItem_a1134911935b56269c2ad308fb2ec012d} 
+unsigned Src\+Item::\+had\+Schema}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20369}{20369}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a6d54c09f58c35057b41d9091dbb2e64f}\index{SrcItem@{SrcItem}!iCursor@{iCursor}}
+\index{iCursor@{iCursor}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{iCursor}{iCursor}}
+{\footnotesize\ttfamily \label{structSrcItem_a6d54c09f58c35057b41d9091dbb2e64f} 
+int Src\+Item::\+i\+Cursor}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20372}{20372}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a049b95a79d9cb565a189cd71fe6b77bc}\index{SrcItem@{SrcItem}!isCorrelated@{isCorrelated}}
+\index{isCorrelated@{isCorrelated}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{isCorrelated}{isCorrelated}}
+{\footnotesize\ttfamily \label{structSrcItem_a049b95a79d9cb565a189cd71fe6b77bc} 
+unsigned Src\+Item::\+is\+Correlated}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20356}{20356}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_aca1b9eb73c86bce791be27d26f3de8d9}\index{SrcItem@{SrcItem}!isCte@{isCte}}
+\index{isCte@{isCte}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{isCte}{isCte}}
+{\footnotesize\ttfamily \label{structSrcItem_aca1b9eb73c86bce791be27d26f3de8d9} 
+unsigned Src\+Item::\+is\+Cte}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20361}{20361}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a965b54cd484e6c2c2331b93bdc3e86f7}\index{SrcItem@{SrcItem}!isIndexedBy@{isIndexedBy}}
+\index{isIndexedBy@{isIndexedBy}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{isIndexedBy}{isIndexedBy}}
+{\footnotesize\ttfamily \label{structSrcItem_a965b54cd484e6c2c2331b93bdc3e86f7} 
+unsigned Src\+Item::\+is\+Indexed\+By}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20353}{20353}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_accb61f180009d5e81a2bbbdfac1c167f}\index{SrcItem@{SrcItem}!isMaterialized@{isMaterialized}}
+\index{isMaterialized@{isMaterialized}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{isMaterialized}{isMaterialized}}
+{\footnotesize\ttfamily \label{structSrcItem_accb61f180009d5e81a2bbbdfac1c167f} 
+unsigned Src\+Item::\+is\+Materialized}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20357}{20357}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a94054ef21d022c2afd94fea20c469b84}\index{SrcItem@{SrcItem}!isNestedFrom@{isNestedFrom}}
+\index{isNestedFrom@{isNestedFrom}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{isNestedFrom}{isNestedFrom}}
+{\footnotesize\ttfamily \label{structSrcItem_a94054ef21d022c2afd94fea20c469b84} 
+unsigned Src\+Item::\+is\+Nested\+From}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20366}{20366}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a95fe9f96fbef97f97a3f6b43fc45dc6f}\index{SrcItem@{SrcItem}!isOn@{isOn}}
+\index{isOn@{isOn}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{isOn}{isOn}}
+{\footnotesize\ttfamily \label{structSrcItem_a95fe9f96fbef97f97a3f6b43fc45dc6f} 
+unsigned Src\+Item::\+is\+On}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20364}{20364}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_aaa56ec3f68465462bf70fec32b4918f0}\index{SrcItem@{SrcItem}!isRecursive@{isRecursive}}
+\index{isRecursive@{isRecursive}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{isRecursive}{isRecursive}}
+{\footnotesize\ttfamily \label{structSrcItem_aaa56ec3f68465462bf70fec32b4918f0} 
+unsigned Src\+Item::\+is\+Recursive}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20359}{20359}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a81b9f962f39d5dd2821090781a4c02ae}\index{SrcItem@{SrcItem}!isSubquery@{isSubquery}}
+\index{isSubquery@{isSubquery}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{isSubquery}{isSubquery}}
+{\footnotesize\ttfamily \label{structSrcItem_a81b9f962f39d5dd2821090781a4c02ae} 
+unsigned Src\+Item::\+is\+Subquery}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20354}{20354}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_ad4bdb02c2c1ab627a73fc828fd05043c}\index{SrcItem@{SrcItem}!isSynthUsing@{isSynthUsing}}
+\index{isSynthUsing@{isSynthUsing}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{isSynthUsing}{isSynthUsing}}
+{\footnotesize\ttfamily \label{structSrcItem_ad4bdb02c2c1ab627a73fc828fd05043c} 
+unsigned Src\+Item::\+is\+Synth\+Using}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20365}{20365}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a4bf74cdcf192f23cd3767465f8b14503}\index{SrcItem@{SrcItem}!isTabFunc@{isTabFunc}}
+\index{isTabFunc@{isTabFunc}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{isTabFunc}{isTabFunc}}
+{\footnotesize\ttfamily \label{structSrcItem_a4bf74cdcf192f23cd3767465f8b14503} 
+unsigned Src\+Item::\+is\+Tab\+Func}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20355}{20355}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_adda398ec4dabf1a0b5d022434c7d6e95}\index{SrcItem@{SrcItem}!isUsing@{isUsing}}
+\index{isUsing@{isUsing}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{isUsing}{isUsing}}
+{\footnotesize\ttfamily \label{structSrcItem_adda398ec4dabf1a0b5d022434c7d6e95} 
+unsigned Src\+Item::\+is\+Using}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20363}{20363}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a2eafa800b828ace03575c55237bd65c3}\index{SrcItem@{SrcItem}!jointype@{jointype}}
+\index{jointype@{jointype}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{jointype}{jointype}}
+{\footnotesize\ttfamily \label{structSrcItem_a2eafa800b828ace03575c55237bd65c3} 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} Src\+Item::\+jointype}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20351}{20351}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a4fab3d4415b1efeddd98f3ba3d68d532}\index{SrcItem@{SrcItem}!notCte@{notCte}}
+\index{notCte@{notCte}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{notCte}{notCte}}
+{\footnotesize\ttfamily \label{structSrcItem_a4fab3d4415b1efeddd98f3ba3d68d532} 
+unsigned Src\+Item::\+not\+Cte}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20362}{20362}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a2802c9ac695d746aee94c8782ed9e23a}\index{SrcItem@{SrcItem}!notIndexed@{notIndexed}}
+\index{notIndexed@{notIndexed}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{notIndexed}{notIndexed}}
+{\footnotesize\ttfamily \label{structSrcItem_a2802c9ac695d746aee94c8782ed9e23a} 
+unsigned Src\+Item::\+not\+Indexed}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20352}{20352}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a82258c8c38344e3172f0db098cb23909}\index{SrcItem@{SrcItem}!nRow@{nRow}}
+\index{nRow@{nRow}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{nRow}{nRow}}
+{\footnotesize\ttfamily \label{structSrcItem_a82258c8c38344e3172f0db098cb23909} 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} Src\+Item::\+n\+Row}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20377}{20377}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a6b5adebb6ca58248df2dc1046084cc8a}\index{SrcItem@{SrcItem}!pCteUse@{pCteUse}}
+\index{pCteUse@{pCteUse}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{pCteUse}{pCteUse}}
+{\footnotesize\ttfamily \label{structSrcItem_a6b5adebb6ca58248df2dc1046084cc8a} 
+\doxymbox{\hyperlink{structCteUse}{Cte\+Use}}\texorpdfstring{$\ast$}{*} Src\+Item::\+p\+Cte\+Use}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20381}{20381}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a11976ca3f28a6ef25c11abfa753355eb}\index{SrcItem@{SrcItem}!pFuncArg@{pFuncArg}}
+\index{pFuncArg@{pFuncArg}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{pFuncArg}{pFuncArg}}
+{\footnotesize\ttfamily \label{structSrcItem_a11976ca3f28a6ef25c11abfa753355eb} 
+\doxymbox{\hyperlink{structExprList}{Expr\+List}}\texorpdfstring{$\ast$}{*} Src\+Item::\+p\+Func\+Arg}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20376}{20376}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a1df9de568f7642398e227e76d6ced423}\index{SrcItem@{SrcItem}!pIBIndex@{pIBIndex}}
+\index{pIBIndex@{pIBIndex}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{pIBIndex}{pIBIndex}}
+{\footnotesize\ttfamily \label{structSrcItem_a1df9de568f7642398e227e76d6ced423} 
+\doxymbox{\hyperlink{structIndex}{Index}}\texorpdfstring{$\ast$}{*} Src\+Item::\+p\+IBIndex}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20380}{20380}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a9b3d3251eef82ac0ca687864d36632b4}\index{SrcItem@{SrcItem}!pOn@{pOn}}
+\index{pOn@{pOn}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{pOn}{pOn}}
+{\footnotesize\ttfamily \label{structSrcItem_a9b3d3251eef82ac0ca687864d36632b4} 
+\doxymbox{\hyperlink{structExpr}{Expr}}\texorpdfstring{$\ast$}{*} Src\+Item::\+p\+On}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20384}{20384}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_ac0fb7ed36a99df6c91adee1d4f0bd545}\index{SrcItem@{SrcItem}!pSchema@{pSchema}}
+\index{pSchema@{pSchema}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{pSchema}{pSchema}}
+{\footnotesize\ttfamily \label{structSrcItem_ac0fb7ed36a99df6c91adee1d4f0bd545} 
+\doxymbox{\hyperlink{structSchema}{Schema}}\texorpdfstring{$\ast$}{*} Src\+Item::\+p\+Schema}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20388}{20388}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a18979c51016bcea1fc71aca9da1bb190}\index{SrcItem@{SrcItem}!pSTab@{pSTab}}
+\index{pSTab@{pSTab}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{pSTab}{pSTab}}
+{\footnotesize\ttfamily \label{structSrcItem_a18979c51016bcea1fc71aca9da1bb190} 
+\doxymbox{\hyperlink{structTable}{Table}}\texorpdfstring{$\ast$}{*} Src\+Item::\+p\+STab}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20349}{20349}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a187df7eef6781ec0ad1dc2d2d4541b76}\index{SrcItem@{SrcItem}!pSubq@{pSubq}}
+\index{pSubq@{pSubq}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{pSubq}{pSubq}}
+{\footnotesize\ttfamily \label{structSrcItem_a187df7eef6781ec0ad1dc2d2d4541b76} 
+\doxymbox{\hyperlink{structSubquery}{Subquery}}\texorpdfstring{$\ast$}{*} Src\+Item::\+p\+Subq}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20390}{20390}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a57bd1836a3e369ba1657e65d73a0adc8}\index{SrcItem@{SrcItem}!pUsing@{pUsing}}
+\index{pUsing@{pUsing}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{pUsing}{pUsing}}
+{\footnotesize\ttfamily \label{structSrcItem_a57bd1836a3e369ba1657e65d73a0adc8} 
+\doxymbox{\hyperlink{structIdList}{Id\+List}}\texorpdfstring{$\ast$}{*} Src\+Item::\+p\+Using}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20385}{20385}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_abaa8f11e825941970b7ca274a229a78e}\index{SrcItem@{SrcItem}!rowidUsed@{rowidUsed}}
+\index{rowidUsed@{rowidUsed}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{rowidUsed}{rowidUsed}}
+{\footnotesize\ttfamily \label{structSrcItem_abaa8f11e825941970b7ca274a229a78e} 
+unsigned Src\+Item::\+rowid\+Used}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20367}{20367}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a2aad8c48b80760b8e684202ba25689c6}\index{SrcItem@{SrcItem}!u1@{u1}}
+\index{u1@{u1}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily \label{structSrcItem_a2aad8c48b80760b8e684202ba25689c6} 
+union  \{ ... \}  Src\+Item::\+u1}
+
+\Hypertarget{structSrcItem_ac22cb4f07eda3a66b4e6fb14d309a0ba}\index{SrcItem@{SrcItem}!u2@{u2}}
+\index{u2@{u2}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily \label{structSrcItem_ac22cb4f07eda3a66b4e6fb14d309a0ba} 
+union  \{ ... \}  Src\+Item::\+u2}
+
+\Hypertarget{structSrcItem_a74d7063230e2f5cbe43ea68cdb65a48a}\index{SrcItem@{SrcItem}!u3@{u3}}
+\index{u3@{u3}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily \label{structSrcItem_a74d7063230e2f5cbe43ea68cdb65a48a} 
+union  \{ ... \}  Src\+Item::\+u3}
+
+\Hypertarget{structSrcItem_af28972c71e5297f4eeb66a06c762c290}\index{SrcItem@{SrcItem}!u4@{u4}}
+\index{u4@{u4}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily \label{structSrcItem_af28972c71e5297f4eeb66a06c762c290} 
+union  \{ ... \}  Src\+Item::\+u4}
+
+\Hypertarget{structSrcItem_ab92ddd3738c486deaa42f469b7ea1b33}\index{SrcItem@{SrcItem}!viaCoroutine@{viaCoroutine}}
+\index{viaCoroutine@{viaCoroutine}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{viaCoroutine}{viaCoroutine}}
+{\footnotesize\ttfamily \label{structSrcItem_ab92ddd3738c486deaa42f469b7ea1b33} 
+unsigned Src\+Item::\+via\+Coroutine}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20358}{20358}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a88defa197cbf16068887c2a316aa850b}\index{SrcItem@{SrcItem}!zAlias@{zAlias}}
+\index{zAlias@{zAlias}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{zAlias}{zAlias}}
+{\footnotesize\ttfamily \label{structSrcItem_a88defa197cbf16068887c2a316aa850b} 
+char\texorpdfstring{$\ast$}{*} Src\+Item::\+z\+Alias}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20348}{20348}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_ae93f739e4463fba8072a60b6f132e07b}\index{SrcItem@{SrcItem}!zDatabase@{zDatabase}}
+\index{zDatabase@{zDatabase}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{zDatabase}{zDatabase}}
+{\footnotesize\ttfamily \label{structSrcItem_ae93f739e4463fba8072a60b6f132e07b} 
+char\texorpdfstring{$\ast$}{*} Src\+Item::\+z\+Database}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20389}{20389}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a845b578ba01d857111f9e0010850ebed}\index{SrcItem@{SrcItem}!zIndexedBy@{zIndexedBy}}
+\index{zIndexedBy@{zIndexedBy}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{zIndexedBy}{zIndexedBy}}
+{\footnotesize\ttfamily \label{structSrcItem_a845b578ba01d857111f9e0010850ebed} 
+char\texorpdfstring{$\ast$}{*} Src\+Item::\+z\+Indexed\+By}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20375}{20375}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSrcItem_a8f8be9c45763fefeebd92acf8702d640}\index{SrcItem@{SrcItem}!zName@{zName}}
+\index{zName@{zName}!SrcItem@{SrcItem}}
+\doxysubsubsection{\texorpdfstring{zName}{zName}}
+{\footnotesize\ttfamily \label{structSrcItem_a8f8be9c45763fefeebd92acf8702d640} 
+char\texorpdfstring{$\ast$}{*} Src\+Item::\+z\+Name}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l20347}{20347}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Flight\+Link\+Server/\+\+Flight\+Link\+Server/\+\doxymbox{\hyperlink{sqlite3_8c}{sqlite3.\+c}}\end{DoxyCompactItemize}

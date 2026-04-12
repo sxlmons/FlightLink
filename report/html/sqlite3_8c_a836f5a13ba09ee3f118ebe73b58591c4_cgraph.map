@@ -1,0 +1,14 @@
+<map id="subjournalPage" name="subjournalPage">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,116,83"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a69f445a04e423a1eaf24a2b9f035b427" title=" " alt="" coords="164,5,278,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,53,164,36,159,39,106,58"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#a1eea7ec327af84c05b4dd4cc075a537f" title=" " alt="" coords="339,81,445,108"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="116,71,325,87,323,92,116,76"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#a5db7813c01a178a634f0dcd6e7766ed6" title=" " alt="" coords="179,107,263,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="106,81,167,101,162,103,105,86"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a9b6f107e35d28a0d6bc2bec9d7a680a5" title=" " alt="" coords="326,5,458,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="278,16,313,18,308,19,279,21"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a12a1f3451e28f9cecd19cf0bb4f8f416" title=" " alt="" coords="506,5,614,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="458,16,493,18,488,19,459,21"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="263,111,321,105,326,105,264,116"/>
+</map>

@@ -1,0 +1,435 @@
+\doxysection{Vdbe\+Cursor Struct Reference}
+\hypertarget{structVdbeCursor}{}\label{structVdbeCursor}\index{VdbeCursor@{VdbeCursor}}
+
+
+Collaboration diagram for Vdbe\+Cursor:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structVdbeCursor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} \doxymbox{\hyperlink{structVdbeCursor_a6128af438b1faa2d175eeb754af1a9c2}{e\+Cur\+Type}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_ad11a1324ecade336dc6ce17a20cf6617}{i8}} \doxymbox{\hyperlink{structVdbeCursor_ace3e5ef31acdc9bca7b080da2af493a1}{i\+Db}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} \doxymbox{\hyperlink{structVdbeCursor_a564d1df8b7bf6df90b1c07c97d7b23ff}{null\+Row}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} \doxymbox{\hyperlink{structVdbeCursor_ad6c9d21da881287364a1a3f90285a7e9}{deferred\+Moveto}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} \doxymbox{\hyperlink{structVdbeCursor_ab6c2642afb560159a06cffbe7aa98619}{is\+Table}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a2f520588d7cfd47c237231e103dbeb78}{Bool}} \doxymbox{\hyperlink{structVdbeCursor_ac13d003d1cf017f3e44897de29a7c2cb}{is\+Ephemeral}}:\+ 1
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a2f520588d7cfd47c237231e103dbeb78}{Bool}} \doxymbox{\hyperlink{structVdbeCursor_a067fff911d6d37190785a0cf5ba4fc8e}{use\+Random\+Rowid}}:\+ 1
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a2f520588d7cfd47c237231e103dbeb78}{Bool}} \doxymbox{\hyperlink{structVdbeCursor_a8d9e802372b801c4eb5aef6340cfa21a}{is\+Ordered}}:\+ 1
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a2f520588d7cfd47c237231e103dbeb78}{Bool}} \doxymbox{\hyperlink{structVdbeCursor_a380a957a9dbbacd3773d3032b0165d9b}{no\+Reuse}}:\+ 1
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a2f520588d7cfd47c237231e103dbeb78}{Bool}} \doxymbox{\hyperlink{structVdbeCursor_a08f56043b1810f73936e663c6ce696c1}{col\+Cache}}:\+ 1
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} \doxymbox{\hyperlink{structVdbeCursor_a1cbff51d4db6387481076b26175bd150}{seek\+Hit}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\doxymbox{\hyperlink{structBtree}{Btree}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structVdbeCursor_a560873e698d4c6e7d032c069f16834fa}{pBtx}}\\
+\>\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structVdbeCursor_a620195c975dbfdc27d2b0259a0322c9c}{aAltMap}}\\
+\} \doxymbox{\hyperlink{structVdbeCursor_a0e62190d2e8f1e6665cd9fa150de5463}{ub}}\\
+
+\end{tabbing}\item 
+\doxymbox{\hyperlink{sqlite3_8c_a2a0f0f4ae7001eb54351f77ea1cdbcfd}{i64}} \doxymbox{\hyperlink{structVdbeCursor_a4f11f0befb0dcf16273cc832ca6d92a5}{seq\+Count}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} \doxymbox{\hyperlink{structVdbeCursor_acf243b5a94a6e5a11341d6fece473c00}{cache\+Status}}
+\item 
+int \doxymbox{\hyperlink{structVdbeCursor_a5eff86e2a9c87dc15956ad362aa03f05}{seek\+Result}}
+\item 
+\doxymbox{\hyperlink{structVdbeCursor}{Vdbe\+Cursor}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structVdbeCursor_acc57fe0cffe660d0d08ac422dfa20af5}{p\+Alt\+Cursor}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\doxymbox{\hyperlink{structBtCursor}{BtCursor}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structVdbeCursor_a9ecb4ab9f7374f92da69f03fc336c293}{pCursor}}\\
+\>\doxymbox{\hyperlink{sqlite3_8c_a6556587b5d66fddd98d59e5d234f00c4}{sqlite3\_vtab\_cursor}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structVdbeCursor_a384e61f55a336779c6a60d6685f0a00e}{pVCur}}\\
+\>\doxymbox{\hyperlink{structVdbeSorter}{VdbeSorter}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structVdbeCursor_a7e9030a9f4ff8f8161a78dae28a1fe3b}{pSorter}}\\
+\} \doxymbox{\hyperlink{structVdbeCursor_ac32219c76bd1ea08d6b7f087a31493aa}{uc}}\\
+
+\end{tabbing}\item 
+\doxymbox{\hyperlink{structKeyInfo}{Key\+Info}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structVdbeCursor_a72a6c26ab2ab2ad699dfb45703ea4765}{p\+Key\+Info}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} \doxymbox{\hyperlink{structVdbeCursor_a838b93338c0a8539e28697e291c83a91}{i\+Hdr\+Offset}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_aec0c653e8dd16e4639caf2f8ea54f55c}{Pgno}} \doxymbox{\hyperlink{structVdbeCursor_aaff39caaa6bada9b2cd27dbc1fd2a5fc}{pgno\+Root}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a7b32340f65cd15f029caad258fb3355c}{i16}} \doxymbox{\hyperlink{structVdbeCursor_a2c903d08588ce7ade6ca4f678bd83bbb}{n\+Field}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} \doxymbox{\hyperlink{structVdbeCursor_a3e0ed59c6fd714032e665a6249087924}{n\+Hdr\+Parsed}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a2a0f0f4ae7001eb54351f77ea1cdbcfd}{i64}} \doxymbox{\hyperlink{structVdbeCursor_af3c157d480c0597ba50aca227eb8e3b8}{moveto\+Target}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structVdbeCursor_a17431e67b341282aeb6c026cd01ec1e9}{a\+Offset}}
+\item 
+const \doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structVdbeCursor_a6b6f7444963e83e48cd3d63edf539c94}{a\+Row}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} \doxymbox{\hyperlink{structVdbeCursor_a92f39b19e82152386e20ede96d177058}{payload\+Size}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} \doxymbox{\hyperlink{structVdbeCursor_ac0fa6de4df7f418dfd5307cb892ba455}{sz\+Row}}
+\item 
+\doxymbox{\hyperlink{structVdbeTxtBlbCache}{Vdbe\+Txt\+Blb\+Cache}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structVdbeCursor_a2d98f689a94341379c2f7ad9d78468a8}{p\+Cache}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} \doxymbox{\hyperlink{structVdbeCursor_aa8601d396d419769d312d5d7e735ef77}{a\+Type}} \+[\doxymbox{\hyperlink{sqlite3_8c_aea5804730a469abffcdaff833df37977}{FLEXARRAY}}]\+
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24316}{24316}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{structVdbeCursor_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structVdbeCursor_a620195c975dbfdc27d2b0259a0322c9c}\index{VdbeCursor@{VdbeCursor}!aAltMap@{aAltMap}}
+\index{aAltMap@{aAltMap}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{aAltMap}{aAltMap}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a620195c975dbfdc27d2b0259a0322c9c} 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}}\texorpdfstring{$\ast$}{*} Vdbe\+Cursor::\+a\+Alt\+Map}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24334}{24334}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a17431e67b341282aeb6c026cd01ec1e9}\index{VdbeCursor@{VdbeCursor}!aOffset@{aOffset}}
+\index{aOffset@{aOffset}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{aOffset}{aOffset}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a17431e67b341282aeb6c026cd01ec1e9} 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}}\texorpdfstring{$\ast$}{*} Vdbe\+Cursor::\+a\+Offset}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24364}{24364}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a6b6f7444963e83e48cd3d63edf539c94}\index{VdbeCursor@{VdbeCursor}!aRow@{aRow}}
+\index{aRow@{aRow}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{aRow}{aRow}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a6b6f7444963e83e48cd3d63edf539c94} 
+const \doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}}\texorpdfstring{$\ast$}{*} Vdbe\+Cursor::\+a\+Row}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24365}{24365}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_aa8601d396d419769d312d5d7e735ef77}\index{VdbeCursor@{VdbeCursor}!aType@{aType}}
+\index{aType@{aType}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{aType}{aType}}
+{\footnotesize\ttfamily \label{structVdbeCursor_aa8601d396d419769d312d5d7e735ef77} 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} Vdbe\+Cursor::\+a\+Type\+[\doxymbox{\hyperlink{sqlite3_8c_aea5804730a469abffcdaff833df37977}{FLEXARRAY}}]\+}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24375}{24375}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_acf243b5a94a6e5a11341d6fece473c00}\index{VdbeCursor@{VdbeCursor}!cacheStatus@{cacheStatus}}
+\index{cacheStatus@{cacheStatus}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{cacheStatus}{cacheStatus}}
+{\footnotesize\ttfamily \label{structVdbeCursor_acf243b5a94a6e5a11341d6fece473c00} 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} Vdbe\+Cursor::\+cache\+Status}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24342}{24342}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a08f56043b1810f73936e663c6ce696c1}\index{VdbeCursor@{VdbeCursor}!colCache@{colCache}}
+\index{colCache@{colCache}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{colCache}{colCache}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a08f56043b1810f73936e663c6ce696c1} 
+\doxymbox{\hyperlink{sqlite3_8c_a2f520588d7cfd47c237231e103dbeb78}{Bool}} Vdbe\+Cursor::\+col\+Cache}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24330}{24330}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_ad6c9d21da881287364a1a3f90285a7e9}\index{VdbeCursor@{VdbeCursor}!deferredMoveto@{deferredMoveto}}
+\index{deferredMoveto@{deferredMoveto}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{deferredMoveto}{deferredMoveto}}
+{\footnotesize\ttfamily \label{structVdbeCursor_ad6c9d21da881287364a1a3f90285a7e9} 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} Vdbe\+Cursor::\+deferred\+Moveto}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24320}{24320}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a6128af438b1faa2d175eeb754af1a9c2}\index{VdbeCursor@{VdbeCursor}!eCurType@{eCurType}}
+\index{eCurType@{eCurType}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{eCurType}{eCurType}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a6128af438b1faa2d175eeb754af1a9c2} 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} Vdbe\+Cursor::\+e\+Cur\+Type}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24317}{24317}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_ace3e5ef31acdc9bca7b080da2af493a1}\index{VdbeCursor@{VdbeCursor}!iDb@{iDb}}
+\index{iDb@{iDb}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{iDb}{iDb}}
+{\footnotesize\ttfamily \label{structVdbeCursor_ace3e5ef31acdc9bca7b080da2af493a1} 
+\doxymbox{\hyperlink{sqlite3_8c_ad11a1324ecade336dc6ce17a20cf6617}{i8}} Vdbe\+Cursor::\+i\+Db}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24318}{24318}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a838b93338c0a8539e28697e291c83a91}\index{VdbeCursor@{VdbeCursor}!iHdrOffset@{iHdrOffset}}
+\index{iHdrOffset@{iHdrOffset}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{iHdrOffset}{iHdrOffset}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a838b93338c0a8539e28697e291c83a91} 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} Vdbe\+Cursor::\+i\+Hdr\+Offset}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24359}{24359}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_ac13d003d1cf017f3e44897de29a7c2cb}\index{VdbeCursor@{VdbeCursor}!isEphemeral@{isEphemeral}}
+\index{isEphemeral@{isEphemeral}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{isEphemeral}{isEphemeral}}
+{\footnotesize\ttfamily \label{structVdbeCursor_ac13d003d1cf017f3e44897de29a7c2cb} 
+\doxymbox{\hyperlink{sqlite3_8c_a2f520588d7cfd47c237231e103dbeb78}{Bool}} Vdbe\+Cursor::\+is\+Ephemeral}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24326}{24326}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a8d9e802372b801c4eb5aef6340cfa21a}\index{VdbeCursor@{VdbeCursor}!isOrdered@{isOrdered}}
+\index{isOrdered@{isOrdered}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{isOrdered}{isOrdered}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a8d9e802372b801c4eb5aef6340cfa21a} 
+\doxymbox{\hyperlink{sqlite3_8c_a2f520588d7cfd47c237231e103dbeb78}{Bool}} Vdbe\+Cursor::\+is\+Ordered}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24328}{24328}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_ab6c2642afb560159a06cffbe7aa98619}\index{VdbeCursor@{VdbeCursor}!isTable@{isTable}}
+\index{isTable@{isTable}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{isTable}{isTable}}
+{\footnotesize\ttfamily \label{structVdbeCursor_ab6c2642afb560159a06cffbe7aa98619} 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} Vdbe\+Cursor::\+is\+Table}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24321}{24321}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_af3c157d480c0597ba50aca227eb8e3b8}\index{VdbeCursor@{VdbeCursor}!movetoTarget@{movetoTarget}}
+\index{movetoTarget@{movetoTarget}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{movetoTarget}{movetoTarget}}
+{\footnotesize\ttfamily \label{structVdbeCursor_af3c157d480c0597ba50aca227eb8e3b8} 
+\doxymbox{\hyperlink{sqlite3_8c_a2a0f0f4ae7001eb54351f77ea1cdbcfd}{i64}} Vdbe\+Cursor::\+moveto\+Target}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24363}{24363}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a2c903d08588ce7ade6ca4f678bd83bbb}\index{VdbeCursor@{VdbeCursor}!nField@{nField}}
+\index{nField@{nField}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{nField}{nField}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a2c903d08588ce7ade6ca4f678bd83bbb} 
+\doxymbox{\hyperlink{sqlite3_8c_a7b32340f65cd15f029caad258fb3355c}{i16}} Vdbe\+Cursor::\+n\+Field}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24361}{24361}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a3e0ed59c6fd714032e665a6249087924}\index{VdbeCursor@{VdbeCursor}!nHdrParsed@{nHdrParsed}}
+\index{nHdrParsed@{nHdrParsed}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{nHdrParsed}{nHdrParsed}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a3e0ed59c6fd714032e665a6249087924} 
+\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} Vdbe\+Cursor::\+n\+Hdr\+Parsed}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24362}{24362}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a380a957a9dbbacd3773d3032b0165d9b}\index{VdbeCursor@{VdbeCursor}!noReuse@{noReuse}}
+\index{noReuse@{noReuse}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{noReuse}{noReuse}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a380a957a9dbbacd3773d3032b0165d9b} 
+\doxymbox{\hyperlink{sqlite3_8c_a2f520588d7cfd47c237231e103dbeb78}{Bool}} Vdbe\+Cursor::\+no\+Reuse}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24329}{24329}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a564d1df8b7bf6df90b1c07c97d7b23ff}\index{VdbeCursor@{VdbeCursor}!nullRow@{nullRow}}
+\index{nullRow@{nullRow}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{nullRow}{nullRow}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a564d1df8b7bf6df90b1c07c97d7b23ff} 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} Vdbe\+Cursor::\+null\+Row}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24319}{24319}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_acc57fe0cffe660d0d08ac422dfa20af5}\index{VdbeCursor@{VdbeCursor}!pAltCursor@{pAltCursor}}
+\index{pAltCursor@{pAltCursor}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{pAltCursor}{pAltCursor}}
+{\footnotesize\ttfamily \label{structVdbeCursor_acc57fe0cffe660d0d08ac422dfa20af5} 
+\doxymbox{\hyperlink{structVdbeCursor}{Vdbe\+Cursor}}\texorpdfstring{$\ast$}{*} Vdbe\+Cursor::\+p\+Alt\+Cursor}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24352}{24352}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a92f39b19e82152386e20ede96d177058}\index{VdbeCursor@{VdbeCursor}!payloadSize@{payloadSize}}
+\index{payloadSize@{payloadSize}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{payloadSize}{payloadSize}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a92f39b19e82152386e20ede96d177058} 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} Vdbe\+Cursor::\+payload\+Size}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24366}{24366}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a560873e698d4c6e7d032c069f16834fa}\index{VdbeCursor@{VdbeCursor}!pBtx@{pBtx}}
+\index{pBtx@{pBtx}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{pBtx}{pBtx}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a560873e698d4c6e7d032c069f16834fa} 
+\doxymbox{\hyperlink{structBtree}{Btree}}\texorpdfstring{$\ast$}{*} Vdbe\+Cursor::\+p\+Btx}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24333}{24333}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a2d98f689a94341379c2f7ad9d78468a8}\index{VdbeCursor@{VdbeCursor}!pCache@{pCache}}
+\index{pCache@{pCache}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{pCache}{pCache}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a2d98f689a94341379c2f7ad9d78468a8} 
+\doxymbox{\hyperlink{structVdbeTxtBlbCache}{Vdbe\+Txt\+Blb\+Cache}}\texorpdfstring{$\ast$}{*} Vdbe\+Cursor::\+p\+Cache}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24371}{24371}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a9ecb4ab9f7374f92da69f03fc336c293}\index{VdbeCursor@{VdbeCursor}!pCursor@{pCursor}}
+\index{pCursor@{pCursor}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{pCursor}{pCursor}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a9ecb4ab9f7374f92da69f03fc336c293} 
+\doxymbox{\hyperlink{structBtCursor}{Bt\+Cursor}}\texorpdfstring{$\ast$}{*} Vdbe\+Cursor::\+p\+Cursor}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24354}{24354}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_aaff39caaa6bada9b2cd27dbc1fd2a5fc}\index{VdbeCursor@{VdbeCursor}!pgnoRoot@{pgnoRoot}}
+\index{pgnoRoot@{pgnoRoot}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{pgnoRoot}{pgnoRoot}}
+{\footnotesize\ttfamily \label{structVdbeCursor_aaff39caaa6bada9b2cd27dbc1fd2a5fc} 
+\doxymbox{\hyperlink{sqlite3_8c_aec0c653e8dd16e4639caf2f8ea54f55c}{Pgno}} Vdbe\+Cursor::\+pgno\+Root}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24360}{24360}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a72a6c26ab2ab2ad699dfb45703ea4765}\index{VdbeCursor@{VdbeCursor}!pKeyInfo@{pKeyInfo}}
+\index{pKeyInfo@{pKeyInfo}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{pKeyInfo}{pKeyInfo}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a72a6c26ab2ab2ad699dfb45703ea4765} 
+\doxymbox{\hyperlink{structKeyInfo}{Key\+Info}}\texorpdfstring{$\ast$}{*} Vdbe\+Cursor::\+p\+Key\+Info}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24358}{24358}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a7e9030a9f4ff8f8161a78dae28a1fe3b}\index{VdbeCursor@{VdbeCursor}!pSorter@{pSorter}}
+\index{pSorter@{pSorter}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{pSorter}{pSorter}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a7e9030a9f4ff8f8161a78dae28a1fe3b} 
+\doxymbox{\hyperlink{structVdbeSorter}{Vdbe\+Sorter}}\texorpdfstring{$\ast$}{*} Vdbe\+Cursor::\+p\+Sorter}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24356}{24356}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a384e61f55a336779c6a60d6685f0a00e}\index{VdbeCursor@{VdbeCursor}!pVCur@{pVCur}}
+\index{pVCur@{pVCur}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{pVCur}{pVCur}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a384e61f55a336779c6a60d6685f0a00e} 
+\doxymbox{\hyperlink{sqlite3_8c_a6556587b5d66fddd98d59e5d234f00c4}{sqlite3\+\_\+vtab\+\_\+cursor}}\texorpdfstring{$\ast$}{*} Vdbe\+Cursor::\+p\+VCur}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24355}{24355}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a1cbff51d4db6387481076b26175bd150}\index{VdbeCursor@{VdbeCursor}!seekHit@{seekHit}}
+\index{seekHit@{seekHit}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{seekHit}{seekHit}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a1cbff51d4db6387481076b26175bd150} 
+\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} Vdbe\+Cursor::\+seek\+Hit}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24331}{24331}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a5eff86e2a9c87dc15956ad362aa03f05}\index{VdbeCursor@{VdbeCursor}!seekResult@{seekResult}}
+\index{seekResult@{seekResult}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{seekResult}{seekResult}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a5eff86e2a9c87dc15956ad362aa03f05} 
+int Vdbe\+Cursor::\+seek\+Result}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24343}{24343}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a4f11f0befb0dcf16273cc832ca6d92a5}\index{VdbeCursor@{VdbeCursor}!seqCount@{seqCount}}
+\index{seqCount@{seqCount}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{seqCount}{seqCount}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a4f11f0befb0dcf16273cc832ca6d92a5} 
+\doxymbox{\hyperlink{sqlite3_8c_a2a0f0f4ae7001eb54351f77ea1cdbcfd}{i64}} Vdbe\+Cursor::\+seq\+Count}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24336}{24336}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_ac0fa6de4df7f418dfd5307cb892ba455}\index{VdbeCursor@{VdbeCursor}!szRow@{szRow}}
+\index{szRow@{szRow}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{szRow}{szRow}}
+{\footnotesize\ttfamily \label{structVdbeCursor_ac0fa6de4df7f418dfd5307cb892ba455} 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} Vdbe\+Cursor::\+sz\+Row}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24367}{24367}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structVdbeCursor_a0e62190d2e8f1e6665cd9fa150de5463}\index{VdbeCursor@{VdbeCursor}!ub@{ub}}
+\index{ub@{ub}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a0e62190d2e8f1e6665cd9fa150de5463} 
+union  \{ ... \}  Vdbe\+Cursor::\+ub}
+
+\Hypertarget{structVdbeCursor_ac32219c76bd1ea08d6b7f087a31493aa}\index{VdbeCursor@{VdbeCursor}!uc@{uc}}
+\index{uc@{uc}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily \label{structVdbeCursor_ac32219c76bd1ea08d6b7f087a31493aa} 
+union  \{ ... \}  Vdbe\+Cursor::\+uc}
+
+\Hypertarget{structVdbeCursor_a067fff911d6d37190785a0cf5ba4fc8e}\index{VdbeCursor@{VdbeCursor}!useRandomRowid@{useRandomRowid}}
+\index{useRandomRowid@{useRandomRowid}!VdbeCursor@{VdbeCursor}}
+\doxysubsubsection{\texorpdfstring{useRandomRowid}{useRandomRowid}}
+{\footnotesize\ttfamily \label{structVdbeCursor_a067fff911d6d37190785a0cf5ba4fc8e} 
+\doxymbox{\hyperlink{sqlite3_8c_a2f520588d7cfd47c237231e103dbeb78}{Bool}} Vdbe\+Cursor::\+use\+Random\+Rowid}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l24327}{24327}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Flight\+Link\+Server/\+\+Flight\+Link\+Server/\+\doxymbox{\hyperlink{sqlite3_8c}{sqlite3.\+c}}\end{DoxyCompactItemize}

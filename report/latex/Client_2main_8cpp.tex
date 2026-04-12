@@ -1,0 +1,247 @@
+\doxysection{Client/\+main.cpp File Reference}
+\hypertarget{Client_2main_8cpp}{}\label{Client_2main_8cpp}\index{Client/main.cpp@{Client/main.cpp}}
+
+
+Flight\+Link Telemetry Client -\/ Simulates aircraft data transmission.  
+
+
+{\ttfamily \+\#include $<$unistd.\+h$>$}\newline
+{\ttfamily \+\#include $<$sys/\+socket.\+h$>$}\newline
+{\ttfamily \+\#include $<$netinet/\+in.\+h$>$}\newline
+{\ttfamily \+\#include $<$arpa/\+inet.\+h$>$}\newline
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$random$>$}\newline
+{\ttfamily \+\#include $<$fstream$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$sstream$>$}\newline
+{\ttfamily \+\#include $<$thread$>$}\newline
+{\ttfamily \+\#include $<$cstdint$>$}\newline
+Include dependency graph for main.\+cpp:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Client_2main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structAircraftPacket}{Aircraft\+Packet}}
+\begin{DoxyCompactList}\small\item\em Binary packet structure matching the Flight\+Link protocol. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{Client_2main_8cpp_a88a1bdc60bab4dbbd33eee6e7b49ddc6}{get\+Random\+Number}} ()
+\begin{DoxyCompactList}\small\item\em Generates a random number between 0 and 3 for file selection. \end{DoxyCompactList}\item 
+uint32\+\_\+t \doxymbox{\hyperlink{Client_2main_8cpp_a18b398ac5b99c55eb07cae2d363b7afb}{generate\+Global\+Unique\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Generates a globally unique aircraft identifier. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{Client_2main_8cpp_aaa0e909ef7752bfc950f43cb3723cd40}{send\+Packet}} (int socket, uint8\+\_\+t type, uint32\+\_\+t id, double timestamp, double fuel\+\_\+remaining)
+\begin{DoxyCompactList}\small\item\em Sends a binary packet to the server. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{Client_2main_8cpp_a557e7b745780ccc3a128feee2b8a76a3}{process\+Telemetry\+File}} (const std::\+string \&filename, int socket, uint32\+\_\+t plane\+Id)
+\begin{DoxyCompactList}\small\item\em Processes a telemetry data file and transmits all readings. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{Client_2main_8cpp_a136b918707da99da8edaae4e7984f9de}{get\+Project\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Gets the project directory path for locating telemetry files. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{Client_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\+[$\,$]\+)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Flight\+Link Telemetry Client -\/ Simulates aircraft data transmission. 
+
+A Linux-\/based TCP client that reads telemetry data from CSV files and transmits it to the Flight\+Link server using the binary protocol format. Simulates realistic flight data transmission with configurable delays.
+
+Usage:\+ ./\+client $<$server\+\_\+ip$>$ server\+\_\+ip -\/ IPv4 address of the Flight\+Link server
+
+\begin{DoxyAuthor}{Author}
+Flight\+Link Team 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2024 
+\end{DoxyDate}
+
+
+Definition in file \doxymbox{\hyperlink{Client_2main_8cpp_source}{main.\+cpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{Client_2main_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{Client_2main_8cpp_a18b398ac5b99c55eb07cae2d363b7afb}\index{main.cpp@{main.cpp}!generateGlobalUniqueId@{generateGlobalUniqueId}}
+\index{generateGlobalUniqueId@{generateGlobalUniqueId}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{generateGlobalUniqueId()}{generateGlobalUniqueId()}}
+{\footnotesize\ttfamily \label{Client_2main_8cpp_a18b398ac5b99c55eb07cae2d363b7afb} 
+uint32\+\_\+t generate\+Global\+Unique\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Generates a globally unique aircraft identifier. 
+
+Combines process ID, high-\/resolution timestamp, and random data to create a unique 32-\/bit identifier for each client session.
+
+\begin{DoxyReturn}{Returns}
+Unique 32-\/bit aircraft identifier 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Client_2main_8cpp_source_l00177}{177}} of file \doxymbox{\hyperlink{Client_2main_8cpp_source}{main.\+cpp}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{Client_2main_8cpp_a18b398ac5b99c55eb07cae2d363b7afb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{Client_2main_8cpp_a136b918707da99da8edaae4e7984f9de}\index{main.cpp@{main.cpp}!getProjectPath@{getProjectPath}}
+\index{getProjectPath@{getProjectPath}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{getProjectPath()}{getProjectPath()}}
+{\footnotesize\ttfamily \label{Client_2main_8cpp_a136b918707da99da8edaae4e7984f9de} 
+string get\+Project\+Path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the project directory path for locating telemetry files. 
+
+\begin{DoxyReturn}{Returns}
+Absolute path to the project directory 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Client_2main_8cpp_source_l00137}{137}} of file \doxymbox{\hyperlink{Client_2main_8cpp_source}{main.\+cpp}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{Client_2main_8cpp_a136b918707da99da8edaae4e7984f9de_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{Client_2main_8cpp_a88a1bdc60bab4dbbd33eee6e7b49ddc6}\index{main.cpp@{main.cpp}!getRandomNumber@{getRandomNumber}}
+\index{getRandomNumber@{getRandomNumber}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{getRandomNumber()}{getRandomNumber()}}
+{\footnotesize\ttfamily \label{Client_2main_8cpp_a88a1bdc60bab4dbbd33eee6e7b49ddc6} 
+int get\+Random\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Generates a random number between 0 and 3 for file selection. 
+
+\begin{DoxyReturn}{Returns}
+Random integer in range \+[0, 3]\+ 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Client_2main_8cpp_source_l00168}{168}} of file \doxymbox{\hyperlink{Client_2main_8cpp_source}{main.\+cpp}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{Client_2main_8cpp_a88a1bdc60bab4dbbd33eee6e7b49ddc6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{Client_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{Client_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\+[$\,$]\+}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{Client_2main_8cpp_source_l00093}{93}} of file \doxymbox{\hyperlink{Client_2main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Client_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{Client_2main_8cpp_a557e7b745780ccc3a128feee2b8a76a3}\index{main.cpp@{main.cpp}!processTelemetryFile@{processTelemetryFile}}
+\index{processTelemetryFile@{processTelemetryFile}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{processTelemetryFile()}{processTelemetryFile()}}
+{\footnotesize\ttfamily \label{Client_2main_8cpp_a557e7b745780ccc3a128feee2b8a76a3} 
+bool process\+Telemetry\+File (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filename}{, }\item[{int}]{socket}{, }\item[{uint32\+\_\+t}]{plane\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Processes a telemetry data file and transmits all readings. 
+
+Reads timestamp/\+fuel pairs from a CSV file and transmits them as telemetry packets with 750ms delay between readings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path to telemetry CSV file \\
+\hline
+{\em socket} & Connected socket for transmission \\
+\hline
+{\em plane\+Id} & Aircraft identifier to use \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if all packets sent successfully, false on failure 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Client_2main_8cpp_source_l00190}{190}} of file \doxymbox{\hyperlink{Client_2main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{Client_2main_8cpp_a557e7b745780ccc3a128feee2b8a76a3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{Client_2main_8cpp_a557e7b745780ccc3a128feee2b8a76a3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{Client_2main_8cpp_aaa0e909ef7752bfc950f43cb3723cd40}\index{main.cpp@{main.cpp}!sendPacket@{sendPacket}}
+\index{sendPacket@{sendPacket}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{sendPacket()}{sendPacket()}}
+{\footnotesize\ttfamily \label{Client_2main_8cpp_aaa0e909ef7752bfc950f43cb3723cd40} 
+bool send\+Packet (\begin{DoxyParamCaption}\item[{int}]{socket}{, }\item[{uint8\+\_\+t}]{type}{, }\item[{uint32\+\_\+t}]{id}{, }\item[{double}]{timestamp}{ = {\ttfamily 0.0}, }\item[{double}]{fuel\+\_\+remaining}{ = {\ttfamily 0.0}}\end{DoxyParamCaption})}
+
+
+
+Sends a binary packet to the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & Connected socket to send on \\
+\hline
+{\em type} & Message type (0x01, 0x02, or 0x03) \\
+\hline
+{\em id} & Aircraft identifier \\
+\hline
+{\em timestamp} & Timestamp value (ignored for non-\/telemetry packets) \\
+\hline
+{\em fuel\+\_\+remaining} & Fuel value (ignored for non-\/telemetry packets) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if send succeeded, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Client_2main_8cpp_source_l00151}{151}} of file \doxymbox{\hyperlink{Client_2main_8cpp_source}{main.\+cpp}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Client_2main_8cpp_aaa0e909ef7752bfc950f43cb3723cd40_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,19 @@
+<map id="unixSync" name="unixSync">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,81,83"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#aba53411fd87749e2ed670ea40e60c18d" title=" " alt="" coords="143,5,220,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,53,131,36,127,40,82,58"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#abc25d22670649c241bee8c46921988ab" title=" " alt="" coords="134,56,230,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="81,67,121,68,116,71,82,72"/>
+<area shape="rect" id="Node000009" href="$sqlite3_8c.html#ac2eb7c86fbd6cbb4cccb664b746816ec" title=" " alt="" coords="129,107,235,133"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="82,80,131,100,127,102,81,86"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a23b4a35445d08fc62ef2d5c3d56c1640" title=" " alt="" coords="283,56,414,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="229,67,270,69,265,70,230,72"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#a298c9699bf9c143662c6b1fec4b2dc3b" title=" " alt="" coords="462,56,546,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="415,67,449,69,444,70,415,72"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#adb7f26b10ac1b847db6f000ef4c2e2ba" title=" " alt="" coords="594,56,746,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="546,67,581,69,575,70,546,72"/>
+<area shape="rect" id="Node000007" href="$sqlite3_8c.html#adf72e809d4f4d34b3256e2d29769c64a" title=" " alt="" coords="794,56,959,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="747,67,781,69,775,69,747,72"/>
+<area shape="rect" id="Node000008" href="$sqlite3_8c.html#ab9e9d3dc2dd748199ab1439b90a30905" title=" " alt="" coords="1007,56,1125,83"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="960,67,995,69,989,69,960,72"/>
+</map>

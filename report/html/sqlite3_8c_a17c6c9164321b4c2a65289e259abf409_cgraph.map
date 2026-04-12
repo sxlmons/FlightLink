@@ -1,0 +1,17 @@
+<map id="unixLock" name="unixLock">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,132,79,159"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a1c12cde690bd89f104de5cbad12a6bf5" title=" " alt="" coords="143,5,282,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="49,130,78,87,100,63,125,42,137,37,134,41,128,46,104,66,83,90,53,133"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a5838d235601dbd3c1fa993555c6bcc93" title=" " alt="" coords="142,56,282,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="61,129,126,92,145,86,141,90,128,97,65,133"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a7b96b9e451b820cf5061400544842387" title=" " alt="" coords="127,107,298,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="78,138,113,133,109,137,81,142"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#ac2eb7c86fbd6cbb4cccb664b746816ec" title=" " alt="" coords="159,157,266,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="79,148,146,159,142,162,80,153"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#a0f54f8c3ccab69b612496aa857e49a1b" title=" " alt="" coords="165,208,260,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="63,157,128,194,153,205,148,206,126,198,63,162"/>
+<area shape="rect" id="Node000008" href="$sqlite3_8c.html#a20b591723f2387d107b53512441c789e" title=" " alt="" coords="133,259,292,285"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="52,156,83,201,104,224,128,244,138,252,133,252,125,249,100,228,78,204,50,162"/>
+<area shape="rect" id="Node000007" href="$sqlite3_8c.html#acf77da68932b6bc163c5e68547ecc3e7" title=" " alt="" coords="346,208,479,235"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="260,219,333,221,328,222,260,224"/>
+</map>

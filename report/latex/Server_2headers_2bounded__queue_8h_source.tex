@@ -1,0 +1,65 @@
+\doxysection{bounded\+\_\+queue.\+h}
+\hypertarget{Server_2headers_2bounded__queue_8h_source}{}\label{Server_2headers_2bounded__queue_8h_source}\index{Server/headers/bounded\_queue.h@{Server/headers/bounded\_queue.h}}
+\doxymbox{\hyperlink{Server_2headers_2bounded__queue_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00009}00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <WinSock2.h>}}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <condition\_variable>}}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00028}00028\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classBoundedQueue}{BoundedQueue}}\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00029}00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00030}\doxymbox{\hyperlink{classBoundedQueue_ae9c58100110e8489ab8b9a5157a6d90b}{00030}}\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{classBoundedQueue_ae9c58100110e8489ab8b9a5157a6d90b}{BoundedQueue}}(\textcolor{keywordtype}{size\_t}\ capacity)\ :\ \doxymbox{\hyperlink{classBoundedQueue_a2df4134ba07d92cb18c7f61f647e6ac3}{capacity\_}}(capacity),\ \doxymbox{\hyperlink{classBoundedQueue_adc744d49d0e7c5277cacbea3cc03b509}{shutdown\_}}(false)\ \{\}}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00040}\doxymbox{\hyperlink{classBoundedQueue_ad00bbac30d8690112109fd80168e204c}{00040}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classBoundedQueue_ad00bbac30d8690112109fd80168e204c}{push}}(SOCKET\ socket)\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ lock(\doxymbox{\hyperlink{classBoundedQueue_a961c45c8bf1daae486b0a4aa7c7c1682}{mutex\_}});}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classBoundedQueue_a1769c9ab93bbc6f3b7d2473b5ce4c14f}{not\_full\_}}.wait(lock,\ [\textcolor{keyword}{this}]()\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classBoundedQueue_a850c61da1607c920744456d8c3fc49c7}{queue\_}}.size()\ <\ \doxymbox{\hyperlink{classBoundedQueue_a2df4134ba07d92cb18c7f61f647e6ac3}{capacity\_}}\ ||\ \doxymbox{\hyperlink{classBoundedQueue_adc744d49d0e7c5277cacbea3cc03b509}{shutdown\_}};}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{classBoundedQueue_adc744d49d0e7c5277cacbea3cc03b509}{shutdown\_}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classBoundedQueue_a850c61da1607c920744456d8c3fc49c7}{queue\_}}.push(socket);}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classBoundedQueue_a636d152fac36b3fd409ae9435c5dddb4}{not\_empty\_}}.notify\_one();}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00060}\doxymbox{\hyperlink{classBoundedQueue_a412b03fc351af48abb9c88a958d7eb5b}{00060}}\ \ \ \ \ SOCKET\ \doxymbox{\hyperlink{classBoundedQueue_a412b03fc351af48abb9c88a958d7eb5b}{pop}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ lock(\doxymbox{\hyperlink{classBoundedQueue_a961c45c8bf1daae486b0a4aa7c7c1682}{mutex\_}});}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classBoundedQueue_a636d152fac36b3fd409ae9435c5dddb4}{not\_empty\_}}.wait(lock,\ [\textcolor{keyword}{this}]()\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !\doxymbox{\hyperlink{classBoundedQueue_a850c61da1607c920744456d8c3fc49c7}{queue\_}}.empty()\ ||\ \doxymbox{\hyperlink{classBoundedQueue_adc744d49d0e7c5277cacbea3cc03b509}{shutdown\_}};}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{classBoundedQueue_adc744d49d0e7c5277cacbea3cc03b509}{shutdown\_}}\ \&\&\ \doxymbox{\hyperlink{classBoundedQueue_a850c61da1607c920744456d8c3fc49c7}{queue\_}}.empty())\ \textcolor{keywordflow}{return}\ INVALID\_SOCKET;}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ SOCKET\ socket\ =\ \doxymbox{\hyperlink{classBoundedQueue_a850c61da1607c920744456d8c3fc49c7}{queue\_}}.front();}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classBoundedQueue_a850c61da1607c920744456d8c3fc49c7}{queue\_}}.pop();}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classBoundedQueue_a1769c9ab93bbc6f3b7d2473b5ce4c14f}{not\_full\_}}.notify\_one();}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ socket;}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00080}\doxymbox{\hyperlink{classBoundedQueue_a22b48a3b0eff95f43341923a65647bbe}{00080}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classBoundedQueue_a22b48a3b0eff95f43341923a65647bbe}{shutdown}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ lock(\doxymbox{\hyperlink{classBoundedQueue_a961c45c8bf1daae486b0a4aa7c7c1682}{mutex\_}});}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classBoundedQueue_adc744d49d0e7c5277cacbea3cc03b509}{shutdown\_}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classBoundedQueue_a1769c9ab93bbc6f3b7d2473b5ce4c14f}{not\_full\_}}.notify\_all();}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classBoundedQueue_a636d152fac36b3fd409ae9435c5dddb4}{not\_empty\_}}.notify\_all();}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00087}00087\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00088}00088\ \ \ \ \ std::queue<SOCKET>\ \ \doxymbox{\hyperlink{classBoundedQueue_a850c61da1607c920744456d8c3fc49c7}{queue\_}};}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00089}00089\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classBoundedQueue_a2df4134ba07d92cb18c7f61f647e6ac3}{capacity\_}};}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00090}00090\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classBoundedQueue_adc744d49d0e7c5277cacbea3cc03b509}{shutdown\_}};}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00092}00092\ \ \ \ \ std::mutex\ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classBoundedQueue_a961c45c8bf1daae486b0a4aa7c7c1682}{mutex\_}};}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00093}00093\ \ \ \ \ std::condition\_variable\ \doxymbox{\hyperlink{classBoundedQueue_a1769c9ab93bbc6f3b7d2473b5ce4c14f}{not\_full\_}};}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00094}00094\ \ \ \ \ std::condition\_variable\ \doxymbox{\hyperlink{classBoundedQueue_a636d152fac36b3fd409ae9435c5dddb4}{not\_empty\_}};}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2bounded__queue_8h_source_l00098}00098\ \};}
+
+\end{DoxyCode}

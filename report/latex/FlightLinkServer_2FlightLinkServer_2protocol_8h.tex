@@ -1,0 +1,94 @@
+\doxysection{Flight\+Link\+Server/\+\+Flight\+Link\+Server/\+protocol.h File Reference}
+\hypertarget{FlightLinkServer_2FlightLinkServer_2protocol_8h}{}\label{FlightLinkServer_2FlightLinkServer_2protocol_8h}\index{FlightLinkServer/FlightLinkServer/protocol.h@{FlightLinkServer/FlightLinkServer/protocol.h}}
+{\ttfamily \+\#include $<$cstdint$>$}\newline
+Include dependency graph for protocol.\+h:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{FlightLinkServer_2FlightLinkServer_2protocol_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{FlightLinkServer_2FlightLinkServer_2protocol_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structPacketHeader}{Packet\+Header}}
+\begin{DoxyCompactList}\small\item\em Header structure for flight start and end messages. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{structTelemetryData}{Telemetry\+Data}}
+\begin{DoxyCompactList}\small\item\em Complete telemetry packet structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr uint8\+\_\+t \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_a3f6838ff1e1c76654431818918c8fce0}{MSG\+\_\+\+FLIGHT\+\_\+\+START}} = 0x01
+\item 
+constexpr uint8\+\_\+t \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_a407a8fe043c54d6f92d2f6c5a3565c88}{MSG\+\_\+\+TELEMETRY}} = 0x02
+\item 
+constexpr uint8\+\_\+t \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_a44ca186de74c14d24f197e4f69de61ed}{MSG\+\_\+\+FLIGHT\+\_\+\+END}} = 0x03
+\item 
+constexpr size\+\_\+t \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_a8821ddbbd7ad7c93f400b3b889f532c1}{HEADER\+\_\+\+PAYLOAD\+\_\+\+SIZE}} = 4
+\item 
+constexpr size\+\_\+t \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_a56c5f86467361eeb7bff48d9a86623db}{TELEMETRY\+\_\+\+PAYLOAD\+\_\+\+SIZE}} = 20
+\end{DoxyCompactItemize}
+
+
+\label{doc-var-members}
+\Hypertarget{FlightLinkServer_2FlightLinkServer_2protocol_8h_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{FlightLinkServer_2FlightLinkServer_2protocol_8h_a8821ddbbd7ad7c93f400b3b889f532c1}\index{protocol.h@{protocol.h}!HEADER\_PAYLOAD\_SIZE@{HEADER\_PAYLOAD\_SIZE}}
+\index{HEADER\_PAYLOAD\_SIZE@{HEADER\_PAYLOAD\_SIZE}!protocol.h@{protocol.h}}
+\doxysubsubsection{\texorpdfstring{HEADER\_PAYLOAD\_SIZE}{HEADER\_PAYLOAD\_SIZE}}
+{\footnotesize\ttfamily \label{FlightLinkServer_2FlightLinkServer_2protocol_8h_a8821ddbbd7ad7c93f400b3b889f532c1} 
+size\+\_\+t HEADER\+\_\+\+PAYLOAD\+\_\+\+SIZE = 4\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_source_l00014}{14}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_source}{protocol.\+h}}.
+
+\Hypertarget{FlightLinkServer_2FlightLinkServer_2protocol_8h_a44ca186de74c14d24f197e4f69de61ed}\index{protocol.h@{protocol.h}!MSG\_FLIGHT\_END@{MSG\_FLIGHT\_END}}
+\index{MSG\_FLIGHT\_END@{MSG\_FLIGHT\_END}!protocol.h@{protocol.h}}
+\doxysubsubsection{\texorpdfstring{MSG\_FLIGHT\_END}{MSG\_FLIGHT\_END}}
+{\footnotesize\ttfamily \label{FlightLinkServer_2FlightLinkServer_2protocol_8h_a44ca186de74c14d24f197e4f69de61ed} 
+uint8\+\_\+t MSG\+\_\+\+FLIGHT\+\_\+\+END = 0x03\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_source_l00011}{11}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_source}{protocol.\+h}}.
+
+\Hypertarget{FlightLinkServer_2FlightLinkServer_2protocol_8h_a3f6838ff1e1c76654431818918c8fce0}\index{protocol.h@{protocol.h}!MSG\_FLIGHT\_START@{MSG\_FLIGHT\_START}}
+\index{MSG\_FLIGHT\_START@{MSG\_FLIGHT\_START}!protocol.h@{protocol.h}}
+\doxysubsubsection{\texorpdfstring{MSG\_FLIGHT\_START}{MSG\_FLIGHT\_START}}
+{\footnotesize\ttfamily \label{FlightLinkServer_2FlightLinkServer_2protocol_8h_a3f6838ff1e1c76654431818918c8fce0} 
+uint8\+\_\+t MSG\+\_\+\+FLIGHT\+\_\+\+START = 0x01\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_source_l00009}{9}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_source}{protocol.\+h}}.
+
+\Hypertarget{FlightLinkServer_2FlightLinkServer_2protocol_8h_a407a8fe043c54d6f92d2f6c5a3565c88}\index{protocol.h@{protocol.h}!MSG\_TELEMETRY@{MSG\_TELEMETRY}}
+\index{MSG\_TELEMETRY@{MSG\_TELEMETRY}!protocol.h@{protocol.h}}
+\doxysubsubsection{\texorpdfstring{MSG\_TELEMETRY}{MSG\_TELEMETRY}}
+{\footnotesize\ttfamily \label{FlightLinkServer_2FlightLinkServer_2protocol_8h_a407a8fe043c54d6f92d2f6c5a3565c88} 
+uint8\+\_\+t MSG\+\_\+\+TELEMETRY = 0x02\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_source_l00010}{10}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_source}{protocol.\+h}}.
+
+\Hypertarget{FlightLinkServer_2FlightLinkServer_2protocol_8h_a56c5f86467361eeb7bff48d9a86623db}\index{protocol.h@{protocol.h}!TELEMETRY\_PAYLOAD\_SIZE@{TELEMETRY\_PAYLOAD\_SIZE}}
+\index{TELEMETRY\_PAYLOAD\_SIZE@{TELEMETRY\_PAYLOAD\_SIZE}!protocol.h@{protocol.h}}
+\doxysubsubsection{\texorpdfstring{TELEMETRY\_PAYLOAD\_SIZE}{TELEMETRY\_PAYLOAD\_SIZE}}
+{\footnotesize\ttfamily \label{FlightLinkServer_2FlightLinkServer_2protocol_8h_a56c5f86467361eeb7bff48d9a86623db} 
+size\+\_\+t TELEMETRY\+\_\+\+PAYLOAD\+\_\+\+SIZE = 20\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_source_l00015}{15}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_source}{protocol.\+h}}.
+

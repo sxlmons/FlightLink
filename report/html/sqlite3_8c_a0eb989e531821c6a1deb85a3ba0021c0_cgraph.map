@@ -1,0 +1,11 @@
+<map id="robust_open" name="robust_open">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,98,32"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a298c9699bf9c143662c6b1fec4b2dc3b" title=" " alt="" coords="146,5,229,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,16,133,18,127,19,98,21"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#adb7f26b10ac1b847db6f000ef4c2e2ba" title=" " alt="" coords="277,5,429,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="229,16,264,19,259,19,229,21"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#adf72e809d4f4d34b3256e2d29769c64a" title=" " alt="" coords="477,5,643,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="430,16,464,19,459,19,430,21"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#ab9e9d3dc2dd748199ab1439b90a30905" title=" " alt="" coords="691,5,808,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="643,16,678,19,673,19,643,21"/>
+</map>

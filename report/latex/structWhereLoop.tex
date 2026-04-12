@@ -1,0 +1,382 @@
+\doxysection{Where\+Loop Struct Reference}
+\hypertarget{structWhereLoop}{}\label{structWhereLoop}\index{WhereLoop@{WhereLoop}}
+
+
+Collaboration diagram for Where\+Loop:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structWhereLoop__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_afa77b629897c4457bfdc47d364ba5c3f}{Bitmask}} \doxymbox{\hyperlink{structWhereLoop_aa654af6ecff71bd43c4b0cd6046ccf4d}{prereq}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_afa77b629897c4457bfdc47d364ba5c3f}{Bitmask}} \doxymbox{\hyperlink{structWhereLoop_a0118b20be771241ee29de452ffead61e}{mask\+Self}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} \doxymbox{\hyperlink{structWhereLoop_a469ad31ae7f3b025667813e2d0aa9d01}{i\+Tab}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} \doxymbox{\hyperlink{structWhereLoop_a35e725c988b2bcfb9633a259cd6eba58}{i\+Sort\+Idx}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_aa0f9b3b63ad120ac15b96785b05ce733}{Log\+Est}} \doxymbox{\hyperlink{structWhereLoop_a5e28f2d1299993056255158d33baea33}{r\+Setup}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_aa0f9b3b63ad120ac15b96785b05ce733}{Log\+Est}} \doxymbox{\hyperlink{structWhereLoop_a1a67183b699c90c23940f540486b07d6}{r\+Run}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_aa0f9b3b63ad120ac15b96785b05ce733}{Log\+Est}} \doxymbox{\hyperlink{structWhereLoop_aaef49d7d8188f3dd94d0c9fd0e727448}{n\+Out}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \{\\
+\>\>\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} \doxymbox{\hyperlink{structWhereLoop_a6472a46f9fdb5704c9c2afebfbf6d5a6}{nEq}}\\
+\>\>\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} \doxymbox{\hyperlink{structWhereLoop_a4badc4b8c0d1a8ff75d11832acce2805}{nBtm}}\\
+\>\>\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} \doxymbox{\hyperlink{structWhereLoop_afa95af92c736222330e4c91167b24746}{nTop}}\\
+\>\>\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} \doxymbox{\hyperlink{structWhereLoop_a57ef6c97afc77733f6896f13be184b01}{nDistinctCol}}\\
+\>\>\doxymbox{\hyperlink{structIndex}{Index}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structWhereLoop_a0221cfe6443b10f9b09d719296b44060}{pIndex}}\\
+\>\>\doxymbox{\hyperlink{structExprList}{ExprList}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structWhereLoop_a441b81a79b47d1c9ebd74b8fe9bb4825}{pOrderBy}}\\
+\>\} \doxymbox{\hyperlink{structWhereLoop_ac2f576ec6d631ff96ce0a55ea5399df4}{btree}}\\
+\>struct \{\\
+\>\>int \doxymbox{\hyperlink{structWhereLoop_a17718181319ebc4fd1493f270d0d781d}{idxNum}}\\
+\>\>\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} \doxymbox{\hyperlink{structWhereLoop_a63fdfd644303370ddb8b46ac5369fe62}{needFree}}: 1\\
+\>\>\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} \doxymbox{\hyperlink{structWhereLoop_a7fe91ca71ca32241c6f0c2e4ce931d86}{bOmitOffset}}: 1\\
+\>\>\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} \doxymbox{\hyperlink{structWhereLoop_a24635d50560db15129a4172fa7b64b61}{bIdxNumHex}}: 1\\
+\>\>\doxymbox{\hyperlink{sqlite3_8c_ad11a1324ecade336dc6ce17a20cf6617}{i8}} \doxymbox{\hyperlink{structWhereLoop_ae3b2b37da95a17853ca2e29ae82c7a5b}{isOrdered}}\\
+\>\>\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} \doxymbox{\hyperlink{structWhereLoop_af67ad30433e111e3b1380bb422b8b7cd}{omitMask}}\\
+\>\>char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structWhereLoop_ab6f35b7aa07a01bd441681ffc383e810}{idxStr}}\\
+\>\>\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} \doxymbox{\hyperlink{structWhereLoop_acce7c6f76371530e1696d3a8afd89a3c}{mHandleIn}}\\
+\>\} \doxymbox{\hyperlink{structWhereLoop_a46896e6841d65e0cffac8df9ba0d0279}{vtab}}\\
+\} \doxymbox{\hyperlink{structWhereLoop_a61da2be4c0eff601abea5e5a3057cad9}{u}}\\
+
+\end{tabbing}\item 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} \doxymbox{\hyperlink{structWhereLoop_a0cd1e9719a060631a647738bead23b8c}{ws\+Flags}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} \doxymbox{\hyperlink{structWhereLoop_aaab088ed5c23647675e5afb10eb09338}{n\+LTerm}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} \doxymbox{\hyperlink{structWhereLoop_aa6729780dfb942387abc2f1e0a6b94e7}{n\+Skip}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} \doxymbox{\hyperlink{structWhereLoop_a286a5e96fcc56cc835958ec2cbf6852f}{n\+LSlot}}
+\item 
+\doxymbox{\hyperlink{structWhereTerm}{Where\+Term}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structWhereLoop_ad8ea95e5ef2717fbbe1c1732d3ce1a9b}{a\+LTerm}}
+\item 
+\doxymbox{\hyperlink{structWhereLoop}{Where\+Loop}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structWhereLoop_a568852114be14c3a23cef6f8a1c98f4f}{p\+Next\+Loop}}
+\item 
+\doxymbox{\hyperlink{structWhereTerm}{Where\+Term}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structWhereLoop_a1e0a39de75d4288c791c29e2ebf8103a}{a\+LTerm\+Space}} \+[3]\+
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165492}{165492}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{structWhereLoop_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structWhereLoop_ad8ea95e5ef2717fbbe1c1732d3ce1a9b}\index{WhereLoop@{WhereLoop}!aLTerm@{aLTerm}}
+\index{aLTerm@{aLTerm}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{aLTerm}{aLTerm}}
+{\footnotesize\ttfamily \label{structWhereLoop_ad8ea95e5ef2717fbbe1c1732d3ce1a9b} 
+\doxymbox{\hyperlink{structWhereTerm}{Where\+Term}}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Where\+Loop::\+a\+LTerm}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165533}{165533}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_a1e0a39de75d4288c791c29e2ebf8103a}\index{WhereLoop@{WhereLoop}!aLTermSpace@{aLTermSpace}}
+\index{aLTermSpace@{aLTermSpace}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{aLTermSpace}{aLTermSpace}}
+{\footnotesize\ttfamily \label{structWhereLoop_a1e0a39de75d4288c791c29e2ebf8103a} 
+\doxymbox{\hyperlink{structWhereTerm}{Where\+Term}}\texorpdfstring{$\ast$}{*} Where\+Loop::\+a\+LTerm\+Space\+[3]\+}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165535}{165535}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_a24635d50560db15129a4172fa7b64b61}\index{WhereLoop@{WhereLoop}!bIdxNumHex@{bIdxNumHex}}
+\index{bIdxNumHex@{bIdxNumHex}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{bIdxNumHex}{bIdxNumHex}}
+{\footnotesize\ttfamily \label{structWhereLoop_a24635d50560db15129a4172fa7b64b61} 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} Where\+Loop::\+b\+Idx\+Num\+Hex}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165516}{165516}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_a7fe91ca71ca32241c6f0c2e4ce931d86}\index{WhereLoop@{WhereLoop}!bOmitOffset@{bOmitOffset}}
+\index{bOmitOffset@{bOmitOffset}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{bOmitOffset}{bOmitOffset}}
+{\footnotesize\ttfamily \label{structWhereLoop_a7fe91ca71ca32241c6f0c2e4ce931d86} 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} Where\+Loop::\+b\+Omit\+Offset}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165515}{165515}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_ac2f576ec6d631ff96ce0a55ea5399df4}\index{WhereLoop@{WhereLoop}!btree@{btree}}
+\index{btree@{btree}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily \label{structWhereLoop_ac2f576ec6d631ff96ce0a55ea5399df4} 
+struct  \{ ... \}  Where\+Loop::\+btree}
+
+\Hypertarget{structWhereLoop_a17718181319ebc4fd1493f270d0d781d}\index{WhereLoop@{WhereLoop}!idxNum@{idxNum}}
+\index{idxNum@{idxNum}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{idxNum}{idxNum}}
+{\footnotesize\ttfamily \label{structWhereLoop_a17718181319ebc4fd1493f270d0d781d} 
+int Where\+Loop::\+idx\+Num}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165513}{165513}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_ab6f35b7aa07a01bd441681ffc383e810}\index{WhereLoop@{WhereLoop}!idxStr@{idxStr}}
+\index{idxStr@{idxStr}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{idxStr}{idxStr}}
+{\footnotesize\ttfamily \label{structWhereLoop_ab6f35b7aa07a01bd441681ffc383e810} 
+char\texorpdfstring{$\ast$}{*} Where\+Loop::\+idx\+Str}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165519}{165519}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_ae3b2b37da95a17853ca2e29ae82c7a5b}\index{WhereLoop@{WhereLoop}!isOrdered@{isOrdered}}
+\index{isOrdered@{isOrdered}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{isOrdered}{isOrdered}}
+{\footnotesize\ttfamily \label{structWhereLoop_ae3b2b37da95a17853ca2e29ae82c7a5b} 
+\doxymbox{\hyperlink{sqlite3_8c_ad11a1324ecade336dc6ce17a20cf6617}{i8}} Where\+Loop::\+is\+Ordered}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165517}{165517}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_a35e725c988b2bcfb9633a259cd6eba58}\index{WhereLoop@{WhereLoop}!iSortIdx@{iSortIdx}}
+\index{iSortIdx@{iSortIdx}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{iSortIdx}{iSortIdx}}
+{\footnotesize\ttfamily \label{structWhereLoop_a35e725c988b2bcfb9633a259cd6eba58} 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} Where\+Loop::\+i\+Sort\+Idx}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165499}{165499}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_a469ad31ae7f3b025667813e2d0aa9d01}\index{WhereLoop@{WhereLoop}!iTab@{iTab}}
+\index{iTab@{iTab}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{iTab}{iTab}}
+{\footnotesize\ttfamily \label{structWhereLoop_a469ad31ae7f3b025667813e2d0aa9d01} 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} Where\+Loop::\+i\+Tab}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165498}{165498}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_a0118b20be771241ee29de452ffead61e}\index{WhereLoop@{WhereLoop}!maskSelf@{maskSelf}}
+\index{maskSelf@{maskSelf}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{maskSelf}{maskSelf}}
+{\footnotesize\ttfamily \label{structWhereLoop_a0118b20be771241ee29de452ffead61e} 
+\doxymbox{\hyperlink{sqlite3_8c_afa77b629897c4457bfdc47d364ba5c3f}{Bitmask}} Where\+Loop::\+mask\+Self}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165494}{165494}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_acce7c6f76371530e1696d3a8afd89a3c}\index{WhereLoop@{WhereLoop}!mHandleIn@{mHandleIn}}
+\index{mHandleIn@{mHandleIn}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{mHandleIn}{mHandleIn}}
+{\footnotesize\ttfamily \label{structWhereLoop_acce7c6f76371530e1696d3a8afd89a3c} 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} Where\+Loop::\+m\+Handle\+In}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165520}{165520}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_a4badc4b8c0d1a8ff75d11832acce2805}\index{WhereLoop@{WhereLoop}!nBtm@{nBtm}}
+\index{nBtm@{nBtm}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{nBtm}{nBtm}}
+{\footnotesize\ttfamily \label{structWhereLoop_a4badc4b8c0d1a8ff75d11832acce2805} 
+\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} Where\+Loop::\+n\+Btm}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165506}{165506}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_a57ef6c97afc77733f6896f13be184b01}\index{WhereLoop@{WhereLoop}!nDistinctCol@{nDistinctCol}}
+\index{nDistinctCol@{nDistinctCol}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{nDistinctCol}{nDistinctCol}}
+{\footnotesize\ttfamily \label{structWhereLoop_a57ef6c97afc77733f6896f13be184b01} 
+\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} Where\+Loop::\+n\+Distinct\+Col}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165508}{165508}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_a63fdfd644303370ddb8b46ac5369fe62}\index{WhereLoop@{WhereLoop}!needFree@{needFree}}
+\index{needFree@{needFree}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{needFree}{needFree}}
+{\footnotesize\ttfamily \label{structWhereLoop_a63fdfd644303370ddb8b46ac5369fe62} 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} Where\+Loop::\+need\+Free}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165514}{165514}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_a6472a46f9fdb5704c9c2afebfbf6d5a6}\index{WhereLoop@{WhereLoop}!nEq@{nEq}}
+\index{nEq@{nEq}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{nEq}{nEq}}
+{\footnotesize\ttfamily \label{structWhereLoop_a6472a46f9fdb5704c9c2afebfbf6d5a6} 
+\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} Where\+Loop::\+n\+Eq}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165505}{165505}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_a286a5e96fcc56cc835958ec2cbf6852f}\index{WhereLoop@{WhereLoop}!nLSlot@{nLSlot}}
+\index{nLSlot@{nLSlot}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{nLSlot}{nLSlot}}
+{\footnotesize\ttfamily \label{structWhereLoop_a286a5e96fcc56cc835958ec2cbf6852f} 
+\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} Where\+Loop::\+n\+LSlot}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165528}{165528}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_aaab088ed5c23647675e5afb10eb09338}\index{WhereLoop@{WhereLoop}!nLTerm@{nLTerm}}
+\index{nLTerm@{nLTerm}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{nLTerm}{nLTerm}}
+{\footnotesize\ttfamily \label{structWhereLoop_aaab088ed5c23647675e5afb10eb09338} 
+\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} Where\+Loop::\+n\+LTerm}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165524}{165524}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_aaef49d7d8188f3dd94d0c9fd0e727448}\index{WhereLoop@{WhereLoop}!nOut@{nOut}}
+\index{nOut@{nOut}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{nOut}{nOut}}
+{\footnotesize\ttfamily \label{structWhereLoop_aaef49d7d8188f3dd94d0c9fd0e727448} 
+\doxymbox{\hyperlink{sqlite3_8c_aa0f9b3b63ad120ac15b96785b05ce733}{Log\+Est}} Where\+Loop::\+n\+Out}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165502}{165502}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_aa6729780dfb942387abc2f1e0a6b94e7}\index{WhereLoop@{WhereLoop}!nSkip@{nSkip}}
+\index{nSkip@{nSkip}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{nSkip}{nSkip}}
+{\footnotesize\ttfamily \label{structWhereLoop_aa6729780dfb942387abc2f1e0a6b94e7} 
+\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} Where\+Loop::\+n\+Skip}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165525}{165525}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_afa95af92c736222330e4c91167b24746}\index{WhereLoop@{WhereLoop}!nTop@{nTop}}
+\index{nTop@{nTop}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{nTop}{nTop}}
+{\footnotesize\ttfamily \label{structWhereLoop_afa95af92c736222330e4c91167b24746} 
+\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} Where\+Loop::\+n\+Top}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165507}{165507}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_af67ad30433e111e3b1380bb422b8b7cd}\index{WhereLoop@{WhereLoop}!omitMask@{omitMask}}
+\index{omitMask@{omitMask}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{omitMask}{omitMask}}
+{\footnotesize\ttfamily \label{structWhereLoop_af67ad30433e111e3b1380bb422b8b7cd} 
+\doxymbox{\hyperlink{sqlite3_8c_a20f2299e322dcbde37cb07b16910b843}{u16}} Where\+Loop::\+omit\+Mask}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165518}{165518}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_a0221cfe6443b10f9b09d719296b44060}\index{WhereLoop@{WhereLoop}!pIndex@{pIndex}}
+\index{pIndex@{pIndex}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{pIndex}{pIndex}}
+{\footnotesize\ttfamily \label{structWhereLoop_a0221cfe6443b10f9b09d719296b44060} 
+\doxymbox{\hyperlink{structIndex}{Index}}\texorpdfstring{$\ast$}{*} Where\+Loop::\+p\+Index}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165509}{165509}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_a568852114be14c3a23cef6f8a1c98f4f}\index{WhereLoop@{WhereLoop}!pNextLoop@{pNextLoop}}
+\index{pNextLoop@{pNextLoop}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{pNextLoop}{pNextLoop}}
+{\footnotesize\ttfamily \label{structWhereLoop_a568852114be14c3a23cef6f8a1c98f4f} 
+\doxymbox{\hyperlink{structWhereLoop}{Where\+Loop}}\texorpdfstring{$\ast$}{*} Where\+Loop::\+p\+Next\+Loop}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165534}{165534}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_a441b81a79b47d1c9ebd74b8fe9bb4825}\index{WhereLoop@{WhereLoop}!pOrderBy@{pOrderBy}}
+\index{pOrderBy@{pOrderBy}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{pOrderBy}{pOrderBy}}
+{\footnotesize\ttfamily \label{structWhereLoop_a441b81a79b47d1c9ebd74b8fe9bb4825} 
+\doxymbox{\hyperlink{structExprList}{Expr\+List}}\texorpdfstring{$\ast$}{*} Where\+Loop::\+p\+Order\+By}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165510}{165510}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_aa654af6ecff71bd43c4b0cd6046ccf4d}\index{WhereLoop@{WhereLoop}!prereq@{prereq}}
+\index{prereq@{prereq}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{prereq}{prereq}}
+{\footnotesize\ttfamily \label{structWhereLoop_aa654af6ecff71bd43c4b0cd6046ccf4d} 
+\doxymbox{\hyperlink{sqlite3_8c_afa77b629897c4457bfdc47d364ba5c3f}{Bitmask}} Where\+Loop::\+prereq}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165493}{165493}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_a1a67183b699c90c23940f540486b07d6}\index{WhereLoop@{WhereLoop}!rRun@{rRun}}
+\index{rRun@{rRun}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{rRun}{rRun}}
+{\footnotesize\ttfamily \label{structWhereLoop_a1a67183b699c90c23940f540486b07d6} 
+\doxymbox{\hyperlink{sqlite3_8c_aa0f9b3b63ad120ac15b96785b05ce733}{Log\+Est}} Where\+Loop::\+r\+Run}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165501}{165501}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_a5e28f2d1299993056255158d33baea33}\index{WhereLoop@{WhereLoop}!rSetup@{rSetup}}
+\index{rSetup@{rSetup}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{rSetup}{rSetup}}
+{\footnotesize\ttfamily \label{structWhereLoop_a5e28f2d1299993056255158d33baea33} 
+\doxymbox{\hyperlink{sqlite3_8c_aa0f9b3b63ad120ac15b96785b05ce733}{Log\+Est}} Where\+Loop::\+r\+Setup}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165500}{165500}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structWhereLoop_a61da2be4c0eff601abea5e5a3057cad9}\index{WhereLoop@{WhereLoop}!u@{u}}
+\index{u@{u}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily \label{structWhereLoop_a61da2be4c0eff601abea5e5a3057cad9} 
+union  \{ ... \}  Where\+Loop::\+u}
+
+\Hypertarget{structWhereLoop_a46896e6841d65e0cffac8df9ba0d0279}\index{WhereLoop@{WhereLoop}!vtab@{vtab}}
+\index{vtab@{vtab}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily \label{structWhereLoop_a46896e6841d65e0cffac8df9ba0d0279} 
+struct  \{ ... \}  Where\+Loop::\+vtab}
+
+\Hypertarget{structWhereLoop_a0cd1e9719a060631a647738bead23b8c}\index{WhereLoop@{WhereLoop}!wsFlags@{wsFlags}}
+\index{wsFlags@{wsFlags}!WhereLoop@{WhereLoop}}
+\doxysubsubsection{\texorpdfstring{wsFlags}{wsFlags}}
+{\footnotesize\ttfamily \label{structWhereLoop_a0cd1e9719a060631a647738bead23b8c} 
+\doxymbox{\hyperlink{sqlite3_8c_a03ad5adfaeb9b7640dde78a0cc390319}{u32}} Where\+Loop::\+ws\+Flags}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l165523}{165523}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Flight\+Link\+Server/\+\+Flight\+Link\+Server/\+\doxymbox{\hyperlink{sqlite3_8c}{sqlite3.\+c}}\end{DoxyCompactItemize}

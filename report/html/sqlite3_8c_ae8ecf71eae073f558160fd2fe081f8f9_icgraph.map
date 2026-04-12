@@ -1,0 +1,9 @@
+<map id="clearDatabasePage" name="clearDatabasePage">
+<area shape="rect" id="Node000001" title=" " alt="" coords="420,35,555,61"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a5607024242733ac375d0bf6a03ed0149" title=" " alt="" coords="220,35,372,61"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="402,48,372,51,372,45,407,48"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#abba4061ea34842db278e91f537d2c2ff" title=" " alt="" coords="34,5,143,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="202,36,144,29,144,24,207,34"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a31f4ef273f0625b74b993177f5903454" title=" " alt="" coords="5,56,172,99"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="202,61,173,68,172,63,207,60"/>
+</map>

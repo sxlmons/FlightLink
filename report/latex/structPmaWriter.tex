@@ -1,0 +1,128 @@
+\doxysection{Pma\+Writer Struct Reference}
+\hypertarget{structPmaWriter}{}\label{structPmaWriter}\index{PmaWriter@{PmaWriter}}
+
+
+Collaboration diagram for Pma\+Writer:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{structPmaWriter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{structPmaWriter_a3d74aff37c8abafd22ec8f8159d08725}{e\+FWErr}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structPmaWriter_ae53ada27501eb89a45409db4776f3b23}{a\+Buffer}}
+\item 
+int \doxymbox{\hyperlink{structPmaWriter_a5d8e651696b33ff6318e7d8473ee9e1b}{n\+Buffer}}
+\item 
+int \doxymbox{\hyperlink{structPmaWriter_ae77a80d66a5f3d40cd5d57861a455281}{i\+Buf\+Start}}
+\item 
+int \doxymbox{\hyperlink{structPmaWriter_ab15d816e53fb4496dd1e59094d4839a6}{i\+Buf\+End}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a2a0f0f4ae7001eb54351f77ea1cdbcfd}{i64}} \doxymbox{\hyperlink{structPmaWriter_ad45a9271cbcdd0e506b81b77d2a744a5}{i\+Write\+Off}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a3691103fd7c57f5f69123c4c03aea05a}{sqlite3\+\_\+file}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structPmaWriter_a54606c98fb9e7318a55ed59de0e55550}{p\+Fd}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a0e0cdb443a471891a042a6bfdc4644ca}{u64}} \doxymbox{\hyperlink{structPmaWriter_addfe2f9f913deb97b5dd5ee3e161270b}{n\+Pma\+Spill}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108157}{108157}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{structPmaWriter_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structPmaWriter_ae53ada27501eb89a45409db4776f3b23}\index{PmaWriter@{PmaWriter}!aBuffer@{aBuffer}}
+\index{aBuffer@{aBuffer}!PmaWriter@{PmaWriter}}
+\doxysubsubsection{\texorpdfstring{aBuffer}{aBuffer}}
+{\footnotesize\ttfamily \label{structPmaWriter_ae53ada27501eb89a45409db4776f3b23} 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}}\texorpdfstring{$\ast$}{*} Pma\+Writer::\+a\+Buffer}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108159}{108159}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structPmaWriter_a3d74aff37c8abafd22ec8f8159d08725}\index{PmaWriter@{PmaWriter}!eFWErr@{eFWErr}}
+\index{eFWErr@{eFWErr}!PmaWriter@{PmaWriter}}
+\doxysubsubsection{\texorpdfstring{eFWErr}{eFWErr}}
+{\footnotesize\ttfamily \label{structPmaWriter_a3d74aff37c8abafd22ec8f8159d08725} 
+int Pma\+Writer::\+e\+FWErr}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108158}{108158}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structPmaWriter_ab15d816e53fb4496dd1e59094d4839a6}\index{PmaWriter@{PmaWriter}!iBufEnd@{iBufEnd}}
+\index{iBufEnd@{iBufEnd}!PmaWriter@{PmaWriter}}
+\doxysubsubsection{\texorpdfstring{iBufEnd}{iBufEnd}}
+{\footnotesize\ttfamily \label{structPmaWriter_ab15d816e53fb4496dd1e59094d4839a6} 
+int Pma\+Writer::\+i\+Buf\+End}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108162}{108162}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structPmaWriter_ae77a80d66a5f3d40cd5d57861a455281}\index{PmaWriter@{PmaWriter}!iBufStart@{iBufStart}}
+\index{iBufStart@{iBufStart}!PmaWriter@{PmaWriter}}
+\doxysubsubsection{\texorpdfstring{iBufStart}{iBufStart}}
+{\footnotesize\ttfamily \label{structPmaWriter_ae77a80d66a5f3d40cd5d57861a455281} 
+int Pma\+Writer::\+i\+Buf\+Start}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108161}{108161}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structPmaWriter_ad45a9271cbcdd0e506b81b77d2a744a5}\index{PmaWriter@{PmaWriter}!iWriteOff@{iWriteOff}}
+\index{iWriteOff@{iWriteOff}!PmaWriter@{PmaWriter}}
+\doxysubsubsection{\texorpdfstring{iWriteOff}{iWriteOff}}
+{\footnotesize\ttfamily \label{structPmaWriter_ad45a9271cbcdd0e506b81b77d2a744a5} 
+\doxymbox{\hyperlink{sqlite3_8c_a2a0f0f4ae7001eb54351f77ea1cdbcfd}{i64}} Pma\+Writer::\+i\+Write\+Off}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108163}{108163}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structPmaWriter_a5d8e651696b33ff6318e7d8473ee9e1b}\index{PmaWriter@{PmaWriter}!nBuffer@{nBuffer}}
+\index{nBuffer@{nBuffer}!PmaWriter@{PmaWriter}}
+\doxysubsubsection{\texorpdfstring{nBuffer}{nBuffer}}
+{\footnotesize\ttfamily \label{structPmaWriter_a5d8e651696b33ff6318e7d8473ee9e1b} 
+int Pma\+Writer::\+n\+Buffer}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108160}{108160}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structPmaWriter_addfe2f9f913deb97b5dd5ee3e161270b}\index{PmaWriter@{PmaWriter}!nPmaSpill@{nPmaSpill}}
+\index{nPmaSpill@{nPmaSpill}!PmaWriter@{PmaWriter}}
+\doxysubsubsection{\texorpdfstring{nPmaSpill}{nPmaSpill}}
+{\footnotesize\ttfamily \label{structPmaWriter_addfe2f9f913deb97b5dd5ee3e161270b} 
+\doxymbox{\hyperlink{sqlite3_8c_a0e0cdb443a471891a042a6bfdc4644ca}{u64}} Pma\+Writer::\+n\+Pma\+Spill}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108165}{108165}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structPmaWriter_a54606c98fb9e7318a55ed59de0e55550}\index{PmaWriter@{PmaWriter}!pFd@{pFd}}
+\index{pFd@{pFd}!PmaWriter@{PmaWriter}}
+\doxysubsubsection{\texorpdfstring{pFd}{pFd}}
+{\footnotesize\ttfamily \label{structPmaWriter_a54606c98fb9e7318a55ed59de0e55550} 
+\doxymbox{\hyperlink{sqlite3_8c_a3691103fd7c57f5f69123c4c03aea05a}{sqlite3\+\_\+file}}\texorpdfstring{$\ast$}{*} Pma\+Writer::\+p\+Fd}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108164}{108164}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Flight\+Link\+Server/\+\+Flight\+Link\+Server/\+\doxymbox{\hyperlink{sqlite3_8c}{sqlite3.\+c}}\end{DoxyCompactItemize}

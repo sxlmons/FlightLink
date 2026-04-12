@@ -1,0 +1,11 @@
+<map id="logBadConnection" name="logBadConnection">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,133,32"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a298c9699bf9c143662c6b1fec4b2dc3b" title=" " alt="" coords="181,5,264,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,16,168,18,162,19,133,21"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#adb7f26b10ac1b847db6f000ef4c2e2ba" title=" " alt="" coords="312,5,464,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="264,16,299,19,294,19,264,21"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#adf72e809d4f4d34b3256e2d29769c64a" title=" " alt="" coords="512,5,678,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="465,16,499,19,494,19,465,21"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#ab9e9d3dc2dd748199ab1439b90a30905" title=" " alt="" coords="726,5,843,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="678,16,713,19,708,19,678,21"/>
+</map>

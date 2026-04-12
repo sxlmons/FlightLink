@@ -1,0 +1,14 @@
+<map id="MemJournal" name="MemJournal">
+<area shape="rect" id="Node000001" title=" " alt="" coords="176,224,269,251"/>
+<area shape="rect" id="Node000002" href="$structsqlite3__io__methods.html" title=" " alt="" coords="5,104,139,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,143,93,173,112,198,143,217,179,230,174,230,141,222,108,202,88,175,78,148"/>
+<area shape="rect" id="Node000003" href="$structFileChunk.html" title=" " alt="" coords="168,5,248,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="206,45,202,104,202,130,211,182,221,225,217,223,206,183,196,131,196,104,203,50"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="264,9,275,19,267,28,250,30,248,25,264,23,270,19,264,14"/>
+<area shape="rect" id="Node000004" href="$structFilePoint.html" title=" " alt="" coords="252,104,324,131"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="229,41,280,104,275,104,227,46"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="276,143,232,225,228,222,271,145"/>
+<area shape="rect" id="Node000005" href="$structsqlite3__vfs.html" title=" " alt="" coords="348,104,433,131"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="380,143,361,175,335,202,303,220,270,230,269,225,301,215,332,198,357,172,376,146"/>
+<area shape="poly" id="edge7_Node000005_Node000005" title=" " alt="" coords="449,107,459,117,451,127,434,129,433,124,449,122,454,117,448,113"/>
+</map>

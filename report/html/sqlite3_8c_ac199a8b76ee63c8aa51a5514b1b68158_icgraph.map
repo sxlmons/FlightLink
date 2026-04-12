@@ -1,0 +1,20 @@
+<map id="sqlite3WalHeapMemory" name="sqlite3WalHeapMemory">
+<area shape="rect" id="Node000001" title=" " alt="" coords="815,56,974,83"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a169a4fb259aab3f9681d51c17026eebb" title=" " alt="" coords="597,56,767,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="796,69,767,72,767,67,802,69"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a69cb751a7da501b9a0aa37e0d7c3eaf7" title=" " alt="" coords="453,5,539,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="613,51,539,33,540,28,618,51"/>
+<area shape="rect" id="Node000007" href="$sqlite3_8c.html#a6a9c3bc3a64234e863413f41db473758" title=" " alt="" coords="443,56,549,83"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="579,69,549,72,549,67,584,69"/>
+<area shape="rect" id="Node000009" href="$sqlite3_8c.html#a111391370f58f8e6a6eca51fd34d62ed" title=" " alt="" coords="286,107,390,133"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="601,86,549,97,391,117,390,112,548,92,595,86"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#ae0907fe0b43cc1b4c7e6a16213e8546f" title=" " alt="" coords="289,5,386,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="435,19,387,21,386,16,440,18"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#afbb7bb5727c7c10f77634667a3fb5f3a" title=" " alt="" coords="151,56,232,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="285,37,233,58,231,53,280,39"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#a0327d71a5fabe0b6a343d78a2602e72a" title=" " alt="" coords="5,56,103,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="133,70,104,72,103,67,138,68"/>
+<area shape="rect" id="Node000008" href="$sqlite3_8c.html#a140fe275b6975dc867cea50a65a217c4" title=" " alt="" coords="280,56,395,83"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="425,70,396,72,396,67,430,69"/>
+<area shape="poly" id="edge9_Node000009_Node000005" title=" " alt="" coords="280,101,232,86,233,81,285,101"/>
+</map>

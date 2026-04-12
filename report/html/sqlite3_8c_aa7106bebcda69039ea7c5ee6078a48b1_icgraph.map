@@ -1,0 +1,18 @@
+<map id="renameTokenFind" name="renameTokenFind">
+<area shape="rect" id="Node000001" title=" " alt="" coords="419,132,543,159"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a3f587da9d83f6eb9cc1129a166aa0ebc" title=" " alt="" coords="221,5,342,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="456,119,419,83,370,46,342,34,342,29,372,42,422,79,461,120"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a962b15786325cb539fc25d6691ca51d4" title=" " alt="" coords="193,56,370,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="430,126,370,104,322,86,322,81,372,99,435,125"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a4fdd2a64cdd5dee36ccacc52cb2ca16d" title=" " alt="" coords="5,132,144,159"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="402,148,144,148,144,143,404,143"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#ae22b22fece558ff8948c878f6e19ace1" title=" " alt="" coords="205,157,358,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="401,156,359,164,358,158,406,154"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#a04e43f8f3bd469b9d8b5be5eaa008bf7" title=" " alt="" coords="192,208,371,235"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="442,165,372,198,337,210,336,205,370,194,437,167"/>
+<area shape="rect" id="Node000007" href="$sqlite3_8c.html#aad60fbd27dbc13ef0d06ac3f2d2fc594" title=" " alt="" coords="219,259,344,285"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="461,170,422,212,372,249,345,261,343,256,370,244,419,208,456,172"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="225,90,193,104,113,134,110,129,191,99,229,87"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="187,161,145,156,144,151,192,158"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="210,203,191,198,104,162,105,156,193,194,215,203"/>
+</map>

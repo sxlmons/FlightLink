@@ -1,0 +1,16 @@
+<map id="robust_ftruncate" name="robust_ftruncate">
+<area shape="rect" id="Node000001" title=" " alt="" coords="723,31,838,57"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a83b00fec4238518b00e315fe0eff28e6" title=" " alt="" coords="546,5,642,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="705,34,643,28,643,23,710,34"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a0b3845572d96a99651164411d7cb435c" title=" " alt="" coords="513,56,675,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="710,54,675,61,675,56,705,54"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#ad71f213fa385cc58f307cefd953c03ae" title=" " alt="" coords="329,5,437,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="527,19,438,21,438,16,533,18"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#a30775afa2e08ca6ddc7853326afed7c7" title=" " alt="" coords="301,56,465,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="495,69,466,72,466,67,500,69"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#aeaa77f0ab08a4f4ee5f86e8c9727e974" title=" " alt="" coords="156,81,253,108"/>
+<area shape="poly" id="edge7_Node000004_Node000006" title=" " alt="" coords="523,86,466,97,352,102,254,100,254,95,351,97,465,92,518,86"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="288,83,254,90,253,85,283,83"/>
+<area shape="rect" id="Node000007" href="$sqlite3_8c.html#acf087d4a9bc9d7aaf432540a5f85180a" title=" " alt="" coords="5,81,108,108"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="137,95,108,97,108,92,143,94"/>
+</map>

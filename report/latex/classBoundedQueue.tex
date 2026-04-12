@@ -1,0 +1,244 @@
+\doxysection{Bounded\+Queue Class Reference}
+\hypertarget{classBoundedQueue}{}\label{classBoundedQueue}\index{BoundedQueue@{BoundedQueue}}
+
+
+A thread-\/safe queue with bounded capacity.  
+
+
+
+
+{\ttfamily \+\#include $<$bounded\+\_\+queue.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classBoundedQueue_ae9c58100110e8489ab8b9a5157a6d90b}{Bounded\+Queue}} (size\+\_\+t capacity)
+\item 
+void \doxymbox{\hyperlink{classBoundedQueue_ad00bbac30d8690112109fd80168e204c}{push}} (SOCKET socket)
+\item 
+SOCKET \doxymbox{\hyperlink{classBoundedQueue_a412b03fc351af48abb9c88a958d7eb5b}{pop}} ()
+\item 
+void \doxymbox{\hyperlink{classBoundedQueue_a22b48a3b0eff95f43341923a65647bbe}{shutdown}} ()
+\item 
+\doxymbox{\hyperlink{classBoundedQueue_ae9c58100110e8489ab8b9a5157a6d90b}{Bounded\+Queue}} (size\+\_\+t capacity)
+\item 
+void \doxymbox{\hyperlink{classBoundedQueue_ad00bbac30d8690112109fd80168e204c}{push}} (SOCKET socket)
+\begin{DoxyCompactList}\small\item\em Enqueues a socket, blocking if the queue is full. \end{DoxyCompactList}\item 
+SOCKET \doxymbox{\hyperlink{classBoundedQueue_a412b03fc351af48abb9c88a958d7eb5b}{pop}} ()
+\begin{DoxyCompactList}\small\item\em Dequeues a socket, blocking if the queue is empty. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classBoundedQueue_a22b48a3b0eff95f43341923a65647bbe}{shutdown}} ()
+\begin{DoxyCompactList}\small\item\em Signals all waiting threads to wake up and exit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+queue$<$ SOCKET $>$ \doxymbox{\hyperlink{classBoundedQueue_a850c61da1607c920744456d8c3fc49c7}{queue\+\_\+}}
+\item 
+size\+\_\+t \doxymbox{\hyperlink{classBoundedQueue_a2df4134ba07d92cb18c7f61f647e6ac3}{capacity\+\_\+}}
+\item 
+bool \doxymbox{\hyperlink{classBoundedQueue_adc744d49d0e7c5277cacbea3cc03b509}{shutdown\+\_\+}}
+\item 
+std::\+mutex \doxymbox{\hyperlink{classBoundedQueue_a961c45c8bf1daae486b0a4aa7c7c1682}{mutex\+\_\+}}
+\item 
+std::\+condition\+\_\+variable \doxymbox{\hyperlink{classBoundedQueue_a1769c9ab93bbc6f3b7d2473b5ce4c14f}{not\+\_\+full\+\_\+}}
+\item 
+std::\+condition\+\_\+variable \doxymbox{\hyperlink{classBoundedQueue_a636d152fac36b3fd409ae9435c5dddb4}{not\+\_\+empty\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A thread-\/safe queue with bounded capacity. 
+
+This queue implements the producer-\/consumer pattern with blocking operations. Producers block when the queue is full, and consumers block when the queue is empty. A shutdown mechanism allows graceful termination of waiting threads.
+
+\begin{DoxyNote}{Note}
+This class is designed specifically for SOCKET handles 
+\end{DoxyNote}
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source_l00014}{14}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source}{bounded\+\_\+queue.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classBoundedQueue_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBoundedQueue_ae9c58100110e8489ab8b9a5157a6d90b}\index{BoundedQueue@{BoundedQueue}!BoundedQueue@{BoundedQueue}}
+\index{BoundedQueue@{BoundedQueue}!BoundedQueue@{BoundedQueue}}
+\doxysubsubsection{\texorpdfstring{BoundedQueue()}{BoundedQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classBoundedQueue_ae9c58100110e8489ab8b9a5157a6d90b} 
+Bounded\+Queue::\+\+Bounded\+Queue (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{capacity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source_l00016}{16}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source}{bounded\+\_\+queue.\+h}}.
+
+\Hypertarget{classBoundedQueue_ae9c58100110e8489ab8b9a5157a6d90b}\index{BoundedQueue@{BoundedQueue}!BoundedQueue@{BoundedQueue}}
+\index{BoundedQueue@{BoundedQueue}!BoundedQueue@{BoundedQueue}}
+\doxysubsubsection{\texorpdfstring{BoundedQueue()}{BoundedQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classBoundedQueue_ae9c58100110e8489ab8b9a5157a6d90b} 
+Bounded\+Queue::\+\+Bounded\+Queue (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{capacity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Server_2headers_2bounded__queue_8h_source_l00030}{30}} of file \doxymbox{\hyperlink{Server_2headers_2bounded__queue_8h_source}{bounded\+\_\+queue.\+h}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classBoundedQueue_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBoundedQueue_a412b03fc351af48abb9c88a958d7eb5b}\index{BoundedQueue@{BoundedQueue}!pop@{pop}}
+\index{pop@{pop}!BoundedQueue@{BoundedQueue}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classBoundedQueue_a412b03fc351af48abb9c88a958d7eb5b} 
+SOCKET Bounded\+Queue::\+pop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source_l00032}{32}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source}{bounded\+\_\+queue.\+h}}.
+
+\Hypertarget{classBoundedQueue_a412b03fc351af48abb9c88a958d7eb5b}\index{BoundedQueue@{BoundedQueue}!pop@{pop}}
+\index{pop@{pop}!BoundedQueue@{BoundedQueue}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classBoundedQueue_a412b03fc351af48abb9c88a958d7eb5b} 
+SOCKET Bounded\+Queue::\+pop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dequeues a socket, blocking if the queue is empty. 
+
+This method will wait until an item becomes available in the queue or until \doxylink{classBoundedQueue_a22b48a3b0eff95f43341923a65647bbe}{shutdown()} is called.
+
+\begin{DoxyReturn}{Returns}
+The dequeued socket, or INVALID\+\_\+\+SOCKET if shutdown was called 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Server_2headers_2bounded__queue_8h_source_l00060}{60}} of file \doxymbox{\hyperlink{Server_2headers_2bounded__queue_8h_source}{bounded\+\_\+queue.\+h}}.
+
+\Hypertarget{classBoundedQueue_ad00bbac30d8690112109fd80168e204c}\index{BoundedQueue@{BoundedQueue}!push@{push}}
+\index{push@{push}!BoundedQueue@{BoundedQueue}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classBoundedQueue_ad00bbac30d8690112109fd80168e204c} 
+void Bounded\+Queue::\+push (\begin{DoxyParamCaption}\item[{SOCKET}]{socket}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source_l00019}{19}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source}{bounded\+\_\+queue.\+h}}.
+
+\Hypertarget{classBoundedQueue_ad00bbac30d8690112109fd80168e204c}\index{BoundedQueue@{BoundedQueue}!push@{push}}
+\index{push@{push}!BoundedQueue@{BoundedQueue}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classBoundedQueue_ad00bbac30d8690112109fd80168e204c} 
+void Bounded\+Queue::\+push (\begin{DoxyParamCaption}\item[{SOCKET}]{socket}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Enqueues a socket, blocking if the queue is full. 
+
+This method will wait until space becomes available in the queue or until \doxylink{classBoundedQueue_a22b48a3b0eff95f43341923a65647bbe}{shutdown()} is called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & The client socket to enqueue \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Server_2headers_2bounded__queue_8h_source_l00040}{40}} of file \doxymbox{\hyperlink{Server_2headers_2bounded__queue_8h_source}{bounded\+\_\+queue.\+h}}.
+
+\Hypertarget{classBoundedQueue_a22b48a3b0eff95f43341923a65647bbe}\index{BoundedQueue@{BoundedQueue}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!BoundedQueue@{BoundedQueue}}
+\doxysubsubsection{\texorpdfstring{shutdown()}{shutdown()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classBoundedQueue_a22b48a3b0eff95f43341923a65647bbe} 
+void Bounded\+Queue::\+shutdown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source_l00047}{47}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source}{bounded\+\_\+queue.\+h}}.
+
+\Hypertarget{classBoundedQueue_a22b48a3b0eff95f43341923a65647bbe}\index{BoundedQueue@{BoundedQueue}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!BoundedQueue@{BoundedQueue}}
+\doxysubsubsection{\texorpdfstring{shutdown()}{shutdown()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classBoundedQueue_a22b48a3b0eff95f43341923a65647bbe} 
+void Bounded\+Queue::\+shutdown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Signals all waiting threads to wake up and exit. 
+
+This method should be called during server shutdown to allow worker threads to terminate gracefully. 
+
+Definition at line \doxymbox{\hyperlink{Server_2headers_2bounded__queue_8h_source_l00080}{80}} of file \doxymbox{\hyperlink{Server_2headers_2bounded__queue_8h_source}{bounded\+\_\+queue.\+h}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classBoundedQueue_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classBoundedQueue_a2df4134ba07d92cb18c7f61f647e6ac3}\index{BoundedQueue@{BoundedQueue}!capacity\_@{capacity\_}}
+\index{capacity\_@{capacity\_}!BoundedQueue@{BoundedQueue}}
+\doxysubsubsection{\texorpdfstring{capacity\_}{capacity\_}}
+{\footnotesize\ttfamily \label{classBoundedQueue_a2df4134ba07d92cb18c7f61f647e6ac3} 
+size\+\_\+t Bounded\+Queue::\+capacity\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source_l00056}{56}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source}{bounded\+\_\+queue.\+h}}.
+
+\Hypertarget{classBoundedQueue_a961c45c8bf1daae486b0a4aa7c7c1682}\index{BoundedQueue@{BoundedQueue}!mutex\_@{mutex\_}}
+\index{mutex\_@{mutex\_}!BoundedQueue@{BoundedQueue}}
+\doxysubsubsection{\texorpdfstring{mutex\_}{mutex\_}}
+{\footnotesize\ttfamily \label{classBoundedQueue_a961c45c8bf1daae486b0a4aa7c7c1682} 
+std::\+mutex Bounded\+Queue::\+mutex\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source_l00059}{59}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source}{bounded\+\_\+queue.\+h}}.
+
+\Hypertarget{classBoundedQueue_a636d152fac36b3fd409ae9435c5dddb4}\index{BoundedQueue@{BoundedQueue}!not\_empty\_@{not\_empty\_}}
+\index{not\_empty\_@{not\_empty\_}!BoundedQueue@{BoundedQueue}}
+\doxysubsubsection{\texorpdfstring{not\_empty\_}{not\_empty\_}}
+{\footnotesize\ttfamily \label{classBoundedQueue_a636d152fac36b3fd409ae9435c5dddb4} 
+std::\+condition\+\_\+variable Bounded\+Queue::\+not\+\_\+empty\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source_l00061}{61}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source}{bounded\+\_\+queue.\+h}}.
+
+\Hypertarget{classBoundedQueue_a1769c9ab93bbc6f3b7d2473b5ce4c14f}\index{BoundedQueue@{BoundedQueue}!not\_full\_@{not\_full\_}}
+\index{not\_full\_@{not\_full\_}!BoundedQueue@{BoundedQueue}}
+\doxysubsubsection{\texorpdfstring{not\_full\_}{not\_full\_}}
+{\footnotesize\ttfamily \label{classBoundedQueue_a1769c9ab93bbc6f3b7d2473b5ce4c14f} 
+std::\+condition\+\_\+variable Bounded\+Queue::\+not\+\_\+full\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source_l00060}{60}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source}{bounded\+\_\+queue.\+h}}.
+
+\Hypertarget{classBoundedQueue_a850c61da1607c920744456d8c3fc49c7}\index{BoundedQueue@{BoundedQueue}!queue\_@{queue\_}}
+\index{queue\_@{queue\_}!BoundedQueue@{BoundedQueue}}
+\doxysubsubsection{\texorpdfstring{queue\_}{queue\_}}
+{\footnotesize\ttfamily \label{classBoundedQueue_a850c61da1607c920744456d8c3fc49c7} 
+std::\+queue$<$ SOCKET $>$ Bounded\+Queue::\+queue\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source_l00055}{55}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source}{bounded\+\_\+queue.\+h}}.
+
+\Hypertarget{classBoundedQueue_adc744d49d0e7c5277cacbea3cc03b509}\index{BoundedQueue@{BoundedQueue}!shutdown\_@{shutdown\_}}
+\index{shutdown\_@{shutdown\_}!BoundedQueue@{BoundedQueue}}
+\doxysubsubsection{\texorpdfstring{shutdown\_}{shutdown\_}}
+{\footnotesize\ttfamily \label{classBoundedQueue_adc744d49d0e7c5277cacbea3cc03b509} 
+bool Bounded\+Queue::\+shutdown\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source_l00057}{57}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h_source}{bounded\+\_\+queue.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Flight\+Link\+Server/\+\+Flight\+Link\+Server/\+\doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2bounded__queue_8h}{bounded\+\_\+queue.\+h}}\item 
+Server/\+headers/\+\doxymbox{\hyperlink{Server_2headers_2bounded__queue_8h}{bounded\+\_\+queue.\+h}}\end{DoxyCompactItemize}

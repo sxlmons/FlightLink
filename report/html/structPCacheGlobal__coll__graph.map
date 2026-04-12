@@ -1,0 +1,20 @@
+<map id="PCacheGlobal" name="PCacheGlobal">
+<area shape="rect" id="Node000001" title=" " alt="" coords="172,203,278,229"/>
+<area shape="rect" id="Node000002" href="$structPGroup.html" title=" " alt="" coords="348,104,414,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="332,135,291,157,261,180,238,204,234,200,258,176,288,152,336,132"/>
+<area shape="rect" id="Node000006" href="$structPCache1.html" title=" " alt="" coords="381,203,456,229"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="393,143,416,203,411,202,390,148"/>
+<area shape="rect" id="Node000003" href="$structsqlite3__mutex.html" title=" " alt="" coords="75,5,178,32"/>
+<area shape="poly" id="edge9_Node000001_Node000003" title=" " alt="" coords="117,44,112,88,113,109,119,130,135,153,155,172,200,201,195,203,152,176,131,156,115,132,108,110,107,88,116,49"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="174,35,350,102,346,105,174,41"/>
+<area shape="rect" id="Node000004" href="$structPgHdr1.html" title=" " alt="" coords="323,343,388,369"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="348,326,341,270,341,236,344,202,357,162,372,133,376,129,362,164,350,203,346,236,346,270,352,329"/>
+<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="397,339,410,344,415,356,412,366,404,371,381,373,381,367,402,366,408,362,410,356,406,348,396,344"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="397,332,416,317,431,297,435,280,434,262,424,232,426,227,439,261,440,281,435,300,420,321,399,337"/>
+<area shape="rect" id="Node000005" href="$structsqlite3__pcache__page.html" title=" " alt="" coords="5,203,149,229"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="117,234,332,340,328,344,115,239"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="392,239,382,255,372,278,365,302,358,344,354,341,360,301,367,276,378,252,388,242"/>
+<area shape="rect" id="Node000007" href="$structPgFreeslot.html" title=" " alt="" coords="174,104,258,131"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="216,144,220,178,224,203,219,201,215,179,214,149"/>
+<area shape="poly" id="edge11_Node000007_Node000007" title=" " alt="" coords="273,107,284,117,276,127,259,129,257,124,274,122,279,117,273,113"/>
+</map>

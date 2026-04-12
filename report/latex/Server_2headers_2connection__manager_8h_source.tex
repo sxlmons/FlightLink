@@ -1,0 +1,37 @@
+\doxysection{connection\+\_\+manager.\+h}
+\hypertarget{Server_2headers_2connection__manager_8h_source}{}\label{Server_2headers_2connection__manager_8h_source}\index{Server/headers/connection\_manager.h@{Server/headers/connection\_manager.h}}
+\doxymbox{\hyperlink{Server_2headers_2connection__manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00009}00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <WinSock2.h>}}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Server_2headers_2bounded__queue_8h}{bounded\_queue.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00029}00029\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classConnectionManager}{ConnectionManager}}\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00030}00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00040}\doxymbox{\hyperlink{classConnectionManager_a24f6f3ab6338f292753db25d39014afd}{00040}}\ \ \ \ \ \doxymbox{\hyperlink{classConnectionManager_a24f6f3ab6338f292753db25d39014afd}{ConnectionManager}}(\textcolor{keywordtype}{size\_t}\ pool\_size,\ std::function<\textcolor{keywordtype}{void}(SOCKET)>\ handler);}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00050}\doxymbox{\hyperlink{classConnectionManager_a5aebb6bc179e5147e823edacd44d83a7}{00050}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classConnectionManager_a5aebb6bc179e5147e823edacd44d83a7}{enqueue}}(SOCKET\ client);}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00058}\doxymbox{\hyperlink{classConnectionManager_a72dd3483d46b34877e893027d08ee2b4}{00058}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classConnectionManager_a72dd3483d46b34877e893027d08ee2b4}{shutdown}}();}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00064}\doxymbox{\hyperlink{classConnectionManager_a5c2a49d02244fc399deba3ce6ffe77ac}{00064}}\ \ \ \ \ \doxymbox{\hyperlink{classConnectionManager_a5c2a49d02244fc399deba3ce6ffe77ac}{\string~ConnectionManager}}();}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00066}\doxymbox{\hyperlink{classConnectionManager_ac11f40feecc9e07c530348771a4f98c5}{00066}}\ \ \ \ \ \doxymbox{\hyperlink{classConnectionManager_ac11f40feecc9e07c530348771a4f98c5}{ConnectionManager}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classConnectionManager_a24f6f3ab6338f292753db25d39014afd}{ConnectionManager}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00067}\doxymbox{\hyperlink{classConnectionManager_a396ee462037bfb20d5cd52bd077673c5}{00067}}\ \ \ \ \ \doxymbox{\hyperlink{classConnectionManager_a24f6f3ab6338f292753db25d39014afd}{ConnectionManager}}\&\ \doxymbox{\hyperlink{classConnectionManager_a396ee462037bfb20d5cd52bd077673c5}{operator=}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classConnectionManager_a24f6f3ab6338f292753db25d39014afd}{ConnectionManager}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00069}00069\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00070}00070\ \ \ \ \ std::function<void(SOCKET)>\ \doxymbox{\hyperlink{classConnectionManager_a1128aed94bdaaaa935b09e9665017310}{handler\_}};}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00071}00071\ \ \ \ \ \doxymbox{\hyperlink{classBoundedQueue}{BoundedQueue}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classConnectionManager_a46c6be9b71612306cf5ca50cd6fcd5e2}{queue\_}};}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00072}00072\ \ \ \ \ std::vector<std::thread>\ \ \ \ \doxymbox{\hyperlink{classConnectionManager_a28f01fa38c2bbffbadd03c1b00769570}{workers\_}};}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00073}00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classConnectionManager_a6fb2c030e68fda79ab3d51d8b98097af}{shutdown\_called\_}};}
+\DoxyCodeLine{\Hypertarget{Server_2headers_2connection__manager_8h_source_l00074}00074\ \};}
+
+\end{DoxyCode}

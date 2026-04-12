@@ -1,0 +1,7 @@
+<map id="moveToRightmost" name="moveToRightmost">
+<area shape="rect" id="Node000001" title=" " alt="" coords="155,31,282,57"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a79ec288409ef7f15cc0527dd6f5c5211" title=" " alt="" coords="18,5,94,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,33,94,27,94,22,142,31"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#ae153aa33e5883a999beaf1604e6f2ab8" title=" " alt="" coords="5,56,107,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="137,57,107,64,107,59,142,56"/>
+</map>

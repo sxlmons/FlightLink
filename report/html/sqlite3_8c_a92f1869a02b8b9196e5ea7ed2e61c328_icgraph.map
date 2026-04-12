@@ -1,0 +1,9 @@
+<map id="balance_quick" name="balance_quick">
+<area shape="rect" id="Node000001" title=" " alt="" coords="296,31,400,57"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a173f7c872fb68ccd3a20440d640b66c7" title=" " alt="" coords="182,31,248,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="278,44,249,47,248,41,283,44"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a38f051b1f92279059c43a8161f4502d7" title=" " alt="" coords="5,5,134,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="164,36,134,33,134,27,169,35"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a1d46dd494df3a0e925050293e3065996" title=" " alt="" coords="8,56,131,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="164,53,132,61,131,56,169,52"/>
+</map>

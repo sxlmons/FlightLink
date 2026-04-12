@@ -1,0 +1,125 @@
+<map id="setGetterMethod" name="setGetterMethod">
+<area shape="rect" id="Node000001" title=" " alt="" coords="2848,290,2966,316"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#ac15e13c61047b37098e21115614ddd22" title=" " alt="" coords="2681,251,2767,278"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2829,287,2767,276,2768,271,2835,287"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a5b4a74e8a1754922c482b7af19b30611" title=" " alt="" coords="2191,35,2316,62"/>
+<area shape="poly" id="edge68_Node000001_Node000004" title=" " alt="" coords="2886,275,2843,220,2779,146,2739,110,2696,76,2649,47,2599,26,2560,15,2519,10,2436,11,2360,22,2299,37,2298,32,2359,17,2435,6,2519,5,2561,10,2601,21,2652,42,2699,71,2743,106,2782,143,2848,216,2891,278"/>
+<area shape="rect" id="Node000041" href="$sqlite3_8c.html#afdd2ecbb97b7a716892ff6bd10c7dfd0" title=" " alt="" coords="2428,390,2572,416"/>
+<area shape="poly" id="edge69_Node000001_Node000041" title=" " alt="" coords="2837,320,2558,392,2557,386,2832,321"/>
+<area shape="rect" id="Node000052" href="$sqlite3_8c.html#a5b54bd09bd76fa68eb6310fbf9bbaf20" title=" " alt="" coords="2675,187,2773,214"/>
+<area shape="poly" id="edge63_Node000001_Node000052" title=" " alt="" coords="2868,281,2798,241,2753,217,2754,212,2801,237,2874,282"/>
+<area shape="rect" id="Node000053" href="$sqlite3_8c.html#a8b5f1920b6a8b564a47e243868f2c8d4" title=" " alt="" coords="2648,390,2800,416"/>
+<area shape="poly" id="edge70_Node000001_Node000053" title=" " alt="" coords="2870,324,2751,392,2749,387,2865,325"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#abb21a3a371038e9e3e69af0f21a1b386" title=" " alt="" coords="2454,35,2546,62"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="2669,243,2646,228,2628,201,2621,177,2614,153,2598,126,2562,91,2525,65,2526,60,2565,87,2602,123,2619,150,2626,175,2633,199,2650,224,2674,244"/>
+<area shape="rect" id="Node000012" href="$sqlite3_8c.html#a69de8648b04c623f4dc910281888c9e0" title=" " alt="" coords="1969,212,2097,239"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="2663,261,2097,232,2097,227,2668,261"/>
+<area shape="rect" id="Node000013" href="$sqlite3_8c.html#a18af1df44bbc3ae598f0559f6fc5861e" title=" " alt="" coords="2400,339,2600,366"/>
+<area shape="poly" id="edge13_Node000002_Node000013" title=" " alt="" coords="2684,284,2601,323,2549,341,2548,336,2599,318,2679,285"/>
+<area shape="poly" id="edge48_Node000002_Node000041" title=" " alt="" coords="2693,286,2650,324,2637,339,2628,353,2618,367,2602,380,2573,393,2572,388,2599,375,2614,363,2624,350,2633,336,2646,320,2688,288"/>
+<area shape="rect" id="Node000048" href="$sqlite3_8c.html#a58c197b629fb6eaacf96c7add57c70df" title=" " alt="" coords="2419,136,2581,163"/>
+<area shape="poly" id="edge59_Node000002_Node000048" title=" " alt="" coords="2680,243,2528,166,2529,161,2685,244"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="2436,49,2316,51,2315,46,2441,48"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#a13dcb44dc34af6ce9d38de9c5aa975f9" title=" " alt="" coords="1790,66,1911,92"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="2173,55,1912,77,1912,72,2178,54"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#a69cb751a7da501b9a0aa37e0d7c3eaf7" title=" " alt="" coords="434,311,521,338"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1772,81,1513,86,770,86,718,93,670,114,626,144,587,180,553,218,525,255,488,313,484,309,520,252,549,215,583,176,623,140,668,109,717,88,770,80,1513,80,1777,80"/>
+<area shape="rect" id="Node000010" href="$sqlite3_8c.html#a6a9c3bc3a64234e863413f41db473758" title=" " alt="" coords="1627,19,1732,46"/>
+<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="1782,61,1731,49,1731,44,1787,61"/>
+<area shape="rect" id="Node000007" href="$sqlite3_8c.html#ae0907fe0b43cc1b4c7e6a16213e8546f" title=" " alt="" coords="280,330,377,356"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="416,333,379,339,377,334,421,331"/>
+<area shape="rect" id="Node000008" href="$sqlite3_8c.html#afbb7bb5727c7c10f77634667a3fb5f3a" title=" " alt="" coords="151,392,232,419"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="281,365,224,394,221,389,286,362"/>
+<area shape="rect" id="Node000009" href="$sqlite3_8c.html#a0327d71a5fabe0b6a343d78a2602e72a" title=" " alt="" coords="5,392,103,419"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="133,407,104,408,102,403,138,404"/>
+<area shape="rect" id="Node000011" href="$sqlite3_8c.html#a140fe275b6975dc867cea50a65a217c4" title=" " alt="" coords="1454,19,1570,46"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="1609,33,1571,35,1570,30,1614,32"/>
+<area shape="poly" id="edge12_Node000012_Node000005" title=" " alt="" coords="1995,203,1958,177,1866,96,1867,90,1961,173,2000,204"/>
+<area shape="rect" id="Node000014" href="$sqlite3_8c.html#a84764f43cb4ca50bcac1fc674e8d6dd9" title=" " alt="" coords="2155,288,2352,315"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="2414,335,2322,318,2322,313,2419,335"/>
+<area shape="rect" id="Node000015" href="$sqlite3_8c.html#a5d7f1e0625451b987728f600cfe1b92d" title=" " alt="" coords="1985,304,2081,331"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="2137,310,2081,317,2081,312,2142,310"/>
+<area shape="rect" id="Node000016" href="$sqlite3_8c.html#a8d1d99703d999190fbc35ecc981cb709" title=" " alt="" coords="1794,314,1907,340"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="1967,321,1908,327,1907,321,1973,321"/>
+<area shape="rect" id="Node000017" href="$sqlite3_8c.html#a315a913742f7267f90d46d41446353b1" title=" " alt="" coords="1618,314,1742,340"/>
+<area shape="poly" id="edge17_Node000016_Node000017" title=" " alt="" coords="1776,327,1742,330,1742,324,1781,327"/>
+<area shape="rect" id="Node000018" href="$sqlite3_8c.html#a801195c0f771d40bb4be1e40f3b88945" title=" " alt="" coords="1064,376,1171,403"/>
+<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="1599,328,1426,338,1322,348,1220,363,1160,378,1159,373,1218,358,1322,343,1426,333,1604,327"/>
+<area shape="rect" id="Node000030" href="$sqlite3_8c.html#a758efebc2e95694959ab0e74b397984c" title=" " alt="" coords="1464,271,1560,298"/>
+<area shape="poly" id="edge34_Node000017_Node000030" title=" " alt="" coords="1607,309,1560,299,1560,294,1613,309"/>
+<area shape="rect" id="Node000019" href="$sqlite3_8c.html#afff57e13332b98c8a44a7cebe38962ab" title=" " alt="" coords="893,398,1010,424"/>
+<area shape="poly" id="edge19_Node000018_Node000019" title=" " alt="" coords="1045,399,1010,406,1010,401,1051,398"/>
+<area shape="rect" id="Node000021" href="$flight__session__manager_8cpp.html#ad411a6afd7321526c977d3ed27ee606c" title="Finalizes a flight session and updates aggregate statistics." alt="" coords="894,296,1009,323"/>
+<area shape="poly" id="edge21_Node000018_Node000021" title=" " alt="" coords="1076,368,1015,337,989,326,989,321,1017,333,1082,369"/>
+<area shape="rect" id="Node000024" href="$flight__session__manager_8cpp.html#acce6c39388a8e84f1a2ec4a5624a921f" title="Processes a telemetry reading and updates flight statistics." alt="" coords="887,347,1016,374"/>
+<area shape="poly" id="edge24_Node000018_Node000024" title=" " alt="" coords="1045,377,1016,374,1016,369,1051,378"/>
+<area shape="rect" id="Node000025" href="$sqlite3_8c.html#a5183ff3c8b5311c7332250013ee018b3" title=" " alt="" coords="887,448,1016,475"/>
+<area shape="poly" id="edge26_Node000018_Node000025" title=" " alt="" coords="1076,409,1017,439,989,450,988,445,1015,434,1071,411"/>
+<area shape="rect" id="Node000028" href="$sqlite3_8c.html#a111391370f58f8e6a6eca51fd34d62ed" title=" " alt="" coords="425,494,530,520"/>
+<area shape="poly" id="edge30_Node000018_Node000028" title=" " alt="" coords="1101,414,1065,456,1042,475,1017,489,952,512,884,526,816,535,748,537,624,532,530,520,530,514,625,526,748,532,815,529,883,521,951,507,1015,485,1039,471,1062,452,1096,417"/>
+<area shape="rect" id="Node000029" href="$flight__session__manager_8cpp.html#a3dcfcd40c752c4089a0aff505e23902b" title=" " alt="" coords="902,246,1001,272"/>
+<area shape="poly" id="edge32_Node000018_Node000029" title=" " alt="" coords="1094,363,1060,326,1014,287,994,276,995,270,1017,282,1063,322,1100,365"/>
+<area shape="rect" id="Node000020" href="$sqlite3_8c.html#a0e309bef9d8ebc22e84e88d61c602136" title=" " alt="" coords="703,398,839,424"/>
+<area shape="poly" id="edge20_Node000019_Node000020" title=" " alt="" coords="875,411,840,414,839,408,880,411"/>
+<area shape="rect" id="Node000022" href="$FlightLinkServer_2FlightLinkServer_2stream__processor_8cpp.html#a6f9656db2bdac318c54f4d2c58bc9c9a" title="Processes a single client connection from first byte to disconnection." alt="" coords="718,251,824,278"/>
+<area shape="poly" id="edge22_Node000021_Node000022" title=" " alt="" coords="878,292,824,280,824,275,883,292"/>
+<area shape="rect" id="Node000023" href="$FlightLinkServer_2FlightLinkServer_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="592,223,641,250"/>
+<area shape="poly" id="edge23_Node000022_Node000023" title=" " alt="" coords="700,252,642,243,641,238,706,252"/>
+<area shape="poly" id="edge25_Node000024_Node000022" title=" " alt="" coords="895,340,886,337,861,320,838,301,801,281,802,276,841,297,865,315,889,333,900,341"/>
+<area shape="rect" id="Node000026" href="$sqlite3_8c.html#a269debec14d3614b0d03a77c5a2e6d9a" title=" " alt="" coords="720,311,822,338"/>
+<area shape="poly" id="edge27_Node000025_Node000026" title=" " alt="" coords="892,440,886,438,860,414,837,388,787,341,789,336,841,384,864,411,889,434,897,442"/>
+<area shape="rect" id="Node000027" href="$sqlite3_8c.html#aed74e3dc765631a833f522f425ff5a48" title=" " alt="" coords="578,311,655,338"/>
+<area shape="poly" id="edge28_Node000026_Node000027" title=" " alt="" coords="702,325,656,327,655,322,707,324"/>
+<area shape="poly" id="edge29_Node000027_Node000006" title=" " alt="" coords="560,325,521,327,520,322,565,324"/>
+<area shape="poly" id="edge31_Node000028_Node000008" title=" " alt="" coords="421,489,231,422,232,417,426,487"/>
+<area shape="poly" id="edge33_Node000029_Node000022" title=" " alt="" coords="884,261,825,265,824,260,889,260"/>
+<area shape="rect" id="Node000031" href="$sqlite3_8c.html#ac1e491ce36b7471eb28387f7d3c74334" title=" " alt="" coords="1072,254,1163,280"/>
+<area shape="poly" id="edge35_Node000030_Node000031" title=" " alt="" coords="1446,267,1406,262,1340,257,1274,257,1164,264,1163,259,1274,252,1340,252,1407,256,1452,267"/>
+<area shape="rect" id="Node000040" href="$sqlite3_8c.html#a3f2872e873e2758a4beedad1d5113554" title=" " alt="" coords="1270,271,1356,298"/>
+<area shape="poly" id="edge46_Node000030_Node000040" title=" " alt="" coords="1446,285,1356,287,1356,282,1452,284"/>
+<area shape="poly" id="edge36_Node000031_Node000019" title=" " alt="" coords="1101,292,1066,342,1043,366,1017,388,996,400,995,395,1014,384,1039,362,1062,338,1097,295"/>
+<area shape="poly" id="edge39_Node000031_Node000021" title=" " alt="" coords="1059,282,1007,298,1005,293,1054,283"/>
+<area shape="poly" id="edge40_Node000031_Node000024" title=" " alt="" coords="1088,289,1017,337,991,349,990,344,1014,333,1083,291"/>
+<area shape="poly" id="edge45_Node000031_Node000029" title=" " alt="" coords="1054,264,1002,264,1001,259,1059,264"/>
+<area shape="rect" id="Node000032" href="$sqlite3_8c.html#a7d16651b98a110662f4c265eff0246cb" title=" " alt="" coords="917,144,986,171"/>
+<area shape="poly" id="edge37_Node000031_Node000032" title=" " alt="" coords="1089,243,1056,215,1014,185,986,171,986,166,1017,181,1059,211,1095,244"/>
+<area shape="rect" id="Node000033" href="$sqlite3_8c.html#a97487ec8150e0bcc8fa392ab8f0e24db" title=" " alt="" coords="904,195,999,222"/>
+<area shape="poly" id="edge41_Node000031_Node000033" title=" " alt="" coords="1061,248,991,225,991,220,1066,248"/>
+<area shape="poly" id="edge38_Node000032_Node000032" title=" " alt="" coords="978,129,970,125,951,123,934,125,925,130,923,135,928,145,923,143,918,136,921,126,933,120,952,118,972,120,983,129"/>
+<area shape="poly" id="edge44_Node000033_Node000026" title=" " alt="" coords="896,228,889,236,874,249,865,263,856,277,841,292,806,313,804,308,838,288,852,273,861,260,870,246,886,232,892,231"/>
+<area shape="rect" id="Node000034" href="$flight__session__manager_8cpp.html#ac81b1543651ef73f59ec1a9840087713" title=" " alt="" coords="722,198,820,224"/>
+<area shape="poly" id="edge42_Node000033_Node000034" title=" " alt="" coords="886,210,821,213,821,208,892,209"/>
+<area shape="poly" id="edge43_Node000034_Node000023" title=" " alt="" coords="704,222,642,235,641,230,709,221"/>
+<area shape="poly" id="edge47_Node000040_Node000031" title=" " alt="" coords="1251,279,1164,274,1163,268,1257,279"/>
+<area shape="rect" id="Node000042" href="$sqlite3_8c.html#a02d96b7bf62c3b13ba905d168914518c" title=" " alt="" coords="2169,339,2338,366"/>
+<area shape="poly" id="edge49_Node000041_Node000042" title=" " alt="" coords="2414,386,2322,369,2322,364,2419,386"/>
+<area shape="rect" id="Node000045" href="$sqlite3_8c.html#aada3792ac91b26179c2d68e93265f0f9" title=" " alt="" coords="2183,390,2324,416"/>
+<area shape="poly" id="edge54_Node000041_Node000045" title=" " alt="" coords="2410,403,2324,406,2324,400,2415,403"/>
+<area shape="poly" id="edge53_Node000042_Node000012" title=" " alt="" coords="2166,333,2153,329,2102,290,2048,242,2050,237,2105,286,2156,325,2172,334"/>
+<area shape="rect" id="Node000043" href="$sqlite3_8c.html#abf547f4276efb6f10262f7fde1e4d065" title=" " alt="" coords="1959,431,2107,458"/>
+<area shape="poly" id="edge50_Node000042_Node000043" title=" " alt="" coords="2171,371,2156,380,2142,390,2132,400,2123,410,2108,421,2083,433,2082,428,2105,417,2119,406,2128,396,2138,386,2153,375,2166,372"/>
+<area shape="rect" id="Node000044" href="$sqlite3_8c.html#a53fc6d665965dfca6cf155ffdd70ede3" title=" " alt="" coords="1795,456,1906,483"/>
+<area shape="poly" id="edge51_Node000043_Node000044" title=" " alt="" coords="1947,456,1907,465,1906,459,1942,457"/>
+<area shape="poly" id="edge52_Node000044_Node000001" title=" " alt="" coords="1922,477,2074,493,2163,499,2252,502,2501,502,2589,500,2658,491,2722,468,2798,426,2831,400,2858,370,2896,318,2900,315,2863,373,2834,404,2801,431,2725,473,2659,496,2590,505,2502,507,2252,507,2163,505,2073,498,1922,482"/>
+<area shape="rect" id="Node000046" href="$sqlite3_8c.html#ad902dd388d73208539f557962e3fe6bb" title=" " alt="" coords="1970,380,2096,407"/>
+<area shape="poly" id="edge55_Node000045_Node000046" title=" " alt="" coords="2165,399,2096,399,2096,394,2170,399"/>
+<area shape="poly" id="edge58_Node000046_Node000016" title=" " alt="" coords="1977,374,1889,344,1890,338,1983,375"/>
+<area shape="rect" id="Node000047" href="$sqlite3_8c.html#afe3a37c29dcb0fe9fc15fe07a3976f59" title=" " alt="" coords="1219,372,1406,415"/>
+<area shape="poly" id="edge56_Node000046_Node000047" title=" " alt="" coords="1952,394,1407,396,1406,391,1957,393"/>
+<area shape="poly" id="edge57_Node000047_Node000018" title=" " alt="" coords="1201,392,1171,393,1171,388,1206,391"/>
+<area shape="rect" id="Node000049" href="$sqlite3_8c.html#a5b808194d3178be15705a420265cee9d" title=" " alt="" coords="2215,136,2292,163"/>
+<area shape="poly" id="edge60_Node000048_Node000049" title=" " alt="" coords="2401,150,2292,152,2291,147,2406,149"/>
+<area shape="rect" id="Node000051" href="$sqlite3_8c.html#afb929a0a4553cda84de16180ddbd09f7" title=" " alt="" coords="2160,86,2347,112"/>
+<area shape="poly" id="edge62_Node000048_Node000051" title=" " alt="" coords="2414,133,2322,116,2322,110,2419,133"/>
+<area shape="rect" id="Node000050" href="$sqlite3_8c.html#a2eb598df08b5317511aab819b4be2c8a" title=" " alt="" coords="1975,136,2091,163"/>
+<area shape="poly" id="edge61_Node000049_Node000050" title=" " alt="" coords="2197,150,2092,152,2091,147,2202,149"/>
+<area shape="poly" id="edge65_Node000052_Node000012" title=" " alt="" coords="2656,203,2097,226,2097,221,2662,202"/>
+<area shape="poly" id="edge64_Node000052_Node000042" title=" " alt="" coords="2673,219,2529,273,2353,330,2311,341,2310,336,2351,324,2527,267,2668,220"/>
+<area shape="poly" id="edge67_Node000052_Node000048" title=" " alt="" coords="2657,186,2562,166,2563,161,2662,186"/>
+<area shape="poly" id="edge66_Node000052_Node000051" title=" " alt="" coords="2692,177,2650,151,2599,127,2535,111,2469,101,2405,97,2348,97,2347,91,2405,92,2470,96,2537,106,2601,122,2653,146,2697,178"/>
+<area shape="poly" id="edge73_Node000053_Node000041" title=" " alt="" coords="2630,403,2573,406,2573,400,2635,403"/>
+<area shape="rect" id="Node000054" href="$sqlite3_8c.html#a4580edf7e5192abf64317a3931972115" title=" " alt="" coords="2426,440,2574,467"/>
+<area shape="poly" id="edge71_Node000053_Node000054" title=" " alt="" coords="2649,420,2563,442,2562,437,2644,421"/>
+<area shape="rect" id="Node000055" href="$sqlite3_8c.html#a69438caee7de7e4812c085fd0765baf3" title=" " alt="" coords="2182,440,2325,467"/>
+<area shape="poly" id="edge72_Node000054_Node000055" title=" " alt="" coords="2408,454,2325,456,2325,451,2413,454"/>
+</map>

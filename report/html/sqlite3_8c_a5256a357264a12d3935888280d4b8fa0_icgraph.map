@@ -1,0 +1,18 @@
+<map id="sqlite3_wal_checkpoint" name="sqlite3_wal_checkpoint">
+<area shape="rect" id="Node000001" title=" " alt="" coords="899,31,1055,57"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a4a9ed7c3fcab46b3d82eb79ede8c4f77" title=" " alt="" coords="697,31,851,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="881,44,852,47,852,41,886,44"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#acdc3742b48372dce0e839ce0f89747be" title=" " alt="" coords="467,5,649,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="678,33,649,32,649,27,684,33"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#a111391370f58f8e6a6eca51fd34d62ed" title=" " alt="" coords="314,56,419,83"/>
+<area shape="poly" id="edge8_Node000002_Node000006" title=" " alt="" coords="684,50,420,69,419,63,679,50"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a6a9c3bc3a64234e863413f41db473758" title=" " alt="" coords="314,5,419,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="449,19,420,21,420,16,454,18"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="493,36,420,58,419,53,488,37"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#a140fe275b6975dc867cea50a65a217c4" title=" " alt="" coords="151,5,266,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="296,19,267,21,266,16,301,18"/>
+<area shape="rect" id="Node000007" href="$sqlite3_8c.html#afbb7bb5727c7c10f77634667a3fb5f3a" title=" " alt="" coords="168,56,249,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="296,69,249,72,249,67,301,69"/>
+<area shape="rect" id="Node000008" href="$sqlite3_8c.html#a0327d71a5fabe0b6a343d78a2602e72a" title=" " alt="" coords="5,56,103,83"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="150,70,103,72,103,67,155,69"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="sqlite3DeleteTriggerStep" name="sqlite3DeleteTriggerStep">
+<area shape="rect" id="Node000001" title=" " alt="" coords="428,5,593,32"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#afca0f0d2a9c0e0ca0625382394fa060e" title=" " alt="" coords="280,5,380,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="410,19,381,21,381,16,416,19"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a0327d71a5fabe0b6a343d78a2602e72a" title=" " alt="" coords="5,5,103,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="264,21,103,21,103,16,266,16"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#afbb7bb5727c7c10f77634667a3fb5f3a" title=" " alt="" coords="151,31,232,57"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="267,30,233,39,232,34,262,31"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="133,34,103,30,103,25,138,33"/>
+</map>

@@ -1,0 +1,117 @@
+\doxysection{Flight\+Session Struct Reference}
+\hypertarget{structFlightSession}{}\label{structFlightSession}\index{FlightSession@{FlightSession}}
+
+
+Per-\/flight in-\/progress state (not shared between threads).  
+
+
+
+
+{\ttfamily \+\#include $<$flight\+\_\+session\+\_\+manager.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int64\+\_\+t \doxymbox{\hyperlink{structFlightSession_a599ad82bebfde058fabcfe233bb1eddd}{db\+\_\+row\+\_\+id}}
+\item 
+uint32\+\_\+t \doxymbox{\hyperlink{structFlightSession_acf345a472851913f978a202a420c5010}{plane\+\_\+id}}
+\item 
+double \doxymbox{\hyperlink{structFlightSession_a58887c6b7d05f9c957d615a3c0171c17}{prev\+\_\+fuel}}
+\item 
+double \doxymbox{\hyperlink{structFlightSession_a047515a5c81cae4f6b33f2feb3464518}{fuel\+\_\+sum}}
+\item 
+double \doxymbox{\hyperlink{structFlightSession_a6c429b2276eab1935eecf400a40f9341}{current\+\_\+avg}}
+\item 
+int \doxymbox{\hyperlink{structFlightSession_aeeda4d286969d25caf3f6345bd259b6d}{packet\+\_\+count}}
+\item 
+bool \doxymbox{\hyperlink{structFlightSession_aa64afbec0252c3be1461b78f054e5363}{has\+\_\+baseline}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Per-\/flight in-\/progress state (not shared between threads). 
+
+Each worker thread maintains its own \doxylink{structFlightSession}{Flight\+Session} instance for the client it is currently processing. This structure tracks the fuel consumption calculations for a single flight. 
+
+Definition at line \doxymbox{\hyperlink{flight__session__manager_8h_source_l00025}{25}} of file \doxymbox{\hyperlink{flight__session__manager_8h_source}{flight\+\_\+session\+\_\+manager.\+h}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{structFlightSession_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structFlightSession_a6c429b2276eab1935eecf400a40f9341}\index{FlightSession@{FlightSession}!current\_avg@{current\_avg}}
+\index{current\_avg@{current\_avg}!FlightSession@{FlightSession}}
+\doxysubsubsection{\texorpdfstring{current\_avg}{current\_avg}}
+{\footnotesize\ttfamily \label{structFlightSession_a6c429b2276eab1935eecf400a40f9341} 
+double Flight\+Session::\+current\+\_\+avg}
+
+
+
+Definition at line \doxymbox{\hyperlink{flight__session__manager_8h_source_l00030}{30}} of file \doxymbox{\hyperlink{flight__session__manager_8h_source}{flight\+\_\+session\+\_\+manager.\+h}}.
+
+\Hypertarget{structFlightSession_a599ad82bebfde058fabcfe233bb1eddd}\index{FlightSession@{FlightSession}!db\_row\_id@{db\_row\_id}}
+\index{db\_row\_id@{db\_row\_id}!FlightSession@{FlightSession}}
+\doxysubsubsection{\texorpdfstring{db\_row\_id}{db\_row\_id}}
+{\footnotesize\ttfamily \label{structFlightSession_a599ad82bebfde058fabcfe233bb1eddd} 
+int64\+\_\+t Flight\+Session::\+db\+\_\+row\+\_\+id}
+
+
+
+Definition at line \doxymbox{\hyperlink{flight__session__manager_8h_source_l00026}{26}} of file \doxymbox{\hyperlink{flight__session__manager_8h_source}{flight\+\_\+session\+\_\+manager.\+h}}.
+
+\Hypertarget{structFlightSession_a047515a5c81cae4f6b33f2feb3464518}\index{FlightSession@{FlightSession}!fuel\_sum@{fuel\_sum}}
+\index{fuel\_sum@{fuel\_sum}!FlightSession@{FlightSession}}
+\doxysubsubsection{\texorpdfstring{fuel\_sum}{fuel\_sum}}
+{\footnotesize\ttfamily \label{structFlightSession_a047515a5c81cae4f6b33f2feb3464518} 
+double Flight\+Session::\+fuel\+\_\+sum}
+
+
+
+Definition at line \doxymbox{\hyperlink{flight__session__manager_8h_source_l00029}{29}} of file \doxymbox{\hyperlink{flight__session__manager_8h_source}{flight\+\_\+session\+\_\+manager.\+h}}.
+
+\Hypertarget{structFlightSession_aa64afbec0252c3be1461b78f054e5363}\index{FlightSession@{FlightSession}!has\_baseline@{has\_baseline}}
+\index{has\_baseline@{has\_baseline}!FlightSession@{FlightSession}}
+\doxysubsubsection{\texorpdfstring{has\_baseline}{has\_baseline}}
+{\footnotesize\ttfamily \label{structFlightSession_aa64afbec0252c3be1461b78f054e5363} 
+bool Flight\+Session::\+has\+\_\+baseline}
+
+
+
+Definition at line \doxymbox{\hyperlink{flight__session__manager_8h_source_l00032}{32}} of file \doxymbox{\hyperlink{flight__session__manager_8h_source}{flight\+\_\+session\+\_\+manager.\+h}}.
+
+\Hypertarget{structFlightSession_aeeda4d286969d25caf3f6345bd259b6d}\index{FlightSession@{FlightSession}!packet\_count@{packet\_count}}
+\index{packet\_count@{packet\_count}!FlightSession@{FlightSession}}
+\doxysubsubsection{\texorpdfstring{packet\_count}{packet\_count}}
+{\footnotesize\ttfamily \label{structFlightSession_aeeda4d286969d25caf3f6345bd259b6d} 
+int Flight\+Session::\+packet\+\_\+count}
+
+
+
+Definition at line \doxymbox{\hyperlink{flight__session__manager_8h_source_l00031}{31}} of file \doxymbox{\hyperlink{flight__session__manager_8h_source}{flight\+\_\+session\+\_\+manager.\+h}}.
+
+\Hypertarget{structFlightSession_acf345a472851913f978a202a420c5010}\index{FlightSession@{FlightSession}!plane\_id@{plane\_id}}
+\index{plane\_id@{plane\_id}!FlightSession@{FlightSession}}
+\doxysubsubsection{\texorpdfstring{plane\_id}{plane\_id}}
+{\footnotesize\ttfamily \label{structFlightSession_acf345a472851913f978a202a420c5010} 
+uint32\+\_\+t Flight\+Session::\+plane\+\_\+id}
+
+
+
+Definition at line \doxymbox{\hyperlink{flight__session__manager_8h_source_l00027}{27}} of file \doxymbox{\hyperlink{flight__session__manager_8h_source}{flight\+\_\+session\+\_\+manager.\+h}}.
+
+\Hypertarget{structFlightSession_a58887c6b7d05f9c957d615a3c0171c17}\index{FlightSession@{FlightSession}!prev\_fuel@{prev\_fuel}}
+\index{prev\_fuel@{prev\_fuel}!FlightSession@{FlightSession}}
+\doxysubsubsection{\texorpdfstring{prev\_fuel}{prev\_fuel}}
+{\footnotesize\ttfamily \label{structFlightSession_a58887c6b7d05f9c957d615a3c0171c17} 
+double Flight\+Session::\+prev\+\_\+fuel}
+
+
+
+Definition at line \doxymbox{\hyperlink{flight__session__manager_8h_source_l00028}{28}} of file \doxymbox{\hyperlink{flight__session__manager_8h_source}{flight\+\_\+session\+\_\+manager.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Flight\+Link\+Server/\+\+Flight\+Link\+Server/\+\doxymbox{\hyperlink{flight__session__manager_8h}{flight\+\_\+session\+\_\+manager.\+h}}\end{DoxyCompactItemize}

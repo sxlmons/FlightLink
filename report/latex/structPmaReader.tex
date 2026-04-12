@@ -1,0 +1,164 @@
+\doxysection{Pma\+Reader Struct Reference}
+\hypertarget{structPmaReader}{}\label{structPmaReader}\index{PmaReader@{PmaReader}}
+
+
+Collaboration diagram for Pma\+Reader:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structPmaReader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a2a0f0f4ae7001eb54351f77ea1cdbcfd}{i64}} \doxymbox{\hyperlink{structPmaReader_a04a9b631060dcda1d94eb7b16ef8920e}{i\+Read\+Off}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a2a0f0f4ae7001eb54351f77ea1cdbcfd}{i64}} \doxymbox{\hyperlink{structPmaReader_a7a2e2745d054cd6d86e1ad57d641b657}{i\+Eof}}
+\item 
+int \doxymbox{\hyperlink{structPmaReader_a82522a9128afb8bfb79b88a7c51726ef}{n\+Alloc}}
+\item 
+int \doxymbox{\hyperlink{structPmaReader_a02c5dbf65efa252a84259b1ee2a7cd3c}{n\+Key}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a3691103fd7c57f5f69123c4c03aea05a}{sqlite3\+\_\+file}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structPmaReader_a1ae1caa6e4b1900937135aeeaf1336cd}{p\+Fd}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structPmaReader_af8d5ac60d1ba7ff84e84d5eb6aba4447}{a\+Alloc}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structPmaReader_af8f5dbc63cbbcbf9ee4c2c462ab1c6ff}{a\+Key}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structPmaReader_acd2a7f3e0375a3f8dfa9e565d080e2c2}{a\+Buffer}}
+\item 
+int \doxymbox{\hyperlink{structPmaReader_a422d021b0509c7e5eb2938bba36a5cdd}{n\+Buffer}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structPmaReader_ad90dc0ec0c900dd21377c146ac73c73f}{a\+Map}}
+\item 
+\doxymbox{\hyperlink{structIncrMerger}{Incr\+Merger}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structPmaReader_a34569bea49de8122239eb40eaae8b10f}{p\+Incr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108093}{108093}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{structPmaReader_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structPmaReader_af8d5ac60d1ba7ff84e84d5eb6aba4447}\index{PmaReader@{PmaReader}!aAlloc@{aAlloc}}
+\index{aAlloc@{aAlloc}!PmaReader@{PmaReader}}
+\doxysubsubsection{\texorpdfstring{aAlloc}{aAlloc}}
+{\footnotesize\ttfamily \label{structPmaReader_af8d5ac60d1ba7ff84e84d5eb6aba4447} 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}}\texorpdfstring{$\ast$}{*} Pma\+Reader::\+a\+Alloc}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108099}{108099}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structPmaReader_acd2a7f3e0375a3f8dfa9e565d080e2c2}\index{PmaReader@{PmaReader}!aBuffer@{aBuffer}}
+\index{aBuffer@{aBuffer}!PmaReader@{PmaReader}}
+\doxysubsubsection{\texorpdfstring{aBuffer}{aBuffer}}
+{\footnotesize\ttfamily \label{structPmaReader_acd2a7f3e0375a3f8dfa9e565d080e2c2} 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}}\texorpdfstring{$\ast$}{*} Pma\+Reader::\+a\+Buffer}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108101}{108101}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structPmaReader_af8f5dbc63cbbcbf9ee4c2c462ab1c6ff}\index{PmaReader@{PmaReader}!aKey@{aKey}}
+\index{aKey@{aKey}!PmaReader@{PmaReader}}
+\doxysubsubsection{\texorpdfstring{aKey}{aKey}}
+{\footnotesize\ttfamily \label{structPmaReader_af8f5dbc63cbbcbf9ee4c2c462ab1c6ff} 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}}\texorpdfstring{$\ast$}{*} Pma\+Reader::\+a\+Key}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108100}{108100}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structPmaReader_ad90dc0ec0c900dd21377c146ac73c73f}\index{PmaReader@{PmaReader}!aMap@{aMap}}
+\index{aMap@{aMap}!PmaReader@{PmaReader}}
+\doxysubsubsection{\texorpdfstring{aMap}{aMap}}
+{\footnotesize\ttfamily \label{structPmaReader_ad90dc0ec0c900dd21377c146ac73c73f} 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}}\texorpdfstring{$\ast$}{*} Pma\+Reader::\+a\+Map}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108103}{108103}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structPmaReader_a7a2e2745d054cd6d86e1ad57d641b657}\index{PmaReader@{PmaReader}!iEof@{iEof}}
+\index{iEof@{iEof}!PmaReader@{PmaReader}}
+\doxysubsubsection{\texorpdfstring{iEof}{iEof}}
+{\footnotesize\ttfamily \label{structPmaReader_a7a2e2745d054cd6d86e1ad57d641b657} 
+\doxymbox{\hyperlink{sqlite3_8c_a2a0f0f4ae7001eb54351f77ea1cdbcfd}{i64}} Pma\+Reader::\+i\+Eof}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108095}{108095}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structPmaReader_a04a9b631060dcda1d94eb7b16ef8920e}\index{PmaReader@{PmaReader}!iReadOff@{iReadOff}}
+\index{iReadOff@{iReadOff}!PmaReader@{PmaReader}}
+\doxysubsubsection{\texorpdfstring{iReadOff}{iReadOff}}
+{\footnotesize\ttfamily \label{structPmaReader_a04a9b631060dcda1d94eb7b16ef8920e} 
+\doxymbox{\hyperlink{sqlite3_8c_a2a0f0f4ae7001eb54351f77ea1cdbcfd}{i64}} Pma\+Reader::\+i\+Read\+Off}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108094}{108094}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structPmaReader_a82522a9128afb8bfb79b88a7c51726ef}\index{PmaReader@{PmaReader}!nAlloc@{nAlloc}}
+\index{nAlloc@{nAlloc}!PmaReader@{PmaReader}}
+\doxysubsubsection{\texorpdfstring{nAlloc}{nAlloc}}
+{\footnotesize\ttfamily \label{structPmaReader_a82522a9128afb8bfb79b88a7c51726ef} 
+int Pma\+Reader::\+n\+Alloc}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108096}{108096}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structPmaReader_a422d021b0509c7e5eb2938bba36a5cdd}\index{PmaReader@{PmaReader}!nBuffer@{nBuffer}}
+\index{nBuffer@{nBuffer}!PmaReader@{PmaReader}}
+\doxysubsubsection{\texorpdfstring{nBuffer}{nBuffer}}
+{\footnotesize\ttfamily \label{structPmaReader_a422d021b0509c7e5eb2938bba36a5cdd} 
+int Pma\+Reader::\+n\+Buffer}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108102}{108102}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structPmaReader_a02c5dbf65efa252a84259b1ee2a7cd3c}\index{PmaReader@{PmaReader}!nKey@{nKey}}
+\index{nKey@{nKey}!PmaReader@{PmaReader}}
+\doxysubsubsection{\texorpdfstring{nKey}{nKey}}
+{\footnotesize\ttfamily \label{structPmaReader_a02c5dbf65efa252a84259b1ee2a7cd3c} 
+int Pma\+Reader::\+n\+Key}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108097}{108097}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structPmaReader_a1ae1caa6e4b1900937135aeeaf1336cd}\index{PmaReader@{PmaReader}!pFd@{pFd}}
+\index{pFd@{pFd}!PmaReader@{PmaReader}}
+\doxysubsubsection{\texorpdfstring{pFd}{pFd}}
+{\footnotesize\ttfamily \label{structPmaReader_a1ae1caa6e4b1900937135aeeaf1336cd} 
+\doxymbox{\hyperlink{sqlite3_8c_a3691103fd7c57f5f69123c4c03aea05a}{sqlite3\+\_\+file}}\texorpdfstring{$\ast$}{*} Pma\+Reader::\+p\+Fd}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108098}{108098}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structPmaReader_a34569bea49de8122239eb40eaae8b10f}\index{PmaReader@{PmaReader}!pIncr@{pIncr}}
+\index{pIncr@{pIncr}!PmaReader@{PmaReader}}
+\doxysubsubsection{\texorpdfstring{pIncr}{pIncr}}
+{\footnotesize\ttfamily \label{structPmaReader_a34569bea49de8122239eb40eaae8b10f} 
+\doxymbox{\hyperlink{structIncrMerger}{Incr\+Merger}}\texorpdfstring{$\ast$}{*} Pma\+Reader::\+p\+Incr}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l108104}{108104}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Flight\+Link\+Server/\+\+Flight\+Link\+Server/\+\doxymbox{\hyperlink{sqlite3_8c}{sqlite3.\+c}}\end{DoxyCompactItemize}

@@ -1,0 +1,13 @@
+<map id="btreeGetPage" name="btreeGetPage">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,107,108"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a5fc3749a797ddf656eedeeb73f8c69e6" title=" " alt="" coords="155,31,312,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,78,172,60,168,64,106,83"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#acf77da68932b6bc163c5e68547ecc3e7" title=" " alt="" coords="167,81,300,108"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="106,92,154,94,149,96,107,97"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#aecc2658a23b4e995026b2b35306ba1f3" title=" " alt="" coords="176,132,290,159"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="106,106,172,126,167,128,105,111"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a9dd340e56fb4b7fad4df339595b8d8a2" title=" " alt="" coords="362,5,504,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="312,31,349,29,344,30,313,37"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a48e879a6d20f06f27390973ab8d59bd7" title=" " alt="" coords="360,56,505,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="312,51,347,58,342,59,313,57"/>
+</map>

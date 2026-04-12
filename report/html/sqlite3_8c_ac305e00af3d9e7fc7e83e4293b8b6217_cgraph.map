@@ -1,0 +1,7 @@
+<map id="whereSortingCost" name="whereSortingCost">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,131,57"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#ac4420ab2b01a2e2efe5d4ac054868246" title=" " alt="" coords="199,5,259,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,32,186,25,181,27,132,37"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a14c7d015bfd3d4a869739b9e6139c84f" title=" " alt="" coords="179,56,279,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="131,51,166,59,160,59,131,57"/>
+</map>

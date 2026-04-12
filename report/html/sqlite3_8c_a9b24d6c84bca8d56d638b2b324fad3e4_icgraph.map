@@ -1,0 +1,20 @@
+<map id="freeSpace" name="freeSpace">
+<area shape="rect" id="Node000001" title=" " alt="" coords="735,68,815,95"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a46eeeb6aebf363bd16265d696612b852" title=" " alt="" coords="462,43,531,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="717,77,532,62,532,56,722,76"/>
+<area shape="rect" id="Node000007" href="$sqlite3_8c.html#a1e4fd1fb76cd73af3d23729cad34a20f" title=" " alt="" coords="581,93,687,120"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="722,91,688,100,687,94,717,92"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a513ba5c0beb3462a4b60064469f1539d" title=" " alt="" coords="296,93,412,120"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="450,73,395,95,393,90,445,74"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#a38f051b1f92279059c43a8161f4502d7" title=" " alt="" coords="5,68,134,95"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="446,62,134,80,134,75,446,56"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#a1d46dd494df3a0e925050293e3065996" title=" " alt="" coords="8,5,131,32"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="444,49,412,48,131,25,131,20,413,43,449,49"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a173f7c872fb68ccd3a20440d640b66c7" title=" " alt="" coords="182,93,248,120"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="278,107,249,109,248,104,283,107"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="164,98,134,95,134,90,169,98"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="177,85,132,58,94,35,95,30,135,54,182,84"/>
+<area shape="rect" id="Node000008" href="$sqlite3_8c.html#a0097603cf046ddaacd468e6ab8465eea" title=" " alt="" coords="460,93,533,120"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="562,107,533,109,533,104,567,107"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="442,107,413,109,412,104,447,107"/>
+</map>

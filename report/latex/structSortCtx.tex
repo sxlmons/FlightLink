@@ -1,0 +1,152 @@
+\doxysection{Sort\+Ctx Struct Reference}
+\hypertarget{structSortCtx}{}\label{structSortCtx}\index{SortCtx@{SortCtx}}
+
+
+Collaboration diagram for Sort\+Ctx:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structSortCtx__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{structExprList}{Expr\+List}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structSortCtx_a4c1f59510d6e08b38c958c358d31ba07}{p\+Order\+By}}
+\item 
+int \doxymbox{\hyperlink{structSortCtx_a32e424bbae6b3e56a0959738eaaaf1d2}{n\+OBSat}}
+\item 
+int \doxymbox{\hyperlink{structSortCtx_acaf1633a51ccc836edd0594f90ed501b}{i\+ECursor}}
+\item 
+int \doxymbox{\hyperlink{structSortCtx_a78017ace0acd29ba15652e389d9f90f6}{reg\+Return}}
+\item 
+int \doxymbox{\hyperlink{structSortCtx_abc19dcb503656023d5596aa31378e973}{label\+Bk\+Out}}
+\item 
+int \doxymbox{\hyperlink{structSortCtx_ad4c264de37b3f3b9bbff55e34659ef11}{addr\+Sort\+Index}}
+\item 
+int \doxymbox{\hyperlink{structSortCtx_a0f08fc3dd9df4320b3bb74461ca46759}{label\+Done}}
+\item 
+int \doxymbox{\hyperlink{structSortCtx_a4576d27cce98794fea57bf4ae029e8ef}{label\+OBLopt}}
+\item 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} \doxymbox{\hyperlink{structSortCtx_aca4654bd8cf3789c3a1b05d144e3ce2c}{sort\+Flags}}
+\item 
+struct \doxymbox{\hyperlink{structRowLoadInfo}{Row\+Load\+Info}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structSortCtx_a1c5e80e8999c8f48a5b9678635ac3b0e}{p\+Deferred\+Row\+Load}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l150938}{150938}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{structSortCtx_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structSortCtx_ad4c264de37b3f3b9bbff55e34659ef11}\index{SortCtx@{SortCtx}!addrSortIndex@{addrSortIndex}}
+\index{addrSortIndex@{addrSortIndex}!SortCtx@{SortCtx}}
+\doxysubsubsection{\texorpdfstring{addrSortIndex}{addrSortIndex}}
+{\footnotesize\ttfamily \label{structSortCtx_ad4c264de37b3f3b9bbff55e34659ef11} 
+int Sort\+Ctx::\+addr\+Sort\+Index}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l150944}{150944}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSortCtx_acaf1633a51ccc836edd0594f90ed501b}\index{SortCtx@{SortCtx}!iECursor@{iECursor}}
+\index{iECursor@{iECursor}!SortCtx@{SortCtx}}
+\doxysubsubsection{\texorpdfstring{iECursor}{iECursor}}
+{\footnotesize\ttfamily \label{structSortCtx_acaf1633a51ccc836edd0594f90ed501b} 
+int Sort\+Ctx::\+i\+ECursor}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l150941}{150941}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSortCtx_abc19dcb503656023d5596aa31378e973}\index{SortCtx@{SortCtx}!labelBkOut@{labelBkOut}}
+\index{labelBkOut@{labelBkOut}!SortCtx@{SortCtx}}
+\doxysubsubsection{\texorpdfstring{labelBkOut}{labelBkOut}}
+{\footnotesize\ttfamily \label{structSortCtx_abc19dcb503656023d5596aa31378e973} 
+int Sort\+Ctx::\+label\+Bk\+Out}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l150943}{150943}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSortCtx_a0f08fc3dd9df4320b3bb74461ca46759}\index{SortCtx@{SortCtx}!labelDone@{labelDone}}
+\index{labelDone@{labelDone}!SortCtx@{SortCtx}}
+\doxysubsubsection{\texorpdfstring{labelDone}{labelDone}}
+{\footnotesize\ttfamily \label{structSortCtx_a0f08fc3dd9df4320b3bb74461ca46759} 
+int Sort\+Ctx::\+label\+Done}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l150945}{150945}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSortCtx_a4576d27cce98794fea57bf4ae029e8ef}\index{SortCtx@{SortCtx}!labelOBLopt@{labelOBLopt}}
+\index{labelOBLopt@{labelOBLopt}!SortCtx@{SortCtx}}
+\doxysubsubsection{\texorpdfstring{labelOBLopt}{labelOBLopt}}
+{\footnotesize\ttfamily \label{structSortCtx_a4576d27cce98794fea57bf4ae029e8ef} 
+int Sort\+Ctx::\+label\+OBLopt}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l150946}{150946}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSortCtx_a32e424bbae6b3e56a0959738eaaaf1d2}\index{SortCtx@{SortCtx}!nOBSat@{nOBSat}}
+\index{nOBSat@{nOBSat}!SortCtx@{SortCtx}}
+\doxysubsubsection{\texorpdfstring{nOBSat}{nOBSat}}
+{\footnotesize\ttfamily \label{structSortCtx_a32e424bbae6b3e56a0959738eaaaf1d2} 
+int Sort\+Ctx::\+n\+OBSat}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l150940}{150940}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSortCtx_a1c5e80e8999c8f48a5b9678635ac3b0e}\index{SortCtx@{SortCtx}!pDeferredRowLoad@{pDeferredRowLoad}}
+\index{pDeferredRowLoad@{pDeferredRowLoad}!SortCtx@{SortCtx}}
+\doxysubsubsection{\texorpdfstring{pDeferredRowLoad}{pDeferredRowLoad}}
+{\footnotesize\ttfamily \label{structSortCtx_a1c5e80e8999c8f48a5b9678635ac3b0e} 
+struct \doxymbox{\hyperlink{structRowLoadInfo}{Row\+Load\+Info}}\texorpdfstring{$\ast$}{*} Sort\+Ctx::\+p\+Deferred\+Row\+Load}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l150956}{150956}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSortCtx_a4c1f59510d6e08b38c958c358d31ba07}\index{SortCtx@{SortCtx}!pOrderBy@{pOrderBy}}
+\index{pOrderBy@{pOrderBy}!SortCtx@{SortCtx}}
+\doxysubsubsection{\texorpdfstring{pOrderBy}{pOrderBy}}
+{\footnotesize\ttfamily \label{structSortCtx_a4c1f59510d6e08b38c958c358d31ba07} 
+\doxymbox{\hyperlink{structExprList}{Expr\+List}}\texorpdfstring{$\ast$}{*} Sort\+Ctx::\+p\+Order\+By}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l150939}{150939}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSortCtx_a78017ace0acd29ba15652e389d9f90f6}\index{SortCtx@{SortCtx}!regReturn@{regReturn}}
+\index{regReturn@{regReturn}!SortCtx@{SortCtx}}
+\doxysubsubsection{\texorpdfstring{regReturn}{regReturn}}
+{\footnotesize\ttfamily \label{structSortCtx_a78017ace0acd29ba15652e389d9f90f6} 
+int Sort\+Ctx::\+reg\+Return}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l150942}{150942}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+\Hypertarget{structSortCtx_aca4654bd8cf3789c3a1b05d144e3ce2c}\index{SortCtx@{SortCtx}!sortFlags@{sortFlags}}
+\index{sortFlags@{sortFlags}!SortCtx@{SortCtx}}
+\doxysubsubsection{\texorpdfstring{sortFlags}{sortFlags}}
+{\footnotesize\ttfamily \label{structSortCtx_aca4654bd8cf3789c3a1b05d144e3ce2c} 
+\doxymbox{\hyperlink{sqlite3_8c_a74a0f6424ae628af25f23f0a35f6ead3}{u8}} Sort\+Ctx::\+sort\+Flags}
+
+
+
+Definition at line \doxymbox{\hyperlink{sqlite3_8c_source_l150947}{150947}} of file \doxymbox{\hyperlink{sqlite3_8c_source}{sqlite3.\+c}}.
+
+
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Flight\+Link\+Server/\+\+Flight\+Link\+Server/\+\doxymbox{\hyperlink{sqlite3_8c}{sqlite3.\+c}}\end{DoxyCompactItemize}

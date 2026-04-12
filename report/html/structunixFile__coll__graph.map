@@ -1,0 +1,28 @@
+<map id="unixFile" name="unixFile">
+<area shape="rect" id="Node000001" title=" " alt="" coords="342,419,408,445"/>
+<area shape="rect" id="Node000002" href="$structsqlite3__io__methods.html" title=" " alt="" coords="5,320,139,347"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,351,156,373,207,392,278,411,344,426,338,426,277,416,205,397,154,378,109,357"/>
+<area shape="rect" id="Node000003" href="$structsqlite3__vfs.html" title=" " alt="" coords="163,320,248,347"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="241,352,355,418,350,419,240,357"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="263,323,274,333,266,343,249,345,247,340,263,338,269,333,263,329"/>
+<area shape="rect" id="Node000004" href="$structunixInodeInfo.html" title=" " alt="" coords="388,113,487,140"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="462,149,478,172,498,220,510,261,509,301,492,348,475,372,453,393,406,421,404,416,449,388,471,369,487,345,504,300,504,261,493,222,474,175,461,154"/>
+<area shape="poly" id="edge15_Node000004_Node000004" title=" " alt="" coords="503,116,514,127,506,137,489,140,487,135,503,132,508,127,502,121"/>
+<area shape="rect" id="Node000008" href="$structunixShmNode.html" title=" " alt="" coords="282,221,385,248"/>
+<area shape="poly" id="edge10_Node000008_Node000004" title=" " alt="" coords="433,153,424,178,410,199,393,213,374,223,371,218,390,209,406,196,420,176,429,157"/>
+<area shape="rect" id="Node000005" href="$structunixFileId.html" title=" " alt="" coords="400,5,477,32"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="440,45,440,114,435,112,437,50"/>
+<area shape="rect" id="Node000006" href="$structsqlite3__mutex.html" title=" " alt="" coords="254,5,356,32"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="322,42,355,78,381,96,410,112,404,113,378,101,351,82,321,47"/>
+<area shape="poly" id="edge11_Node000008_Node000006" title=" " alt="" coords="301,45,297,96,301,149,313,188,329,221,324,220,308,190,295,150,292,95,299,50"/>
+<area shape="rect" id="Node000007" href="$structUnixUnusedFd.html" title=" " alt="" coords="519,5,628,32"/>
+<area shape="poly" id="edge16_Node000001_Node000007" title=" " alt="" coords="582,45,591,84,595,125,595,335,589,363,574,385,551,402,524,414,463,428,408,433,408,428,462,423,522,409,549,397,570,381,584,360,589,334,589,125,586,84,580,49"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="535,42,515,58,451,115,448,111,512,54,539,39"/>
+<area shape="poly" id="edge8_Node000007_Node000007" title=" " alt="" coords="643,9,654,19,646,27,629,30,627,25,644,23,649,19,643,14"/>
+<area shape="poly" id="edge9_Node000004_Node000008" title=" " alt="" coords="326,204,326,188,333,172,358,154,400,139,396,142,361,158,337,175,332,189,330,207"/>
+<area shape="rect" id="Node000009" href="$structunixShm.html" title=" " alt="" coords="338,320,411,347"/>
+<area shape="poly" id="edge13_Node000009_Node000008" title=" " alt="" coords="354,258,362,271,371,296,375,321,371,318,366,298,358,273,353,263"/>
+<area shape="poly" id="edge17_Node000001_Node000009" title=" " alt="" coords="377,361,377,420,372,417,373,364"/>
+<area shape="poly" id="edge12_Node000008_Node000009" title=" " alt="" coords="329,310,317,297,313,284,314,271,324,251,327,247,319,272,318,284,321,295,334,311"/>
+<area shape="poly" id="edge14_Node000009_Node000009" title=" " alt="" coords="426,323,434,327,437,334,429,343,412,345,411,340,427,338,432,333,431,331,426,328"/>
+</map>

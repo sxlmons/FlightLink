@@ -1,0 +1,18 @@
+<map id="sqlite3VdbeAddParseSchemaOp" name="sqlite3VdbeAddParseSchemaOp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="896,132,1107,159"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#ad1968341fe7813486540b9581af7a22d" title=" " alt="" coords="718,81,848,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="923,128,843,111,844,106,929,128"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#aa44510b6849b417735c303424946273a" title=" " alt="" coords="298,107,412,133"/>
+<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="883,152,691,158,584,156,478,148,411,137,412,131,479,143,584,150,691,153,878,152"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a0d41effc4e4a0ba740429a08f6747313" title=" " alt="" coords="478,107,670,133"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="705,104,670,111,670,106,700,105"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#afbb7bb5727c7c10f77634667a3fb5f3a" title=" " alt="" coords="151,56,232,83"/>
+<area shape="poly" id="edge8_Node000002_Node000005" title=" " alt="" coords="701,94,233,74,233,68,703,89"/>
+<area shape="rect" id="Node000007" href="$sqlite3_8c.html#af2b0672c3379d2a7d927d210ae0ade62" title=" " alt="" coords="280,5,430,32"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="736,75,669,53,607,41,544,32,431,23,431,18,545,27,608,36,670,48,741,75"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="460,120,412,123,412,117,465,120"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="292,102,232,85,233,79,297,101"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#a0327d71a5fabe0b6a343d78a2602e72a" title=" " alt="" coords="5,56,103,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="133,71,104,72,103,67,138,68"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="292,38,233,59,232,54,297,36"/>
+</map>

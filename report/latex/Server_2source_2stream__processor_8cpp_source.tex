@@ -1,0 +1,89 @@
+\doxysection{stream\+\_\+processor.\+cpp}
+\hypertarget{Server_2source_2stream__processor_8cpp_source}{}\label{Server_2source_2stream__processor_8cpp_source}\index{Server/source/stream\_processor.cpp@{Server/source/stream\_processor.cpp}}
+\doxymbox{\hyperlink{Server_2source_2stream__processor_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}stream\_processor.h"{}}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}protocol.h"{}}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00010}00010\ \textcolor{comment}{//\ stream\_processor.cpp}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00023}\doxymbox{\hyperlink{Server_2source_2stream__processor_8cpp_a65f9aa3ba777683765a5ffec41892bfe}{00023}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2stream__processor_8cpp_a65f9aa3ba777683765a5ffec41892bfe}{recv\_exact}}(SOCKET\ socket,\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ length)\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ received\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{while}\ (received\ <\ length)\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ recv(socket,\ buffer\ +\ received,\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(length\ -\/\ received),\ 0);}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result\ <=\ 0)}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ received\ +=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(result);}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00038}\doxymbox{\hyperlink{Server_2source_2stream__processor_8cpp_a6f9656db2bdac318c54f4d2c58bc9c9a}{00038}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2stream__processor_8cpp_a6f9656db2bdac318c54f4d2c58bc9c9a}{process\_client}}(SOCKET\ client)\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00039}00039\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[stream]\ Client\ connected"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ read\ first\ byte}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ uint8\_t\ msg\_type;}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2stream__processor_8cpp_a65f9aa3ba777683765a5ffec41892bfe}{recv\_exact}}(client,\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&msg\_type),\ 1))\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[stream]\ Client\ disconnected."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (msg\_type)\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_a3f6838ff1e1c76654431818918c8fce0}{MSG\_FLIGHT\_START}}:\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structPacketHeader}{PacketHeader}}\ header;}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2stream__processor_8cpp_a65f9aa3ba777683765a5ffec41892bfe}{recv\_exact}}(client,\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&header),\ \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_a8821ddbbd7ad7c93f400b3b889f532c1}{HEADER\_PAYLOAD\_SIZE}}))\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[stream]\ disconnected\ during\ flight\ start."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ Create\ flight\ session}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[stream]\ Flight\ started\ |\ plane\_id:\ "{}}\ <<\ header.\doxymbox{\hyperlink{structPacketHeader_a1f05f697f8d0d2e93fe1189f09eb41f3}{plane\_id}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_a407a8fe043c54d6f92d2f6c5a3565c88}{MSG\_TELEMETRY}}:\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structTelemetryData}{TelemetryData}}\ telemetry;}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2stream__processor_8cpp_a65f9aa3ba777683765a5ffec41892bfe}{recv\_exact}}(client,\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&telemetry),\ \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_a56c5f86467361eeb7bff48d9a86623db}{TELEMETRY\_PAYLOAD\_SIZE}}))\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[stream]\ Disconnected\ during\ telemetry."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ Pass\ to\ FlightSessionManager\ for\ fuel\ calculation.}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[stream]\ Telemetry\ |\ plane\_id:\ "{}}\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ telemetry.\doxymbox{\hyperlink{structTelemetryData_a45cd28f09034f68565bcc7e292f051a1}{plane\_id}}\ <<\ \textcolor{stringliteral}{"{}\ |\ timestamp:\ "{}}\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ telemetry.\doxymbox{\hyperlink{structTelemetryData_a40cfec5314b0353339a4e65b7172ed57}{timestamp}}\ <<\ \textcolor{stringliteral}{"{}\ |\ fuel:\ "{}}\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ telemetry.\doxymbox{\hyperlink{structTelemetryData_a5a81fd196f614218f02b559b5e8b6bda}{fuel\_remaining}}\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_a44ca186de74c14d24f197e4f69de61ed}{MSG\_FLIGHT\_END}}:\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structPacketHeader}{PacketHeader}}\ header;}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2stream__processor_8cpp_a65f9aa3ba777683765a5ffec41892bfe}{recv\_exact}}(client,\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&header),\ \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2protocol_8h_a8821ddbbd7ad7c93f400b3b889f532c1}{HEADER\_PAYLOAD\_SIZE}}))\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[stream]\ Disconnected\ during\ flight\ end."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ Finalize\ flight\ session\ via\ FlightSessionManager.}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[stream]\ Flight\ ended\ \ |\ plane\_id:\ "{}}\ <<\ header.\doxymbox{\hyperlink{structPacketHeader_a1f05f697f8d0d2e93fe1189f09eb41f3}{plane\_id}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \{}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[stream]\ Malformed\ packet\ |\ unknown\ type:\ 0x"{}}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::hex\ <<\ static\_cast<int>(msg\_type)}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::dec\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Server_2source_2stream__processor_8cpp_source_l00098}00098\ \}}
+
+\end{DoxyCode}

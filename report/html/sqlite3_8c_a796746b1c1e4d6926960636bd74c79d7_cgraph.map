@@ -1,0 +1,15 @@
+<map id="btreeLockCarefully" name="btreeLockCarefully">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,107,136,133"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#ab1714bc62ac8a451c7b17bc53053ca53" title=" " alt="" coords="191,56,303,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,104,185,86,181,89,121,109"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#a196f84b09bdfda96ae5ae23189be1ec8" title=" " alt="" coords="185,107,309,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="136,117,172,119,167,121,136,123"/>
+<area shape="rect" id="Node000007" href="$sqlite3_8c.html#a29bc7d1c753dfa2af9fb296b7dc19a4a" title=" " alt="" coords="184,157,310,184"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="120,131,186,152,180,153,119,137"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a1c12cde690bd89f104de5cbad12a6bf5" title=" " alt="" coords="364,5,503,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="298,53,370,36,365,37,300,58"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#acf77da68932b6bc163c5e68547ecc3e7" title=" " alt="" coords="367,56,500,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="303,67,354,69,349,70,304,72"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#a83967c837c1c000d3b5adcfaa688f5dc" title=" " alt="" coords="358,107,509,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="299,81,370,102,365,102,299,86"/>
+</map>

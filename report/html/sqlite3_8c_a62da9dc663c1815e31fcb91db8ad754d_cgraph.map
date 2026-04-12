@@ -1,0 +1,16 @@
+<map id="whereScanInitIndexExpr" name="whereScanInitIndexExpr">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,169,83"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a8161da06af12678a9e5a1c3aac0ac330" title=" " alt="" coords="217,31,343,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,56,204,54,198,55,169,61"/>
+<area shape="rect" id="Node000007" href="$sqlite3_8c.html#a9b78a756c978e1a3dd5a8eeebd4ba69a" title=" " alt="" coords="223,81,337,108"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="169,77,210,85,205,85,169,83"/>
+<area shape="poly" id="edge5_Node000002_Node000002" title=" " alt="" coords="247,29,241,22,245,12,258,6,280,4,303,7,317,16,311,15,301,12,280,9,260,11,249,16,246,21,252,31"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#af842ccdb8669c8e5938d9b1786d087a7" title=" " alt="" coords="415,5,542,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="343,33,402,28,397,29,344,39"/>
+<area shape="rect" id="Node000006" href="$sqlite3_8c.html#aecbde23208f1c3ea5030391c20179ff8" title=" " alt="" coords="391,56,566,83"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="343,49,378,56,373,56,343,55"/>
+<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a5f876209b4343549fc9224cd11c70928" title=" " alt="" coords="614,5,724,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="542,16,602,18,596,19,543,21"/>
+<area shape="rect" id="Node000005" href="$sqlite3_8c.html#ae3802c77b18399c03c8c9f973ff47239" title=" " alt="" coords="772,5,884,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="724,16,758,18,753,19,724,21"/>
+</map>

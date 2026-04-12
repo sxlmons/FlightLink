@@ -1,0 +1,20 @@
+<map id="FlightLinkServer/FlightLinkServer/connection_manager.h" name="FlightLinkServer/FlightLinkServer/connection_manager.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="36,5,230,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="31,171,123,197"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,51,37,70,12,97,9,114,15,130,28,146,45,161,40,163,24,149,10,133,3,114,8,95,34,66,69,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="23,96,80,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="110,51,77,87,73,83,113,46"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="104,96,161,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="134,46,135,81,130,79,131,51"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="186,96,263,123"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="157,46,202,85,196,86,156,51"/>
+<area shape="rect" id="Node000006" href="$FlightLinkServer_2FlightLinkServer_2bounded__queue_8h.html" title=" " alt="" coords="287,96,410,123"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="189,46,303,89,298,91,188,51"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="302,126,138,169,137,164,300,121"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="239,171,296,197"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="337,122,294,163,291,158,332,124"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="320,171,377,197"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="351,121,351,157,347,153,347,125"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="402,171,527,197"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="370,121,434,162,429,162,368,126"/>
+</map>

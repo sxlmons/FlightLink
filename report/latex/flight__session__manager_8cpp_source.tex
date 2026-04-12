@@ -1,0 +1,185 @@
+\doxysection{flight\+\_\+session\+\_\+manager.\+cpp}
+\hypertarget{flight__session__manager_8cpp_source}{}\label{flight__session__manager_8cpp_source}\index{FlightLinkServer/FlightLinkServer/flight\_session\_manager.cpp@{FlightLinkServer/FlightLinkServer/flight\_session\_manager.cpp}}
+\doxymbox{\hyperlink{flight__session__manager_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{flight__session__manager_8h}{flight\_session\_manager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{sqlite3_8h}{sqlite3.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00009}00009\ \textcolor{comment}{//\ flight\_session\_manager.cpp}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00012}\doxymbox{\hyperlink{flight__session__manager_8cpp_ae23d44fff8981fbb00ee66e44b18a734}{00012}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \doxymbox{\hyperlink{flight__session__manager_8cpp_ae23d44fff8981fbb00ee66e44b18a734}{CSV\_FILE}}\ =\ \textcolor{stringliteral}{"{}flight\_log.csv"{}};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00015}\doxymbox{\hyperlink{flight__session__manager_8cpp_a7811695aff2514a9eda2afc98311fb79}{00015}}\ \textcolor{keyword}{static}\ std::unordered\_map<uint32\_t,\ AircraftStats>\ \doxymbox{\hyperlink{flight__session__manager_8cpp_a7811695aff2514a9eda2afc98311fb79}{aircraft\_map}};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00018}\doxymbox{\hyperlink{flight__session__manager_8cpp_a397d4d0d84c8f784c6be3e201f496233}{00018}}\ \textcolor{keyword}{static}\ std::mutex\ \doxymbox{\hyperlink{flight__session__manager_8cpp_a397d4d0d84c8f784c6be3e201f496233}{aircraft\_mutex}};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00019}\doxymbox{\hyperlink{flight__session__manager_8cpp_ae9fee94caa49aa4f62d859d6794a732c}{00019}}\ \textcolor{keyword}{static}\ std::mutex\ \doxymbox{\hyperlink{flight__session__manager_8cpp_ae9fee94caa49aa4f62d859d6794a732c}{db\_mutex}};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00020}\doxymbox{\hyperlink{flight__session__manager_8cpp_a452fb05e95ce282242760ef11bba7295}{00020}}\ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{structsqlite3}{sqlite3}}*\ \doxymbox{\hyperlink{flight__session__manager_8cpp_a452fb05e95ce282242760ef11bba7295}{g\_db}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00022}\doxymbox{\hyperlink{flight__session__manager_8cpp_ac81b1543651ef73f59ec1a9840087713}{00022}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{flight__session__manager_8cpp_ac81b1543651ef73f59ec1a9840087713}{init\_database}}()\ \{}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{int}\ rc\ =\ \doxymbox{\hyperlink{sqlite3_8c_a97ba966ed1acc38409786258268f5f71}{sqlite3\_open}}(\textcolor{stringliteral}{"{}flight\_logs.db"{}},\ \&\doxymbox{\hyperlink{flight__session__manager_8cpp_a452fb05e95ce282242760ef11bba7295}{g\_db}});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ \doxymbox{\hyperlink{sqlite3_8c_a650d09c7bec7ddadb7c8aa3519dc842c}{SQLITE\_OK}})\ \{}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ open\ db:\ "{}}\ <<\ \doxymbox{\hyperlink{sqlite3_8c_ae0d58565fa198e724fc2bb5381b3299f}{sqlite3\_errmsg}}(\doxymbox{\hyperlink{flight__session__manager_8cpp_a452fb05e95ce282242760ef11bba7295}{g\_db}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00029}00029\ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_a97487ec8150e0bcc8fa392ab8f0e24db}{sqlite3\_exec}}(\doxymbox{\hyperlink{flight__session__manager_8cpp_a452fb05e95ce282242760ef11bba7295}{g\_db}},\ \textcolor{stringliteral}{"{}PRAGMA\ journal\_mode=WAL;"{}},\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00031}00031\ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_a97487ec8150e0bcc8fa392ab8f0e24db}{sqlite3\_exec}}(\doxymbox{\hyperlink{flight__session__manager_8cpp_a452fb05e95ce282242760ef11bba7295}{g\_db}},}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ flight\_sessions\ ("{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}id\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT,"{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}plane\_id\ INTEGER\ NOT\ NULL,"{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}fuel\_sum\ REAL,"{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}current\_avg\ REAL,"{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}packet\_count\ INTEGER,"{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}status\ TEXT\ DEFAULT\ 'active'"{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{});"{}},}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00042}00042\ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_a97487ec8150e0bcc8fa392ab8f0e24db}{sqlite3\_exec}}(\doxymbox{\hyperlink{flight__session__manager_8cpp_a452fb05e95ce282242760ef11bba7295}{g\_db}},}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ aircraft\_stats\ ("{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}plane\_id\ INTEGER\ PRIMARY\ KEY,"{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}cumulative\_avg\ REAL,"{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}flight\_count\ INTEGER\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{});"{}},}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00051}00051\ \}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00053}\doxymbox{\hyperlink{flight__session__manager_8cpp_a6e0e207331dd052340dd50f6f40f997f}{00053}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{flight__session__manager_8cpp_a6e0e207331dd052340dd50f6f40f997f}{close\_database}}()\ \{}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{flight__session__manager_8cpp_a452fb05e95ce282242760ef11bba7295}{g\_db}})\ \{}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_ac43c9032fc6ef3b2a231dc3a9fa44b2d}{sqlite3\_close}}(\doxymbox{\hyperlink{flight__session__manager_8cpp_a452fb05e95ce282242760ef11bba7295}{g\_db}});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{flight__session__manager_8cpp_a452fb05e95ce282242760ef11bba7295}{g\_db}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00058}00058\ \}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00060}\doxymbox{\hyperlink{flight__session__manager_8cpp_a3dcfcd40c752c4089a0aff505e23902b}{00060}}\ \doxymbox{\hyperlink{structFlightSession}{FlightSession}}\ \doxymbox{\hyperlink{flight__session__manager_8cpp_a3dcfcd40c752c4089a0aff505e23902b}{start\_session}}(uint32\_t\ plane\_id)\ \{}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00061}00061\ \ \ \ \ \doxymbox{\hyperlink{structFlightSession}{FlightSession}}\ session\{\};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00062}00062\ \ \ \ \ session.\doxymbox{\hyperlink{structFlightSession_acf345a472851913f978a202a420c5010}{plane\_id}}\ \ \ \ \ =\ plane\_id;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00063}00063\ \ \ \ \ session.\doxymbox{\hyperlink{structFlightSession_a58887c6b7d05f9c957d615a3c0171c17}{prev\_fuel}}\ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00064}00064\ \ \ \ \ session.\doxymbox{\hyperlink{structFlightSession_a047515a5c81cae4f6b33f2feb3464518}{fuel\_sum}}\ \ \ \ \ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00065}00065\ \ \ \ \ session.\doxymbox{\hyperlink{structFlightSession_aeeda4d286969d25caf3f6345bd259b6d}{packet\_count}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00066}00066\ \ \ \ \ session.\doxymbox{\hyperlink{structFlightSession_aa64afbec0252c3be1461b78f054e5363}{has\_baseline}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00068}00068\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(\doxymbox{\hyperlink{flight__session__manager_8cpp_ae9fee94caa49aa4f62d859d6794a732c}{db\_mutex}});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_af2a033da1327cdd77f0a174a09aedd0c}{sqlite3\_stmt}}*\ stmt\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_a85d4203bb54c984c5325c2f5b3664985}{sqlite3\_prepare\_v2}}(\doxymbox{\hyperlink{flight__session__manager_8cpp_a452fb05e95ce282242760ef11bba7295}{g\_db}},}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}INSERT\ INTO\ flight\_sessions\ (plane\_id,\ fuel\_sum,\ current\_avg,\ packet\_count,\ status)\ "{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}VALUES\ (?,\ 0.0,\ 0.0,\ 0,\ 'active');"{}},}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ -\/1,\ \&stmt,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_af77e2729923f2621852202e1c23788c6}{sqlite3\_bind\_int64}}(stmt,\ 1,\ \textcolor{keyword}{static\_cast<}int64\_t\textcolor{keyword}{>}(session.\doxymbox{\hyperlink{structFlightSession_acf345a472851913f978a202a420c5010}{plane\_id}}));}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_ac1e491ce36b7471eb28387f7d3c74334}{sqlite3\_step}}(stmt);}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_a801195c0f771d40bb4be1e40f3b88945}{sqlite3\_finalize}}(stmt);}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ session.\doxymbox{\hyperlink{structFlightSession_a599ad82bebfde058fabcfe233bb1eddd}{db\_row\_id}}\ =\ \doxymbox{\hyperlink{sqlite3_8c_adb98868f8066d408f51db8bf8f6be192}{sqlite3\_last\_insert\_rowid}}(\doxymbox{\hyperlink{flight__session__manager_8cpp_a452fb05e95ce282242760ef11bba7295}{g\_db}});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00083}00083\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[flight]\ Session\ started\ |\ plane\_id:\ "{}}\ <<\ plane\_id\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{return}\ session;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00085}00085\ \}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00087}\doxymbox{\hyperlink{flight__session__manager_8cpp_acce6c39388a8e84f1a2ec4a5624a921f}{00087}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{flight__session__manager_8cpp_acce6c39388a8e84f1a2ec4a5624a921f}{process\_telemetry}}(\doxymbox{\hyperlink{structFlightSession}{FlightSession}}\&\ session,\ \textcolor{keywordtype}{double}\ fuel\_remaining)\ \{}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{if}\ (!session.\doxymbox{\hyperlink{structFlightSession_aa64afbec0252c3be1461b78f054e5363}{has\_baseline}})\ \{}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ First\ packet\ establishes\ the\ baseline\ lol\ -\/\ no\ delta}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ session.\doxymbox{\hyperlink{structFlightSession_a58887c6b7d05f9c957d615a3c0171c17}{prev\_fuel}}\ =\ fuel\_remaining;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ session.\doxymbox{\hyperlink{structFlightSession_aa64afbec0252c3be1461b78f054e5363}{has\_baseline}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ session.\doxymbox{\hyperlink{structFlightSession_aeeda4d286969d25caf3f6345bd259b6d}{packet\_count}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordtype}{double}\ delta\ =\ session.\doxymbox{\hyperlink{structFlightSession_a58887c6b7d05f9c957d615a3c0171c17}{prev\_fuel}}\ -\/\ fuel\_remaining;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00097}00097\ \ \ \ \ session.\doxymbox{\hyperlink{structFlightSession_a047515a5c81cae4f6b33f2feb3464518}{fuel\_sum}}\ +=\ delta;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00098}00098\ \ \ \ \ session.\doxymbox{\hyperlink{structFlightSession_aeeda4d286969d25caf3f6345bd259b6d}{packet\_count}}++;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00099}00099\ \ \ \ \ session.\doxymbox{\hyperlink{structFlightSession_a58887c6b7d05f9c957d615a3c0171c17}{prev\_fuel}}\ =\ fuel\_remaining;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00100}00100\ \ \ \ \ session.\doxymbox{\hyperlink{structFlightSession_a6c429b2276eab1935eecf400a40f9341}{current\_avg}}\ =\ session.\doxymbox{\hyperlink{structFlightSession_a047515a5c81cae4f6b33f2feb3464518}{fuel\_sum}}\ /\ (session.\doxymbox{\hyperlink{structFlightSession_aeeda4d286969d25caf3f6345bd259b6d}{packet\_count}}\ -\/\ 1);\ \ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00101}00101\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{if}\ (session.\doxymbox{\hyperlink{structFlightSession_aeeda4d286969d25caf3f6345bd259b6d}{packet\_count}}\ \%\ 100\ ==\ 0)\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00103}00103\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(\doxymbox{\hyperlink{flight__session__manager_8cpp_ae9fee94caa49aa4f62d859d6794a732c}{db\_mutex}});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_af2a033da1327cdd77f0a174a09aedd0c}{sqlite3\_stmt}}*\ stmt\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_a85d4203bb54c984c5325c2f5b3664985}{sqlite3\_prepare\_v2}}(\doxymbox{\hyperlink{flight__session__manager_8cpp_a452fb05e95ce282242760ef11bba7295}{g\_db}},}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}UPDATE\ flight\_sessions\ SET\ "{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}fuel\_sum\ =\ ?,\ current\_avg\ =\ ?,\ packet\_count\ =\ ?\ WHERE\ id\ =\ ?;"{}},}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ -\/1,\ \&stmt,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_a8dc6f4de797850398e12e5022cae8915}{sqlite3\_bind\_double}}(stmt,\ 1,\ session.\doxymbox{\hyperlink{structFlightSession_a047515a5c81cae4f6b33f2feb3464518}{fuel\_sum}});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_a8dc6f4de797850398e12e5022cae8915}{sqlite3\_bind\_double}}(stmt,\ 2,\ session.\doxymbox{\hyperlink{structFlightSession_a6c429b2276eab1935eecf400a40f9341}{current\_avg}});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_aa6d5cc21ec0004b2e0bdce3395590aad}{sqlite3\_bind\_int}}(stmt,\ 3,\ session.\doxymbox{\hyperlink{structFlightSession_aeeda4d286969d25caf3f6345bd259b6d}{packet\_count}});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_af77e2729923f2621852202e1c23788c6}{sqlite3\_bind\_int64}}(stmt,\ 4,\ session.\doxymbox{\hyperlink{structFlightSession_a599ad82bebfde058fabcfe233bb1eddd}{db\_row\_id}});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_ac1e491ce36b7471eb28387f7d3c74334}{sqlite3\_step}}(stmt);}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_a801195c0f771d40bb4be1e40f3b88945}{sqlite3\_finalize}}(stmt);}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00120}00120\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00121}00121\ \}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00123}\doxymbox{\hyperlink{flight__session__manager_8cpp_ad411a6afd7321526c977d3ed27ee606c}{00123}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{flight__session__manager_8cpp_ad411a6afd7321526c977d3ed27ee606c}{finalize\_session}}(\doxymbox{\hyperlink{structFlightSession}{FlightSession}}\&\ session)\ \{}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{keywordflow}{if}\ (session.\doxymbox{\hyperlink{structFlightSession_aeeda4d286969d25caf3f6345bd259b6d}{packet\_count}}\ <\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[flight]\ Session\ ended\ |\ plane\_id:\ "{}}\ <<\ session.\doxymbox{\hyperlink{structFlightSession_acf345a472851913f978a202a420c5010}{plane\_id}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ |\ not\ enough\ data\ for\ average"{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00129}00129\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{keywordtype}{double}\ avg\_consumption\ =\ session.\doxymbox{\hyperlink{structFlightSession_a047515a5c81cae4f6b33f2feb3464518}{fuel\_sum}}\ /\ (session.\doxymbox{\hyperlink{structFlightSession_aeeda4d286969d25caf3f6345bd259b6d}{packet\_count}}\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{keywordtype}{double}\ final\_cumulative\_avg;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{keywordtype}{int}\ final\_flight\_count;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00135}00135\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[flight]\ Completed\ |\ plane\_id:\ "{}}\ <<\ session.\doxymbox{\hyperlink{structFlightSession_acf345a472851913f978a202a420c5010}{plane\_id}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ |\ avg\ consumption:\ "{}}\ <<\ avg\_consumption}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ |\ total\ consumed:\ "{}}\ <<\ session.\doxymbox{\hyperlink{structFlightSession_a047515a5c81cae4f6b33f2feb3464518}{fuel\_sum}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ |\ readings:\ "{}}\ <<\ session.\doxymbox{\hyperlink{structFlightSession_aeeda4d286969d25caf3f6345bd259b6d}{packet\_count}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00141}00141\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(\doxymbox{\hyperlink{flight__session__manager_8cpp_a397d4d0d84c8f784c6be3e201f496233}{aircraft\_mutex}});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structAircraftStats}{AircraftStats}}\&\ stats\ =\ \doxymbox{\hyperlink{flight__session__manager_8cpp_a7811695aff2514a9eda2afc98311fb79}{aircraft\_map}}[session.\doxymbox{\hyperlink{structFlightSession_acf345a472851913f978a202a420c5010}{plane\_id}}];}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ stats.\doxymbox{\hyperlink{structAircraftStats_a15e0c83b356ec0e89edf5ccdfb59a1bc}{cumulative\_avg}}\ =\ (stats.\doxymbox{\hyperlink{structAircraftStats_a15e0c83b356ec0e89edf5ccdfb59a1bc}{cumulative\_avg}}\ *\ stats.\doxymbox{\hyperlink{structAircraftStats_afb8fbcb4f7a014daa135fcb15801749c}{flight\_count}}\ +\ avg\_consumption)\ /\ (stats.\doxymbox{\hyperlink{structAircraftStats_afb8fbcb4f7a014daa135fcb15801749c}{flight\_count}}\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ stats.\doxymbox{\hyperlink{structAircraftStats_afb8fbcb4f7a014daa135fcb15801749c}{flight\_count}}++;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ final\_cumulative\_avg\ =\ stats.\doxymbox{\hyperlink{structAircraftStats_a15e0c83b356ec0e89edf5ccdfb59a1bc}{cumulative\_avg}};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ final\_flight\_count\ =\ stats.\doxymbox{\hyperlink{structAircraftStats_afb8fbcb4f7a014daa135fcb15801749c}{flight\_count}};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[fleet]\ \ Aircraft\ "{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ session.\doxymbox{\hyperlink{structFlightSession_acf345a472851913f978a202a420c5010}{plane\_id}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ |\ cumulative\ avg:\ "{}}\ <<\ stats.\doxymbox{\hyperlink{structAircraftStats_a15e0c83b356ec0e89edf5ccdfb59a1bc}{cumulative\_avg}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ |\ flights:\ "{}}\ <<\ stats.\doxymbox{\hyperlink{structAircraftStats_afb8fbcb4f7a014daa135fcb15801749c}{flight\_count}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00154}00154\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00156}00156\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(\doxymbox{\hyperlink{flight__session__manager_8cpp_ae9fee94caa49aa4f62d859d6794a732c}{db\_mutex}});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_af2a033da1327cdd77f0a174a09aedd0c}{sqlite3\_stmt}}*\ stmt\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_a85d4203bb54c984c5325c2f5b3664985}{sqlite3\_prepare\_v2}}(\doxymbox{\hyperlink{flight__session__manager_8cpp_a452fb05e95ce282242760ef11bba7295}{g\_db}},}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}UPDATE\ flight\_sessions\ SET\ "{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}fuel\_sum\ =\ ?,\ current\_avg\ =\ ?,\ packet\_count\ =\ ?,\ status\ =\ 'completed'\ "{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}WHERE\ id\ =\ ?;"{}},}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ -\/1,\ \&stmt,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_a8dc6f4de797850398e12e5022cae8915}{sqlite3\_bind\_double}}(stmt,\ 1,\ session.\doxymbox{\hyperlink{structFlightSession_a047515a5c81cae4f6b33f2feb3464518}{fuel\_sum}});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_a8dc6f4de797850398e12e5022cae8915}{sqlite3\_bind\_double}}(stmt,\ 2,\ avg\_consumption);}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_aa6d5cc21ec0004b2e0bdce3395590aad}{sqlite3\_bind\_int}}(stmt,\ 3,\ session.\doxymbox{\hyperlink{structFlightSession_aeeda4d286969d25caf3f6345bd259b6d}{packet\_count}});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_af77e2729923f2621852202e1c23788c6}{sqlite3\_bind\_int64}}(stmt,\ 4,\ session.\doxymbox{\hyperlink{structFlightSession_a599ad82bebfde058fabcfe233bb1eddd}{db\_row\_id}});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_ac1e491ce36b7471eb28387f7d3c74334}{sqlite3\_step}}(stmt);}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_a801195c0f771d40bb4be1e40f3b88945}{sqlite3\_finalize}}(stmt);}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_af2a033da1327cdd77f0a174a09aedd0c}{sqlite3\_stmt}}*\ stats\_stmt\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_a85d4203bb54c984c5325c2f5b3664985}{sqlite3\_prepare\_v2}}(\doxymbox{\hyperlink{flight__session__manager_8cpp_a452fb05e95ce282242760ef11bba7295}{g\_db}},}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}INSERT\ OR\ REPLACE\ INTO\ aircraft\_stats\ (plane\_id,\ cumulative\_avg,\ flight\_count)\ "{}}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}VALUES\ (?,\ ?,\ ?);"{}},}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ -\/1,\ \&stats\_stmt,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_af77e2729923f2621852202e1c23788c6}{sqlite3\_bind\_int64}}(stats\_stmt,\ 1,\ \textcolor{keyword}{static\_cast<}int64\_t\textcolor{keyword}{>}(session.\doxymbox{\hyperlink{structFlightSession_acf345a472851913f978a202a420c5010}{plane\_id}}));}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_a8dc6f4de797850398e12e5022cae8915}{sqlite3\_bind\_double}}(stats\_stmt,\ 2,\ final\_cumulative\_avg);}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_aa6d5cc21ec0004b2e0bdce3395590aad}{sqlite3\_bind\_int}}(stats\_stmt,\ 3,\ final\_flight\_count);}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_ac1e491ce36b7471eb28387f7d3c74334}{sqlite3\_step}}(stats\_stmt);}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sqlite3_8c_a801195c0f771d40bb4be1e40f3b88945}{sqlite3\_finalize}}(stats\_stmt);}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00184}00184\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flight__session__manager_8cpp_source_l00185}00185\ \}}
+
+\end{DoxyCode}

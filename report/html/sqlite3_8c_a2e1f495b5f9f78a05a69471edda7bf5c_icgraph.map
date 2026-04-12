@@ -1,0 +1,20 @@
+<map id="bindText" name="bindText">
+<area shape="rect" id="Node000001" title=" " alt="" coords="616,81,686,108"/>
+<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a21616ad282a9d6ea45ee39746f81287a" title=" " alt="" coords="432,5,568,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="615,73,566,46,541,35,542,30,569,42,620,73"/>
+<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a8dc6f4de797850398e12e5022cae8915" title=" " alt="" coords="432,56,568,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="598,86,568,83,568,78,603,86"/>
+<area shape="rect" id="Node000008" href="$sqlite3_8c.html#a9e493afa3924315ba147f62c4800f415" title=" " alt="" coords="433,107,567,133"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="603,103,567,111,567,106,598,103"/>
+<area shape="rect" id="Node000009" href="$sqlite3_8c.html#a962df8800a9e412161fee0add5f7267e" title=" " alt="" coords="436,157,564,184"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="620,116,569,148,542,159,541,154,566,143,615,117"/>
+<area shape="rect" id="Node000004" href="$flight__session__manager_8cpp.html#ad411a6afd7321526c977d3ed27ee606c" title="Finalizes a flight session and updates aggregate statistics." alt="" coords="263,31,377,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="414,58,378,55,377,49,419,57"/>
+<area shape="rect" id="Node000007" href="$flight__session__manager_8cpp.html#acce6c39388a8e84f1a2ec4a5624a921f" title="Processes a telemetry reading and updates flight statistics." alt="" coords="256,81,384,108"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="414,82,385,88,384,83,419,81"/>
+<area shape="rect" id="Node000005" href="$FlightLinkServer_2FlightLinkServer_2stream__processor_8cpp.html#a6f9656db2bdac318c54f4d2c58bc9c9a" title="Processes a single client connection from first byte to disconnection." alt="" coords="103,56,208,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="245,56,209,64,208,59,250,54"/>
+<area shape="rect" id="Node000006" href="$FlightLinkServer_2FlightLinkServer_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,56,55,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="85,71,56,72,54,67,89,68"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="238,83,209,80,208,75,243,82"/>
+</map>

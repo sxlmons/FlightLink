@@ -1,0 +1,73 @@
+\doxysection{Flight\+Link\+Server/\+\+Flight\+Link\+Server/\+main.cpp File Reference}
+\hypertarget{FlightLinkServer_2FlightLinkServer_2main_8cpp}{}\label{FlightLinkServer_2FlightLinkServer_2main_8cpp}\index{FlightLinkServer/FlightLinkServer/main.cpp@{FlightLinkServer/FlightLinkServer/main.cpp}}
+{\ttfamily \+\#include $<$winsock2.\+h$>$}\newline
+{\ttfamily \+\#include $<$ws2tcpip.\+h$>$}\newline
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$optional$>$}\newline
+{\ttfamily \+\#include "{}sqlite3.\+h"{}}\newline
+{\ttfamily \+\#include "{}protocol.\+h"{}}\newline
+{\ttfamily \+\#include "{}connection\+\_\+manager.\+h"{}}\newline
+{\ttfamily \+\#include "{}stream\+\_\+processor.\+h"{}}\newline
+{\ttfamily \+\#include "{}flight\+\_\+session\+\_\+manager.\+h"{}}\newline
+Include dependency graph for main.\+cpp:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{FlightLinkServer_2FlightLinkServer_2main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structServerConfig}{Server\+Config}}
+\begin{DoxyCompactList}\small\item\em Runtime configuration parameters for the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std::\+optional$<$ \doxymbox{\hyperlink{structServerConfig}{Server\+Config}} $>$ \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2main_8cpp_aae0e40629e5409b4240aeefe8dcfb104}{parse\+\_\+args}} (int argc, char \texorpdfstring{$\ast$}{*}argv\+[$\,$]\+)
+\item 
+int \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\+[$\,$]\+)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{FlightLinkServer_2FlightLinkServer_2main_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{FlightLinkServer_2FlightLinkServer_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{FlightLinkServer_2FlightLinkServer_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\+[$\,$]\+}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2main_8cpp_source_l00020}{20}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{FlightLinkServer_2FlightLinkServer_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{FlightLinkServer_2FlightLinkServer_2main_8cpp_aae0e40629e5409b4240aeefe8dcfb104}\index{main.cpp@{main.cpp}!parse\_args@{parse\_args}}
+\index{parse\_args@{parse\_args}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{parse\_args()}{parse\_args()}}
+{\footnotesize\ttfamily \label{FlightLinkServer_2FlightLinkServer_2main_8cpp_aae0e40629e5409b4240aeefe8dcfb104} 
+std::\+optional$<$ \doxymbox{\hyperlink{structServerConfig}{Server\+Config}} $>$ parse\+\_\+args (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\+[$\,$]\+}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2main_8cpp_source_l00091}{91}} of file \doxymbox{\hyperlink{FlightLinkServer_2FlightLinkServer_2main_8cpp_source}{main.\+cpp}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{FlightLinkServer_2FlightLinkServer_2main_8cpp_aae0e40629e5409b4240aeefe8dcfb104_icgraph}
+\end{center}
+\end{figure}
