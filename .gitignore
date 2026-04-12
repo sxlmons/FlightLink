@@ -33,3 +33,5 @@ Thumbs.db
 # /docs/        <-- We want to track the SRS and SDD PDFs
 .idea
 cmake-build-debug
+*.db-wal
+*.db-shm

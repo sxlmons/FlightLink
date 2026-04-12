@@ -7,6 +7,7 @@
 
 #include <iomanip>
 
+// For debugging purposes 
 static void dump_bytes(const char* label, const void* data, size_t len) {
 	const uint8_t* bytes = reinterpret_cast<const uint8_t*>(data);
 	std::cout << "[dump] " << label << " (" << len << " bytes): ";
@@ -44,6 +45,7 @@ void process_client(SOCKET client) {
 		uint8_t msg_type;
 		if (!recv_exact(client, reinterpret_cast<char*>(&msg_type), 1)) {
 			std::cout << "[stream] Client disconnected." << std::endl;
+			finalize_session(session);
 			break;
 		}
 		/*
@@ -57,6 +59,7 @@ void process_client(SOCKET client) {
 			PacketHeader header;
 			if (!recv_exact(client, reinterpret_cast<char*>(&header), HEADER_PAYLOAD_SIZE)) {
 				std::cout << "[stream] disconnected during flight start." << std::endl;
+				finalize_session(session);
 				return;
 			}
 			// dump_bytes("flight_start payload", &header, HEADER_PAYLOAD_SIZE);
@@ -69,13 +72,14 @@ void process_client(SOCKET client) {
 			TelemetryData telemetry;
 			if (!recv_exact(client, reinterpret_cast<char*>(&telemetry), TELEMETRY_PAYLOAD_SIZE)) {
 				std::cout << "[stream] Disconnected during telemetry." << std::endl;
+				finalize_session(session);
 				return;
 			}
 			// dump_bytes("telemetry payload", &telemetry, TELEMETRY_PAYLOAD_SIZE);
-			std::cout << "[stream] Parsed plane_id: " << telemetry.plane_id
+			/*std::cout << "[stream] Parsed plane_id: " << telemetry.plane_id
 				<< " | timestamp: " << telemetry.timestamp
-				<< " | fuel: " << telemetry.fuel_remaining << std::endl;
-
+				<< " | fuel: " << telemetry.fuel_remaining << std::endl;  
+			*/
 			process_telemetry(session, telemetry.fuel_remaining);
 			break;
 		}
