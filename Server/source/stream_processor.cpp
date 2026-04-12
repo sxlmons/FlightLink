@@ -1,9 +1,25 @@
+/**
+ * @file stream_processor.cpp
+ * @brief Implementation of the client connection processing logic
+ */
+
 #include "stream_processor.h"
 #include "protocol.h"
 #include <iostream>
 
 // stream_processor.cpp
-
+/**
+ * @brief Receives exactly the specified number of bytes from a socket
+ *
+ * This function handles the fact that TCP may fragment messages across
+ * multiple packets. It continues reading until all requested bytes
+ * have been received or an error occurs.
+ *
+ * @param socket The socket to read from
+ * @param buffer Destination buffer for received data
+ * @param length Exact number of bytes to receive
+ * @return true if all bytes were received successfully, false otherwise
+ */
 static bool recv_exact(SOCKET socket, char* buffer, size_t length) {
 	size_t received = 0;
 

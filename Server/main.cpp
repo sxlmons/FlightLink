@@ -1,3 +1,19 @@
+/**
+ * @file main.cpp
+ * @brief FlightLink Telemetry Server - Main Entry Point
+ *
+ * A multi-threaded TCP server that receives and processes aircraft telemetry
+ * data using the FlightLink binary protocol. The server calculates fuel
+ * consumption rates and maintains per-aircraft statistics.
+ *
+ * Usage: server.exe <port> <pool_size>
+ *   port      - TCP port to listen on (1-65535)
+ *   pool_size - Number of worker threads for connection processing
+ *
+ * @author FlightLink Team
+ * @date 2024
+ */
+
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include <iostream>
@@ -7,13 +23,39 @@
 #include "connection_manager.h"
 #include "stream_processor.h"
 
+
+ /**
+  * @struct ServerConfig
+  * @brief Runtime configuration parameters for the server
+  */
 struct ServerConfig {
     int port;
     int pool_size;
 };
 
+
+/**
+ * @brief Parses command line arguments into server configuration
+ *
+ * Validates port range (1-65535) and ensures pool size is positive.
+ *
+ * @param argc Argument count from main()
+ * @param argv Argument vector from main()
+ * @return ServerConfig if parsing succeeds, std::nullopt otherwise
+ */
 std::optional<ServerConfig> parse_args(int argc, char* argv[]);
 
+
+/**
+ * @brief Main server entry point
+ *
+ * Initializes Winsock, creates the listening socket, starts the worker
+ * thread pool via ConnectionManager, and enters the accept loop.
+ *
+ * @param argc Argument count
+ * @param argv Argument vector
+ * @return 0 on success, 1 on error
+ */
 int main(int argc, char* argv[]) {
     auto config = parse_args(argc, argv);
     if (!config)

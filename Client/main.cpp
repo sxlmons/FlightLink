@@ -1,3 +1,18 @@
+/**
+ * @file main.cpp
+ * @brief FlightLink Telemetry Client - Simulates aircraft data transmission
+ *
+ * A Linux-based TCP client that reads telemetry data from CSV files and
+ * transmits it to the FlightLink server using the binary protocol format.
+ * Simulates realistic flight data transmission with configurable delays.
+ *
+ * Usage: ./client <server_ip>
+ *   server_ip - IPv4 address of the FlightLink server
+ *
+ * @author FlightLink Team
+ * @date 2024
+ */
+
 #include <unistd.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -12,6 +27,12 @@
 
 using namespace std;
 
+/**
+ * @struct AircraftPacket
+ * @brief Binary packet structure matching the FlightLink protocol
+ *
+ * Packed to ensure consistent binary layout across platforms.
+ */
 #pragma pack(push, 1)
 struct AircraftPacket {
     uint8_t message_type;  // 0x01 (Start), 0x02 (Data), or 0x03 (End)
@@ -22,10 +43,51 @@ struct AircraftPacket {
 };
 #pragma pack(pop)
 
+/**
+ * @brief Generates a random number between 0 and 3 for file selection
+ * @return Random integer in range [0, 3]
+ */
 int getRandomNumber();
+
+/**
+ * @brief Generates a globally unique aircraft identifier
+ *
+ * Combines process ID, high-resolution timestamp, and random data
+ * to create a unique 32-bit identifier for each client session.
+ *
+ * @return Unique 32-bit aircraft identifier
+ */
 uint32_t generateGlobalUniqueId();
+
+/**
+ * @brief Sends a binary packet to the server
+ *
+ * @param socket Connected socket to send on
+ * @param type Message type (0x01, 0x02, or 0x03)
+ * @param id Aircraft identifier
+ * @param timestamp Timestamp value (ignored for non-telemetry packets)
+ * @param fuel_remaining Fuel value (ignored for non-telemetry packets)
+ * @return true if send succeeded, false otherwise
+ */
 bool sendPacket(int socket, uint8_t type, uint32_t id, double timestamp, double fuel_remaining);
+
+/**
+ * @brief Processes a telemetry data file and transmits all readings
+ *
+ * Reads timestamp/fuel pairs from a CSV file and transmits them
+ * as telemetry packets with 750ms delay between readings.
+ *
+ * @param filename Path to telemetry CSV file
+ * @param socket Connected socket for transmission
+ * @param planeId Aircraft identifier to use
+ * @return true if all packets sent successfully, false on failure
+ */
 bool processTelemetryFile(const std::string& filename, int socket, uint32_t planeId);
+
+/**
+ * @brief Gets the project directory path for locating telemetry files
+ * @return Absolute path to the project directory
+ */
 string getProjectPath();
 
 int main(int argc, char* argv[])
@@ -49,7 +111,7 @@ int main(int argc, char* argv[])
     sockaddr_in SvrAddr;
     SvrAddr.sin_family = AF_INET;						//Address family type internet
     SvrAddr.sin_port = htons(27000);					//port (host to network conversion)
-    SvrAddr.sin_addr.s_addr = inet_addr(argv[1]);	//IP address 10.144.114.37
+    SvrAddr.sin_addr.s_addr = inet_addr(argv[1]);	    //IP address 10.144.114.37
     if ((connect(ClientSocket, (struct sockaddr*)&SvrAddr, sizeof(SvrAddr))) == -1) {
         close(ClientSocket);
         return 0;

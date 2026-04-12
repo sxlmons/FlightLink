@@ -1,3 +1,11 @@
+/**
+ * @file bounded_queue.h
+ * @brief Thread-safe bounded queue implementation for socket distribution
+ *
+ * Provides a blocking queue with fixed capacity for managing client
+ * socket connections between the acceptor thread and worker threads.
+ */
+
 #pragma once
 
 #include <WinSock2.h>
@@ -5,17 +13,30 @@
 #include <mutex>
 #include <condition_variable>
 
-// bounded_queue.h
-//
-// push() blocks when the queue is at capacity
-// pop() blocks when the queue is empty
-// shutdown() wakes all waiting threads so they can exit
+ /**
+  * @class BoundedQueue
+  * @brief A thread-safe queue with bounded capacity
+  *
+  * This queue implements the producer-consumer pattern with blocking
+  * operations. Producers block when the queue is full, and consumers
+  * block when the queue is empty. A shutdown mechanism allows graceful
+  * termination of waiting threads.
+  *
+  * @note This class is designed specifically for SOCKET handles
+  */
 
 class BoundedQueue {
 public:
 	explicit BoundedQueue(size_t capacity) : capacity_(capacity), shutdown_(false) {}
 
-	// Blocks until space is available, then enques the socket
+	/**
+   * @brief Enqueues a socket, blocking if the queue is full
+   *
+   * This method will wait until space becomes available in the queue
+   * or until shutdown() is called.
+   *
+   * @param socket The client socket to enqueue
+   */
 	void push(SOCKET socket) {
 		std::unique_lock<std::mutex> lock(mutex_);
 		not_full_.wait(lock, [this]() {
@@ -28,7 +49,14 @@ public:
 		not_empty_.notify_one();
 	}
 
-	// Blocks until a socket is available, then dequeues and returns it
+	/**
+ * @brief Dequeues a socket, blocking if the queue is empty
+ *
+ * This method will wait until an item becomes available in the queue
+ * or until shutdown() is called.
+ *
+ * @return The dequeued socket, or INVALID_SOCKET if shutdown was called
+ */
 	SOCKET pop() {
 		std::unique_lock<std::mutex> lock(mutex_);
 		not_empty_.wait(lock, [this]() {
@@ -43,7 +71,12 @@ public:
 		return socket;
 	}
 
-	// Signals all waiting threads to wake up and exit.
+	/**
+   * @brief Signals all waiting threads to wake up and exit
+   *
+   * This method should be called during server shutdown to allow
+   * worker threads to terminate gracefully.
+   */
 	void shutdown() {
 		std::unique_lock<std::mutex> lock(mutex_);
 		shutdown_ = true;

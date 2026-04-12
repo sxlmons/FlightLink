@@ -1,6 +1,9 @@
-#include "connection_manager.h"
+/**
+ * @file connection_manager.cpp
+ * @brief Implementation of the connection manager thread pool
+ */
 
-// connection_manager.cpp
+#include "connection_manager.h"
 
 ConnectionManager::ConnectionManager(size_t pool_size, std::function<void(SOCKET)> handler)
 	: handler_(std::move(handler)),
