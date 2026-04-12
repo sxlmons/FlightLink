@@ -2,7 +2,7 @@
  * @file main.cpp
  * @brief FlightLink Telemetry Client - Simulates aircraft data transmission
  *
- * A Linux-based TCP client that reads telemetry data from CSV files and
+ * A Linux or Windows TCP client that reads telemetry data from CSV files and
  * transmits it to the FlightLink server using the binary protocol format.
  * Simulates realistic flight data transmission with configurable delays.
  *
@@ -10,13 +10,21 @@
  *   server_ip - IPv4 address of the FlightLink server
  *
  * @author FlightLink Team
- * @date 2024
+ * @date 2026
  */
 
+#ifdef _WIN32
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#include <windows.h>
+#define CLOSE_SOCKET closesocket
+#else
 #include <unistd.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#define CLOSE_SOCKET close
+#endif
 #include <iostream>
 #include <random>
 #include <fstream>
@@ -24,6 +32,7 @@
 #include <sstream>
 #include <thread>
 #include <cstdint>
+#include <chrono>
 
 using namespace std;
 
@@ -113,7 +122,7 @@ int main(int argc, char* argv[])
     SvrAddr.sin_port = htons(27000);					//port (host to network conversion)
     SvrAddr.sin_addr.s_addr = inet_addr(argv[1]);	    //IP address 10.144.114.37
     if ((connect(ClientSocket, (struct sockaddr*)&SvrAddr, sizeof(SvrAddr))) == -1) {
-        close(ClientSocket);
+        CLOSE_SOCKET(ClientSocket);
         return 0;
     }
 
@@ -129,7 +138,7 @@ int main(int argc, char* argv[])
     if (!sendPacket(ClientSocket, 0x03, clientId, 0x00, 0x00))
         return 0;
 
-    close(ClientSocket);
+    CLOSE_SOCKET(ClientSocket);
 
     return 1;
 }
