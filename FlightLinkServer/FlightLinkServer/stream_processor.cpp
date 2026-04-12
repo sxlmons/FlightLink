@@ -76,10 +76,10 @@ void process_client(SOCKET client) {
 				return;
 			}
 			// dump_bytes("telemetry payload", &telemetry, TELEMETRY_PAYLOAD_SIZE);
-			std::cout << "[stream] Parsed plane_id: " << telemetry.plane_id
+			/*std::cout << "[stream] Parsed plane_id: " << telemetry.plane_id
 				<< " | timestamp: " << telemetry.timestamp
-				<< " | fuel: " << telemetry.fuel_remaining << std::endl;
-
+				<< " | fuel: " << telemetry.fuel_remaining << std::endl;  
+			*/
 			process_telemetry(session, telemetry.fuel_remaining);
 			break;
 		}

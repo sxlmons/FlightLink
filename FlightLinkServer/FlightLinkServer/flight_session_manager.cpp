@@ -87,7 +87,7 @@ void process_telemetry(FlightSession& session, double fuel_remaining) {
 	session.prev_fuel = fuel_remaining;
 	session.current_avg = session.fuel_sum / (session.packet_count - 1);  
 	
-	if (session.packet_count % 10 == 0) 
+	if (session.packet_count % 100 == 0) 
 	{
 		std::lock_guard<std::mutex> lock(db_mutex);
 
@@ -163,7 +163,7 @@ void finalize_session(FlightSession& session) {
 			"INSERT OR REPLACE INTO aircraft_stats (plane_id, cumulative_avg, flight_count) "
 			"VALUES (?, ?, ?);",
 			-1, &stats_stmt, nullptr);
-		sqlite3_bind_int64(stmt, 1, static_cast<int64_t>(session.plane_id));
+		sqlite3_bind_int64(stats_stmt, 1, static_cast<int64_t>(session.plane_id));
 		sqlite3_bind_double(stats_stmt, 2, final_cumulative_avg);
 		sqlite3_bind_int(stats_stmt, 3, final_flight_count);
 
