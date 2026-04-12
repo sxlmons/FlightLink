@@ -6,7 +6,7 @@ BATCH_SIZE=${3:-50}
 CLIENT_NAME="Client"
 
 while true; do
-    CURRENT_RUNNING=$(pgrep -c -x "$CLIENT_NAME")
+    CURRENT_RUNNING=$(pgrep -x "$CLIENT_NAME" | wc -l | tr -d ' ')
     NEEDED=$((COUNT - CURRENT_RUNNING))
 
     if [ "$NEEDED" -gt 0 ]; then
