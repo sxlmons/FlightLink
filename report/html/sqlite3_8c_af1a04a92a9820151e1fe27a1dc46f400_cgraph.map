@@ -1,9 +1,0 @@
-<map id="explainAppendTerm" name="explainAppendTerm">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,141,83"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a498ad2c9e634cbf313c5711f0db0d98d" title=" " alt="" coords="189,5,363,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,53,207,35,203,38,130,58"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#ae8104bd5de783db5e41cb4638111032a" title=" " alt="" coords="211,56,341,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="141,67,198,68,193,70,141,72"/>
-<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a6ba0c20e4e277988750dad398db293ac" title=" " alt="" coords="204,107,348,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="130,81,207,101,202,103,129,86"/>
-</map>

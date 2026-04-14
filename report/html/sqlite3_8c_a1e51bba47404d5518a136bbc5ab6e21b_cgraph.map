@@ -1,8 +1,0 @@
-<map id="unixRead" name="unixRead">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,82,57"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a12a82854284c159ec47d1e5bb38d63bf" title=" " alt="" coords="130,5,233,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,34,117,30,112,32,83,40"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#ac2eb7c86fbd6cbb4cccb664b746816ec" title=" " alt="" coords="281,31,387,57"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="82,41,266,41,266,47,82,47"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="234,25,268,33,263,33,233,30"/>
-</map>

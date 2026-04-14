@@ -1,7 +1,0 @@
-<map id="RowSetChunk" name="RowSetChunk">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,123,112,149"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="128,127,138,136,130,145,113,148,112,142,128,140,133,136,126,132"/>
-<area shape="rect" id="Node000002" href="$structRowSetEntry.html" title=" " alt="" coords="9,15,108,41"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="61,56,61,123,56,122,56,58"/>
-<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="124,17,135,28,127,38,110,41,108,36,124,33,130,28,124,22"/>
-</map>

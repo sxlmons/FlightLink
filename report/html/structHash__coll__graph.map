@@ -1,9 +1,0 @@
-<map id="Hash" name="Hash">
-<area shape="rect" id="Node000001" title=" " alt="" coords="20,221,73,248"/>
-<area shape="rect" id="Node000002" href="$structHashElem.html" title=" " alt="" coords="5,15,88,41"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="43,54,41,101,40,149,47,221,42,221,35,149,36,100,42,60"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="102,16,111,21,114,28,106,38,89,41,86,37,103,34,109,28,107,24,103,22"/>
-<area shape="rect" id="Node000003" href="$structHash_1_1__ht.html" title=" " alt="" coords="79,123,158,149"/>
-<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="64,52,113,121,107,123,63,57"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="103,162,58,223,54,219,98,161"/>
-</map>

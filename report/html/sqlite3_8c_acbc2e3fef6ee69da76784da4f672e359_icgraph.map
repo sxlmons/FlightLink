@@ -1,8 +1,0 @@
-<map id="btreeHeapPull" name="btreeHeapPull">
-<area shape="rect" id="Node000001" title=" " alt="" coords="389,29,492,56"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a80938dd01f800bfd9ece3390c062f3b7" title=" " alt="" coords="229,29,341,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="371,43,341,45,341,40,376,43"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="310,14,302,10,285,8,269,10,260,15,258,20,262,30,258,28,253,21,256,11,267,5,285,3,304,5,315,15"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a4d71d3f5335842ef22f64612a692afba" title=" " alt="" coords="5,29,181,56"/>
-<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="210,43,181,45,181,40,216,43"/>
-</map>

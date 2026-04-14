@@ -1,7 +1,0 @@
-<map id="exprIdxCover" name="exprIdxCover">
-<area shape="rect" id="Node000001" title=" " alt="" coords="423,5,522,32"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a02299a60a3355ec69280d52f5be24fa6" title=" " alt="" coords="192,5,375,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="405,19,375,21,375,16,410,19"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a6846f48e41bba28064b5b05e3e7c55ef" title=" " alt="" coords="5,5,144,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="174,19,144,21,144,16,179,18"/>
-</map>

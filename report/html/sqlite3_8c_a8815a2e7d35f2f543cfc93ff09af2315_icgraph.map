@@ -1,8 +1,0 @@
-<map id="whereRangeScanEst" name="whereRangeScanEst">
-<area shape="rect" id="Node000001" title=" " alt="" coords="410,29,554,56"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a085c0b32447d146fe8f52eed1414d4af" title=" " alt="" coords="192,29,362,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="392,43,363,45,362,40,397,43"/>
-<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="310,14,299,10,277,8,256,10,244,15,242,20,247,30,242,28,236,21,241,11,254,5,277,3,301,5,315,14"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a6846f48e41bba28064b5b05e3e7c55ef" title=" " alt="" coords="5,29,144,56"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="173,43,144,45,144,40,179,43"/>
-</map>

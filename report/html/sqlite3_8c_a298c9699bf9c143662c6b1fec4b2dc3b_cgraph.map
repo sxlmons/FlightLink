@@ -1,9 +1,0 @@
-<map id="sqlite3_log" name="sqlite3_log">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,89,32"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#adb7f26b10ac1b847db6f000ef4c2e2ba" title=" " alt="" coords="137,5,289,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,16,124,18,118,19,89,21"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#adf72e809d4f4d34b3256e2d29769c64a" title=" " alt="" coords="337,5,502,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="290,16,324,19,318,19,290,21"/>
-<area shape="rect" id="Node000004" href="$sqlite3_8c.html#ab9e9d3dc2dd748199ab1439b90a30905" title=" " alt="" coords="550,5,668,32"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="503,16,538,19,532,19,503,21"/>
-</map>

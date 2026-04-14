@@ -1,9 +1,0 @@
-<map id="sqlite3PagerExclusiveLock" name="sqlite3PagerExclusiveLock">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,184,32"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a181fa0432ae1cc12a783f8a11ea2021f" title=" " alt="" coords="232,5,368,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,16,219,19,213,19,184,21"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a667bdac69bf20203e45cd8e899790bcc" title=" " alt="" coords="416,5,514,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="368,16,403,19,398,19,368,21"/>
-<area shape="rect" id="Node000004" href="$sqlite3_8c.html#ae224ca9067bc3e682180d0ecc1cd2206" title=" " alt="" coords="562,5,667,32"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="515,16,549,19,544,19,515,21"/>
-</map>

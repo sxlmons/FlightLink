@@ -1,0 +1,30 @@
+\doxysection{Aircraft\+Stats Struct Reference}
+\hypertarget{struct_aircraft_stats}{}\label{struct_aircraft_stats}\index{AircraftStats@{AircraftStats}}
+
+
+Per-\/aircraft cumulative statistics (shared across threads).  
+
+
+
+
+{\ttfamily \+\#include $<$flight\+\_\+session\+\_\+manager.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_aircraft_stats_a15e0c83b356ec0e89edf5ccdfb59a1bc}\label{struct_aircraft_stats_a15e0c83b356ec0e89edf5ccdfb59a1bc} 
+double {\bfseries cumulative\+\_\+avg}
+\item 
+\Hypertarget{struct_aircraft_stats_afb8fbcb4f7a014daa135fcb15801749c}\label{struct_aircraft_stats_afb8fbcb4f7a014daa135fcb15801749c} 
+int {\bfseries flight\+\_\+count}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Per-\/aircraft cumulative statistics (shared across threads). 
+
+These statistics are maintained across all flights for each aircraft and are protected by a mutex for thread-\/safe access. 
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Flight\+Link\+Server/\+\+Flight\+Link\+Server/\+\doxymbox{\hyperlink{flight__session__manager_8h}{flight\+\_\+session\+\_\+manager.\+h}}\end{DoxyCompactItemize}

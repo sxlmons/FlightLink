@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_5fht_0',['_ht',['../structHash_1_1__ht.html',1,'Hash']]]
+  ['aircraftpacket_0',['AircraftPacket',['../struct_aircraft_packet.html',1,'']]],
+  ['aircraftstats_1',['AircraftStats',['../struct_aircraft_stats.html',1,'']]]
 ];

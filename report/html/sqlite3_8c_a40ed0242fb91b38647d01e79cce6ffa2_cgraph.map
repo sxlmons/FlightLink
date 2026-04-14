@@ -1,7 +1,0 @@
-<map id="jsonArrayCompute" name="jsonArrayCompute">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,135,32"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#aa20ffa021677068822edc6652c40f542" title=" " alt="" coords="183,5,300,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,16,170,18,164,19,135,21"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#ace0a93a5b4491bcbdfe09c5baa15df3d" title=" " alt="" coords="348,5,458,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="301,16,335,19,330,19,301,21"/>
-</map>

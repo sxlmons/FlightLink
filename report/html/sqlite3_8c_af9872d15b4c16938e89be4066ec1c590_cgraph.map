@@ -1,7 +1,0 @@
-<map id="getSafetyLevel" name="getSafetyLevel">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,114,57"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a567fec0d8e10559f0f901f485158a9ad" title=" " alt="" coords="174,5,256,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,33,161,27,156,29,115,38"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a3dcd80ba41f1a308193dee74857b62a7" title=" " alt="" coords="162,56,269,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="114,50,149,58,144,59,114,55"/>
-</map>

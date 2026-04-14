@@ -1,7 +1,0 @@
-<map id="exprImpliesNotNull" name="exprImpliesNotNull">
-<area shape="rect" id="Node000001" title=" " alt="" coords="209,29,341,56"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="306,14,296,10,275,8,255,10,244,15,242,20,247,30,242,28,236,21,240,11,253,5,275,3,298,5,311,14"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#aa70b2804ad2b9296414e603b05552418" title=" " alt="" coords="5,29,161,56"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="190,43,161,45,161,40,196,43"/>
-<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="114,14,104,10,83,8,63,10,52,15,50,20,55,29,50,29,44,21,48,11,62,5,83,3,106,5,120,14"/>
-</map>

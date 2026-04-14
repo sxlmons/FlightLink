@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['bounded_5fqueue_2eh_0',['bounded_queue.h',['../FlightLinkServer_2FlightLinkServer_2bounded__queue_8h.html',1,'(Global Namespace)'],['../Server_2headers_2bounded__queue_8h.html',1,'(Global Namespace)']]]
+  ['flight_5fsession_5fmanager_2ecpp_0',['flight_session_manager.cpp',['../flight__session__manager_8cpp.html',1,'']]],
+  ['flight_5fsession_5fmanager_2eh_1',['flight_session_manager.h',['../flight__session__manager_8h.html',1,'']]]
 ];

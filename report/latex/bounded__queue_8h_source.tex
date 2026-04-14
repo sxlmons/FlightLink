@@ -1,0 +1,71 @@
+\doxysection{bounded\+\_\+queue.\+h}
+\hypertarget{bounded__queue_8h_source}{}\label{bounded__queue_8h_source}\index{FlightLinkServer/FlightLinkServer/bounded\_queue.h@{FlightLinkServer/FlightLinkServer/bounded\_queue.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <WinSock2.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <condition\_variable>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ bounded\_queue.h}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ push()\ blocks\ when\ the\ queue\ is\ at\ capacity}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ pop()\ blocks\ when\ the\ queue\ is\ empty}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ shutdown()\ wakes\ all\ waiting\ threads\ so\ they\ can\ exit}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }BoundedQueue\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{explicit}\ BoundedQueue(\textcolor{keywordtype}{size\_t}\ capacity)\ :\ capacity\_(capacity),\ shutdown\_(\textcolor{keyword}{false})\ \{\}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Blocks\ until\ space\ is\ available,\ then\ enques\ the\ socket}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ push(SOCKET\ socket)\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ lock(mutex\_);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ not\_full\_.wait(lock,\ [\textcolor{keyword}{this}]()\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ queue\_.size()\ <\ capacity\_\ ||\ shutdown\_;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (shutdown\_)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ queue\_.push(socket);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ not\_empty\_.notify\_one();}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Blocks\ until\ a\ socket\ is\ available,\ then\ dequeues\ and\ returns\ it}}
+\DoxyCodeLine{00032\ \ \ \ \ SOCKET\ pop()\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ lock(mutex\_);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ not\_empty\_.wait(lock,\ [\textcolor{keyword}{this}]()\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !queue\_.empty()\ ||\ shutdown\_;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (shutdown\_\ \&\&\ queue\_.empty())\ \textcolor{keywordflow}{return}\ INVALID\_SOCKET;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ SOCKET\ socket\ =\ queue\_.front();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ queue\_.pop();}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ not\_full\_.notify\_one();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ socket;}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ Signals\ all\ waiting\ threads\ to\ wake\ up\ and\ exit.}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ shutdown()\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ lock(mutex\_);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ shutdown\_\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ not\_full\_.notify\_all();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ not\_empty\_.notify\_all();}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00055\ \ \ \ \ std::queue<SOCKET>\ \ queue\_;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \ capacity\_;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shutdown\_;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ std::mutex\ \ \ \ \ \ \ \ \ \ \ \ \ \ mutex\_;}
+\DoxyCodeLine{00060\ \ \ \ \ std::condition\_variable\ not\_full\_;}
+\DoxyCodeLine{00061\ \ \ \ \ std::condition\_variable\ not\_empty\_;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \};}
+
+\end{DoxyCode}

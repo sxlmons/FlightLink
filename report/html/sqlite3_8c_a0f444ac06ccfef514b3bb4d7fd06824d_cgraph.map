@@ -1,6 +1,0 @@
-<map id="patternCompare" name="patternCompare">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,120,56"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="34,29,29,21,33,11,44,5,63,3,82,5,94,14,89,14,80,10,62,8,46,10,37,15,35,20,39,29"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#ae25f70650fcf02236868220f5ebd2d79" title=" " alt="" coords="168,29,283,56"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="120,40,155,42,150,43,120,45"/>
-</map>

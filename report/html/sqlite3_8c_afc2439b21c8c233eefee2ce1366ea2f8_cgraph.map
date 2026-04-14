@@ -1,9 +1,0 @@
-<map id="printfTempBuf" name="printfTempBuf">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,108,57"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#abbe8be0cf7175e11ddc3e2218fad924e" title=" " alt="" coords="168,5,309,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,34,155,30,150,32,109,39"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#adf72e809d4f4d34b3256e2d29769c64a" title=" " alt="" coords="156,56,321,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="108,48,143,55,137,56,108,54"/>
-<area shape="rect" id="Node000004" href="$sqlite3_8c.html#ab9e9d3dc2dd748199ab1439b90a30905" title=" " alt="" coords="369,56,486,83"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="321,67,356,69,351,69,322,72"/>
-</map>

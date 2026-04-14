@@ -1,9 +1,0 @@
-<map id="isRealTable" name="isRealTable">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,95,57"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#aee2798e173651adae0f9c85469f3457d" title=" " alt="" coords="143,31,255,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,41,130,43,125,45,96,47"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#ac70ab821a6607b4a1b909582dc37a069" title=" " alt="" coords="307,5,409,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="255,32,294,29,289,30,256,38"/>
-<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a05535d0982ef06fbc2ee8195ebbae689" title=" " alt="" coords="303,56,413,83"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="256,50,290,58,285,58,255,56"/>
-</map>

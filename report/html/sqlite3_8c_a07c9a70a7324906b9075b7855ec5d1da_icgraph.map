@@ -1,8 +1,0 @@
-<map id="yy_find_reduce_action" name="yy_find_reduce_action">
-<area shape="rect" id="Node000001" title=" " alt="" coords="280,5,431,32"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a0327d71a5fabe0b6a343d78a2602e72a" title=" " alt="" coords="5,5,103,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="264,21,103,21,103,16,265,16"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#afbb7bb5727c7c10f77634667a3fb5f3a" title=" " alt="" coords="151,31,232,57"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="267,32,233,40,232,35,262,33"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="133,34,103,30,103,25,138,33"/>
-</map>

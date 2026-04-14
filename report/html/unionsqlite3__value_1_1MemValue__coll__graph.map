@@ -1,8 +1,0 @@
-<map id="sqlite3_value::MemValue" name="sqlite3_value::MemValue">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,221,172,248"/>
-<area shape="rect" id="Node000002" href="$structFuncDef.html" title=" " alt="" coords="53,113,124,140"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,154,91,221,86,220,86,157"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="139,115,148,119,151,127,143,137,126,140,124,135,140,133,146,126,144,123,140,120"/>
-<area shape="rect" id="Node000003" href="$structFuncDestructor.html" title=" " alt="" coords="33,5,144,32"/>
-<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="90,45,91,113,86,112,87,50"/>
-</map>

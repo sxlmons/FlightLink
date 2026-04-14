@@ -22,28 +22,31 @@ This graph shows which files directly or indirectly include this file:\+
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{flight__session__manager_8h__dep__incl}
+\includegraphics[width=249pt]{flight__session__manager_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \doxymbox{\hyperlink{structFlightSession}{Flight\+Session}}
+struct \doxymbox{\hyperlink{struct_flight_session}{Flight\+Session}}
 \begin{DoxyCompactList}\small\item\em Per-\/flight in-\/progress state (not shared between threads). \end{DoxyCompactList}\item 
-struct \doxymbox{\hyperlink{structAircraftStats}{Aircraft\+Stats}}
+struct \doxymbox{\hyperlink{struct_aircraft_stats}{Aircraft\+Stats}}
 \begin{DoxyCompactList}\small\item\em Per-\/aircraft cumulative statistics (shared across threads). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \doxymbox{\hyperlink{flight__session__manager_8h_ac81b1543651ef73f59ec1a9840087713}{init\+\_\+database}} ()
+\Hypertarget{flight__session__manager_8h_ac81b1543651ef73f59ec1a9840087713}\label{flight__session__manager_8h_ac81b1543651ef73f59ec1a9840087713} 
+bool {\bfseries init\+\_\+database} ()
 \item 
-void \doxymbox{\hyperlink{flight__session__manager_8h_a6e0e207331dd052340dd50f6f40f997f}{close\+\_\+database}} ()
+\Hypertarget{flight__session__manager_8h_a6e0e207331dd052340dd50f6f40f997f}\label{flight__session__manager_8h_a6e0e207331dd052340dd50f6f40f997f} 
+void {\bfseries close\+\_\+database} ()
 \item 
-\doxymbox{\hyperlink{structFlightSession}{Flight\+Session}} \doxymbox{\hyperlink{flight__session__manager_8h_a3dcfcd40c752c4089a0aff505e23902b}{start\+\_\+session}} (uint32\+\_\+t plane\+\_\+id)
+\Hypertarget{flight__session__manager_8h_a3dcfcd40c752c4089a0aff505e23902b}\label{flight__session__manager_8h_a3dcfcd40c752c4089a0aff505e23902b} 
+\doxymbox{\hyperlink{struct_flight_session}{Flight\+Session}} {\bfseries start\+\_\+session} (uint32\+\_\+t plane\+\_\+id)
 \item 
-void \doxymbox{\hyperlink{flight__session__manager_8h_a7a16509ce4896f7e58e2f1d5b493d12a}{process\+\_\+telemetry}} (\doxymbox{\hyperlink{structFlightSession}{Flight\+Session}} \&session, double fuel\+\_\+remianing)
+void \doxymbox{\hyperlink{flight__session__manager_8h_a7a16509ce4896f7e58e2f1d5b493d12a}{process\+\_\+telemetry}} (\doxymbox{\hyperlink{struct_flight_session}{Flight\+Session}} \&session, double fuel\+\_\+remianing)
 \begin{DoxyCompactList}\small\item\em Processes a telemetry reading and updates flight statistics. \end{DoxyCompactList}\item 
-void \doxymbox{\hyperlink{flight__session__manager_8h_ad411a6afd7321526c977d3ed27ee606c}{finalize\+\_\+session}} (\doxymbox{\hyperlink{structFlightSession}{Flight\+Session}} \&session)
+void \doxymbox{\hyperlink{flight__session__manager_8h_ad411a6afd7321526c977d3ed27ee606c}{finalize\+\_\+session}} (\doxymbox{\hyperlink{struct_flight_session}{Flight\+Session}} \&session)
 \begin{DoxyCompactList}\small\item\em Finalizes a flight session and updates aggregate statistics. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -52,44 +55,14 @@ Flight session state management and fuel consumption tracking.
 
 Manages per-\/flight state for active connections and maintains per-\/aircraft aggregate statistics across all flights. 
 
-Definition in file \doxymbox{\hyperlink{flight__session__manager_8h_source}{flight\+\_\+session\+\_\+manager.\+h}}.
-
-
-
 \label{doc-func-members}
 \Hypertarget{flight__session__manager_8h_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{flight__session__manager_8h_a6e0e207331dd052340dd50f6f40f997f}\index{flight\_session\_manager.h@{flight\_session\_manager.h}!close\_database@{close\_database}}
-\index{close\_database@{close\_database}!flight\_session\_manager.h@{flight\_session\_manager.h}}
-\doxysubsubsection{\texorpdfstring{close\_database()}{close\_database()}}
-{\footnotesize\ttfamily \label{flight__session__manager_8h_a6e0e207331dd052340dd50f6f40f997f} 
-void close\+\_\+database (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-Definition at line \doxymbox{\hyperlink{flight__session__manager_8cpp_source_l00053}{53}} of file \doxymbox{\hyperlink{flight__session__manager_8cpp_source}{flight\+\_\+session\+\_\+manager.\+cpp}}.
-
-Here is the call graph for this function:\+
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=273pt]{flight__session__manager_8h_a6e0e207331dd052340dd50f6f40f997f_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function:\+
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=237pt]{flight__session__manager_8h_a6e0e207331dd052340dd50f6f40f997f_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{flight__session__manager_8h_ad411a6afd7321526c977d3ed27ee606c}\index{flight\_session\_manager.h@{flight\_session\_manager.h}!finalize\_session@{finalize\_session}}
 \index{finalize\_session@{finalize\_session}!flight\_session\_manager.h@{flight\_session\_manager.h}}
 \doxysubsubsection{\texorpdfstring{finalize\_session()}{finalize\_session()}}
 {\footnotesize\ttfamily \label{flight__session__manager_8h_ad411a6afd7321526c977d3ed27ee606c} 
-void finalize\+\_\+session (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structFlightSession}{Flight\+Session}} \&}]{session}{}\end{DoxyParamCaption})}
+void finalize\+\_\+session (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_flight_session}{Flight\+Session}} \&}]{session}{}\end{DoxyParamCaption})}
 
 
 
@@ -102,57 +75,11 @@ Calculates final average fuel consumption, updates the shared per-\/aircraft sta
 {\em session} & Reference to the flight session to finalize \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line \doxymbox{\hyperlink{flight__session__manager_8cpp_source_l00123}{123}} of file \doxymbox{\hyperlink{flight__session__manager_8cpp_source}{flight\+\_\+session\+\_\+manager.\+cpp}}.
-
-Here is the call graph for this function:\+
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{flight__session__manager_8h_ad411a6afd7321526c977d3ed27ee606c_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function:\+
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{flight__session__manager_8h_ad411a6afd7321526c977d3ed27ee606c_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{flight__session__manager_8h_ac81b1543651ef73f59ec1a9840087713}\index{flight\_session\_manager.h@{flight\_session\_manager.h}!init\_database@{init\_database}}
-\index{init\_database@{init\_database}!flight\_session\_manager.h@{flight\_session\_manager.h}}
-\doxysubsubsection{\texorpdfstring{init\_database()}{init\_database()}}
-{\footnotesize\ttfamily \label{flight__session__manager_8h_ac81b1543651ef73f59ec1a9840087713} 
-bool init\+\_\+database (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-Definition at line \doxymbox{\hyperlink{flight__session__manager_8cpp_source_l00022}{22}} of file \doxymbox{\hyperlink{flight__session__manager_8cpp_source}{flight\+\_\+session\+\_\+manager.\+cpp}}.
-
-Here is the call graph for this function:\+
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{flight__session__manager_8h_ac81b1543651ef73f59ec1a9840087713_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function:\+
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=227pt]{flight__session__manager_8h_ac81b1543651ef73f59ec1a9840087713_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{flight__session__manager_8h_a7a16509ce4896f7e58e2f1d5b493d12a}\index{flight\_session\_manager.h@{flight\_session\_manager.h}!process\_telemetry@{process\_telemetry}}
 \index{process\_telemetry@{process\_telemetry}!flight\_session\_manager.h@{flight\_session\_manager.h}}
 \doxysubsubsection{\texorpdfstring{process\_telemetry()}{process\_telemetry()}}
 {\footnotesize\ttfamily \label{flight__session__manager_8h_a7a16509ce4896f7e58e2f1d5b493d12a} 
-void process\+\_\+telemetry (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structFlightSession}{Flight\+Session}} \&}]{session}{, }\item[{double}]{fuel\+\_\+remianing}{}\end{DoxyParamCaption})}
+void process\+\_\+telemetry (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_flight_session}{Flight\+Session}} \&}]{session}{, }\item[{double}]{fuel\+\_\+remianing}{}\end{DoxyParamCaption})}
 
 
 
@@ -167,49 +94,3 @@ Calculates the fuel consumption delta from the previous reading and updates the 
 {\em fuel\+\_\+remaining} & Current fuel reading from telemetry packet \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line \doxymbox{\hyperlink{flight__session__manager_8cpp_source_l00087}{87}} of file \doxymbox{\hyperlink{flight__session__manager_8cpp_source}{flight\+\_\+session\+\_\+manager.\+cpp}}.
-
-Here is the call graph for this function:\+
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{flight__session__manager_8h_a7a16509ce4896f7e58e2f1d5b493d12a_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function:\+
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{flight__session__manager_8h_a7a16509ce4896f7e58e2f1d5b493d12a_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{flight__session__manager_8h_a3dcfcd40c752c4089a0aff505e23902b}\index{flight\_session\_manager.h@{flight\_session\_manager.h}!start\_session@{start\_session}}
-\index{start\_session@{start\_session}!flight\_session\_manager.h@{flight\_session\_manager.h}}
-\doxysubsubsection{\texorpdfstring{start\_session()}{start\_session()}}
-{\footnotesize\ttfamily \label{flight__session__manager_8h_a3dcfcd40c752c4089a0aff505e23902b} 
-\doxymbox{\hyperlink{structFlightSession}{Flight\+Session}} start\+\_\+session (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{plane\+\_\+id}{}\end{DoxyParamCaption})}
-
-
-
-Definition at line \doxymbox{\hyperlink{flight__session__manager_8cpp_source_l00060}{60}} of file \doxymbox{\hyperlink{flight__session__manager_8cpp_source}{flight\+\_\+session\+\_\+manager.\+cpp}}.
-
-Here is the call graph for this function:\+
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{flight__session__manager_8h_a3dcfcd40c752c4089a0aff505e23902b_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function:\+
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=343pt]{flight__session__manager_8h_a3dcfcd40c752c4089a0aff505e23902b_icgraph}
-\end{center}
-\end{figure}

@@ -1,9 +1,0 @@
-<map id="vdbeChangeP4Full" name="vdbeChangeP4Full">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,137,57"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#add0d891a062d044a0c7e6fc072702830" title=" " alt="" coords="185,31,335,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,41,172,44,167,44,137,47"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a48e8c757f70cba60fe83ce00ad8de713" title=" " alt="" coords="383,5,510,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="335,31,370,29,365,30,336,36"/>
-<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a3dcd80ba41f1a308193dee74857b62a7" title=" " alt="" coords="393,56,500,83"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="336,52,380,60,375,60,335,57"/>
-</map>

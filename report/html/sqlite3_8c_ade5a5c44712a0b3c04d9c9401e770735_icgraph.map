@@ -1,9 +1,0 @@
-<map id="sqlite3BtreeGetReserveNoMutex" name="sqlite3BtreeGetReserveNoMutex">
-<area shape="rect" id="Node000001" title=" " alt="" coords="381,27,558,69"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a7efb6a8380d746b14e73db99ad3428a2" title=" " alt="" coords="187,5,304,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="363,35,305,29,305,24,368,34"/>
-<area shape="rect" id="Node000004" href="$sqlite3_8c.html#aae8e61d8024397e2109b017c51844f2e" title=" " alt="" coords="159,56,333,99"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="368,61,334,69,333,63,363,62"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a975b4273ae0f03c1463761c3e1439870" title=" " alt="" coords="5,5,111,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="169,20,112,21,111,16,174,17"/>
-</map>

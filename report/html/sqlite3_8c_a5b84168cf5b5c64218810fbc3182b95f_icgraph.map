@@ -1,9 +1,0 @@
-<map id="vdbeMergeEngineLevel0" name="vdbeMergeEngineLevel0">
-<area shape="rect" id="Node000001" title=" " alt="" coords="647,5,811,32"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a7af2bdcef74d6ae7b6c04a2a7d171f33" title=" " alt="" coords="424,5,599,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="629,19,600,21,600,16,635,19"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a82088507aafeedcc04af031f7ea0bbd8" title=" " alt="" coords="222,5,376,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="406,19,377,21,377,16,411,19"/>
-<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a31677d178ebf96ee6034a05660e1f4bf" title=" " alt="" coords="5,5,174,32"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="203,19,174,21,174,16,209,19"/>
-</map>

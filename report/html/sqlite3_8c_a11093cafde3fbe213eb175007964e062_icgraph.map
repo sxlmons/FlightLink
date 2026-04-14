@@ -1,9 +1,0 @@
-<map id="memdbEnter" name="memdbEnter">
-<area shape="rect" id="Node000001" title=" " alt="" coords="181,56,276,83"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a447eecac7245d2477b46e711882b3eab" title=" " alt="" coords="20,5,118,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,52,113,35,113,30,172,50"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a830b7fab6bf76f67b36ab44d659267a1" title=" " alt="" coords="5,56,133,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,70,134,72,133,67,168,69"/>
-<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a2585b35467284a3b461e3734edac07d3" title=" " alt="" coords="11,107,127,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="172,87,114,109,113,104,167,89"/>
-</map>

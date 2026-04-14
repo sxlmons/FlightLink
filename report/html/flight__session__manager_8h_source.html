@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FlightLink Telemetry System: FlightLinkServer/FlightLinkServer/flight_session_manager.h Source File</title>
+<title>FlightLink: FlightLinkServer/FlightLinkServer/flight_session_manager.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FlightLink Telemetry System
+   <div id="projectname">FlightLink
    </div>
-   <div id="projectbrief">Multi-threaded TCP server for aircraft telemetry processing</div>
   </td>
  </tr>
  </tbody>
@@ -103,54 +102,42 @@ $(function(){initNavTree('flight__session__manager_8h_source.html','',''); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structFlightSession.html">   25</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structFlightSession.html">FlightSession</a> {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structFlightSession.html#a599ad82bebfde058fabcfe233bb1eddd">   26</a></span>    int64_t  <a class="code hl_variable" href="structFlightSession.html#a599ad82bebfde058fabcfe233bb1eddd">db_row_id</a>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structFlightSession.html#acf345a472851913f978a202a420c5010">   27</a></span>    uint32_t <a class="code hl_variable" href="structFlightSession.html#acf345a472851913f978a202a420c5010">plane_id</a>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structFlightSession.html#a58887c6b7d05f9c957d615a3c0171c17">   28</a></span>    <span class="keywordtype">double</span>   <a class="code hl_variable" href="structFlightSession.html#a58887c6b7d05f9c957d615a3c0171c17">prev_fuel</a>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structFlightSession.html#a047515a5c81cae4f6b33f2feb3464518">   29</a></span>    <span class="keywordtype">double</span>   <a class="code hl_variable" href="structFlightSession.html#a047515a5c81cae4f6b33f2feb3464518">fuel_sum</a>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structFlightSession.html#a6c429b2276eab1935eecf400a40f9341">   30</a></span>    <span class="keywordtype">double</span>   <a class="code hl_variable" href="structFlightSession.html#a6c429b2276eab1935eecf400a40f9341">current_avg</a>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structFlightSession.html#aeeda4d286969d25caf3f6345bd259b6d">   31</a></span>    <span class="keywordtype">int</span>      <a class="code hl_variable" href="structFlightSession.html#aeeda4d286969d25caf3f6345bd259b6d">packet_count</a>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structFlightSession.html#aa64afbec0252c3be1461b78f054e5363">   32</a></span>    <span class="keywordtype">bool</span>     <a class="code hl_variable" href="structFlightSession.html#aa64afbec0252c3be1461b78f054e5363">has_baseline</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="struct_flight_session.html">   25</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_flight_session.html">FlightSession</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    int64_t  db_row_id;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    uint32_t plane_id;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">double</span>   prev_fuel;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">double</span>   fuel_sum;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">double</span>   current_avg;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">int</span>      packet_count;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">bool</span>     has_baseline;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
 </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
 <div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structAircraftStats.html">   42</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structAircraftStats.html">AircraftStats</a> {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structAircraftStats.html#a15e0c83b356ec0e89edf5ccdfb59a1bc">   43</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="structAircraftStats.html#a15e0c83b356ec0e89edf5ccdfb59a1bc">cumulative_avg</a>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structAircraftStats.html#afb8fbcb4f7a014daa135fcb15801749c">   44</a></span>    <span class="keywordtype">int</span>    <a class="code hl_variable" href="structAircraftStats.html#afb8fbcb4f7a014daa135fcb15801749c">flight_count</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_aircraft_stats.html">   42</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_aircraft_stats.html">AircraftStats</a> {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">double</span> cumulative_avg;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">int</span>    flight_count;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
 </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">bool</span> <a class="code hl_function" href="flight__session__manager_8h.html#ac81b1543651ef73f59ec1a9840087713">init_database</a>();</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">void</span> <a class="code hl_function" href="flight__session__manager_8h.html#a6e0e207331dd052340dd50f6f40f997f">close_database</a>();</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><a class="code hl_struct" href="structFlightSession.html">FlightSession</a> <a class="code hl_function" href="flight__session__manager_8h.html#a3dcfcd40c752c4089a0aff505e23902b">start_session</a>(uint32_t plane_id);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">bool</span> init_database();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">void</span> close_database();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><a class="code hl_struct" href="struct_flight_session.html">FlightSession</a> start_session(uint32_t plane_id);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keywordtype">void</span> <a class="code hl_function" href="flight__session__manager_8h.html#a7a16509ce4896f7e58e2f1d5b493d12a">process_telemetry</a>(<a class="code hl_struct" href="structFlightSession.html">FlightSession</a>&amp; session, <span class="keywordtype">double</span> fuel_remianing);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keywordtype">void</span> <a class="code hl_function" href="flight__session__manager_8h.html#a7a16509ce4896f7e58e2f1d5b493d12a">process_telemetry</a>(<a class="code hl_struct" href="struct_flight_session.html">FlightSession</a>&amp; session, <span class="keywordtype">double</span> fuel_remianing);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keywordtype">void</span> <a class="code hl_function" href="flight__session__manager_8h.html#ad411a6afd7321526c977d3ed27ee606c">finalize_session</a>(<a class="code hl_struct" href="structFlightSession.html">FlightSession</a>&amp; session);</div>
-<div class="ttc" id="aflight__session__manager_8h_html_a3dcfcd40c752c4089a0aff505e23902b"><div class="ttname"><a href="flight__session__manager_8h.html#a3dcfcd40c752c4089a0aff505e23902b">start_session</a></div><div class="ttdeci">FlightSession start_session(uint32_t plane_id)</div><div class="ttdef"><b>Definition</b> <a href="flight__session__manager_8cpp_source.html#l00060">flight_session_manager.cpp:60</a></div></div>
-<div class="ttc" id="aflight__session__manager_8h_html_a6e0e207331dd052340dd50f6f40f997f"><div class="ttname"><a href="flight__session__manager_8h.html#a6e0e207331dd052340dd50f6f40f997f">close_database</a></div><div class="ttdeci">void close_database()</div><div class="ttdef"><b>Definition</b> <a href="flight__session__manager_8cpp_source.html#l00053">flight_session_manager.cpp:53</a></div></div>
-<div class="ttc" id="aflight__session__manager_8h_html_a7a16509ce4896f7e58e2f1d5b493d12a"><div class="ttname"><a href="flight__session__manager_8h.html#a7a16509ce4896f7e58e2f1d5b493d12a">process_telemetry</a></div><div class="ttdeci">void process_telemetry(FlightSession &amp;session, double fuel_remianing)</div><div class="ttdoc">Processes a telemetry reading and updates flight statistics.</div><div class="ttdef"><b>Definition</b> <a href="flight__session__manager_8cpp_source.html#l00087">flight_session_manager.cpp:87</a></div></div>
-<div class="ttc" id="aflight__session__manager_8h_html_ac81b1543651ef73f59ec1a9840087713"><div class="ttname"><a href="flight__session__manager_8h.html#ac81b1543651ef73f59ec1a9840087713">init_database</a></div><div class="ttdeci">bool init_database()</div><div class="ttdef"><b>Definition</b> <a href="flight__session__manager_8cpp_source.html#l00022">flight_session_manager.cpp:22</a></div></div>
-<div class="ttc" id="aflight__session__manager_8h_html_ad411a6afd7321526c977d3ed27ee606c"><div class="ttname"><a href="flight__session__manager_8h.html#ad411a6afd7321526c977d3ed27ee606c">finalize_session</a></div><div class="ttdeci">void finalize_session(FlightSession &amp;session)</div><div class="ttdoc">Finalizes a flight session and updates aggregate statistics.</div><div class="ttdef"><b>Definition</b> <a href="flight__session__manager_8cpp_source.html#l00123">flight_session_manager.cpp:123</a></div></div>
-<div class="ttc" id="astructAircraftStats_html"><div class="ttname"><a href="structAircraftStats.html">AircraftStats</a></div><div class="ttdoc">Per-aircraft cumulative statistics (shared across threads).</div><div class="ttdef"><b>Definition</b> <a href="#l00042">flight_session_manager.h:42</a></div></div>
-<div class="ttc" id="astructAircraftStats_html_a15e0c83b356ec0e89edf5ccdfb59a1bc"><div class="ttname"><a href="structAircraftStats.html#a15e0c83b356ec0e89edf5ccdfb59a1bc">AircraftStats::cumulative_avg</a></div><div class="ttdeci">double cumulative_avg</div><div class="ttdef"><b>Definition</b> <a href="#l00043">flight_session_manager.h:43</a></div></div>
-<div class="ttc" id="astructAircraftStats_html_afb8fbcb4f7a014daa135fcb15801749c"><div class="ttname"><a href="structAircraftStats.html#afb8fbcb4f7a014daa135fcb15801749c">AircraftStats::flight_count</a></div><div class="ttdeci">int flight_count</div><div class="ttdef"><b>Definition</b> <a href="#l00044">flight_session_manager.h:44</a></div></div>
-<div class="ttc" id="astructFlightSession_html"><div class="ttname"><a href="structFlightSession.html">FlightSession</a></div><div class="ttdoc">Per-flight in-progress state (not shared between threads).</div><div class="ttdef"><b>Definition</b> <a href="#l00025">flight_session_manager.h:25</a></div></div>
-<div class="ttc" id="astructFlightSession_html_a047515a5c81cae4f6b33f2feb3464518"><div class="ttname"><a href="structFlightSession.html#a047515a5c81cae4f6b33f2feb3464518">FlightSession::fuel_sum</a></div><div class="ttdeci">double fuel_sum</div><div class="ttdef"><b>Definition</b> <a href="#l00029">flight_session_manager.h:29</a></div></div>
-<div class="ttc" id="astructFlightSession_html_a58887c6b7d05f9c957d615a3c0171c17"><div class="ttname"><a href="structFlightSession.html#a58887c6b7d05f9c957d615a3c0171c17">FlightSession::prev_fuel</a></div><div class="ttdeci">double prev_fuel</div><div class="ttdef"><b>Definition</b> <a href="#l00028">flight_session_manager.h:28</a></div></div>
-<div class="ttc" id="astructFlightSession_html_a599ad82bebfde058fabcfe233bb1eddd"><div class="ttname"><a href="structFlightSession.html#a599ad82bebfde058fabcfe233bb1eddd">FlightSession::db_row_id</a></div><div class="ttdeci">int64_t db_row_id</div><div class="ttdef"><b>Definition</b> <a href="#l00026">flight_session_manager.h:26</a></div></div>
-<div class="ttc" id="astructFlightSession_html_a6c429b2276eab1935eecf400a40f9341"><div class="ttname"><a href="structFlightSession.html#a6c429b2276eab1935eecf400a40f9341">FlightSession::current_avg</a></div><div class="ttdeci">double current_avg</div><div class="ttdef"><b>Definition</b> <a href="#l00030">flight_session_manager.h:30</a></div></div>
-<div class="ttc" id="astructFlightSession_html_aa64afbec0252c3be1461b78f054e5363"><div class="ttname"><a href="structFlightSession.html#aa64afbec0252c3be1461b78f054e5363">FlightSession::has_baseline</a></div><div class="ttdeci">bool has_baseline</div><div class="ttdef"><b>Definition</b> <a href="#l00032">flight_session_manager.h:32</a></div></div>
-<div class="ttc" id="astructFlightSession_html_acf345a472851913f978a202a420c5010"><div class="ttname"><a href="structFlightSession.html#acf345a472851913f978a202a420c5010">FlightSession::plane_id</a></div><div class="ttdeci">uint32_t plane_id</div><div class="ttdef"><b>Definition</b> <a href="#l00027">flight_session_manager.h:27</a></div></div>
-<div class="ttc" id="astructFlightSession_html_aeeda4d286969d25caf3f6345bd259b6d"><div class="ttname"><a href="structFlightSession.html#aeeda4d286969d25caf3f6345bd259b6d">FlightSession::packet_count</a></div><div class="ttdeci">int packet_count</div><div class="ttdef"><b>Definition</b> <a href="#l00031">flight_session_manager.h:31</a></div></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keywordtype">void</span> <a class="code hl_function" href="flight__session__manager_8h.html#ad411a6afd7321526c977d3ed27ee606c">finalize_session</a>(<a class="code hl_struct" href="struct_flight_session.html">FlightSession</a>&amp; session);</div>
+<div class="ttc" id="aflight__session__manager_8h_html_a7a16509ce4896f7e58e2f1d5b493d12a"><div class="ttname"><a href="flight__session__manager_8h.html#a7a16509ce4896f7e58e2f1d5b493d12a">process_telemetry</a></div><div class="ttdeci">void process_telemetry(FlightSession &amp;session, double fuel_remianing)</div><div class="ttdoc">Processes a telemetry reading and updates flight statistics.</div><div class="ttdef"><b>Definition</b> flight_session_manager.cpp:87</div></div>
+<div class="ttc" id="aflight__session__manager_8h_html_ad411a6afd7321526c977d3ed27ee606c"><div class="ttname"><a href="flight__session__manager_8h.html#ad411a6afd7321526c977d3ed27ee606c">finalize_session</a></div><div class="ttdeci">void finalize_session(FlightSession &amp;session)</div><div class="ttdoc">Finalizes a flight session and updates aggregate statistics.</div><div class="ttdef"><b>Definition</b> flight_session_manager.cpp:123</div></div>
+<div class="ttc" id="astruct_aircraft_stats_html"><div class="ttname"><a href="struct_aircraft_stats.html">AircraftStats</a></div><div class="ttdoc">Per-aircraft cumulative statistics (shared across threads).</div><div class="ttdef"><b>Definition</b> flight_session_manager.h:42</div></div>
+<div class="ttc" id="astruct_flight_session_html"><div class="ttname"><a href="struct_flight_session.html">FlightSession</a></div><div class="ttdoc">Per-flight in-progress state (not shared between threads).</div><div class="ttdef"><b>Definition</b> flight_session_manager.h:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_28695526de0af3cf158a0803fb637eab.html">FlightLinkServer</a></li><li class="navelem"><a href="dir_2855f5e1d0a3b615e952b5b12a0b595b.html">FlightLinkServer</a></li><li class="navelem"><a href="flight__session__manager_8h.html">flight_session_manager.h</a></li>
+    <li class="navelem"><b>FlightLinkServer</b></li><li class="navelem"><b>FlightLinkServer</b></li><li class="navelem"><a href="flight__session__manager_8h.html">flight_session_manager.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

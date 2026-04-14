@@ -2,37 +2,37 @@
 \hypertarget{flight__session__manager_8h_source}{}\label{flight__session__manager_8h_source}\index{FlightLinkServer/FlightLinkServer/flight\_session\_manager.h@{FlightLinkServer/FlightLinkServer/flight\_session\_manager.h}}
 \doxymbox{\hyperlink{flight__session__manager_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00001}00001\ }
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00009}00009\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00010}00010\ }
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <cstdint>}}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <mutex>}}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00025}\doxymbox{\hyperlink{structFlightSession}{00025}}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structFlightSession}{FlightSession}}\ \{}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00026}\doxymbox{\hyperlink{structFlightSession_a599ad82bebfde058fabcfe233bb1eddd}{00026}}\ \ \ \ \ int64\_t\ \ \doxymbox{\hyperlink{structFlightSession_a599ad82bebfde058fabcfe233bb1eddd}{db\_row\_id}};}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00027}\doxymbox{\hyperlink{structFlightSession_acf345a472851913f978a202a420c5010}{00027}}\ \ \ \ \ uint32\_t\ \doxymbox{\hyperlink{structFlightSession_acf345a472851913f978a202a420c5010}{plane\_id}};}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00028}\doxymbox{\hyperlink{structFlightSession_a58887c6b7d05f9c957d615a3c0171c17}{00028}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \doxymbox{\hyperlink{structFlightSession_a58887c6b7d05f9c957d615a3c0171c17}{prev\_fuel}};}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00029}\doxymbox{\hyperlink{structFlightSession_a047515a5c81cae4f6b33f2feb3464518}{00029}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \doxymbox{\hyperlink{structFlightSession_a047515a5c81cae4f6b33f2feb3464518}{fuel\_sum}};}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00030}\doxymbox{\hyperlink{structFlightSession_a6c429b2276eab1935eecf400a40f9341}{00030}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \doxymbox{\hyperlink{structFlightSession_a6c429b2276eab1935eecf400a40f9341}{current\_avg}};}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00031}\doxymbox{\hyperlink{structFlightSession_aeeda4d286969d25caf3f6345bd259b6d}{00031}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \doxymbox{\hyperlink{structFlightSession_aeeda4d286969d25caf3f6345bd259b6d}{packet\_count}};}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00032}\doxymbox{\hyperlink{structFlightSession_aa64afbec0252c3be1461b78f054e5363}{00032}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \doxymbox{\hyperlink{structFlightSession_aa64afbec0252c3be1461b78f054e5363}{has\_baseline}};}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00033}00033\ \};}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00042}\doxymbox{\hyperlink{structAircraftStats}{00042}}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structAircraftStats}{AircraftStats}}\ \{}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00043}\doxymbox{\hyperlink{structAircraftStats_a15e0c83b356ec0e89edf5ccdfb59a1bc}{00043}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{structAircraftStats_a15e0c83b356ec0e89edf5ccdfb59a1bc}{cumulative\_avg}};}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00044}\doxymbox{\hyperlink{structAircraftStats_afb8fbcb4f7a014daa135fcb15801749c}{00044}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \doxymbox{\hyperlink{structAircraftStats_afb8fbcb4f7a014daa135fcb15801749c}{flight\_count}};}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00045}00045\ \};}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00046}00046\ }
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00047}00047\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{flight__session__manager_8h_ac81b1543651ef73f59ec1a9840087713}{init\_database}}();}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00048}00048\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{flight__session__manager_8h_a6e0e207331dd052340dd50f6f40f997f}{close\_database}}();}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00049}00049\ \doxymbox{\hyperlink{structFlightSession}{FlightSession}}\ \doxymbox{\hyperlink{flight__session__manager_8h_a3dcfcd40c752c4089a0aff505e23902b}{start\_session}}(uint32\_t\ plane\_id);}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00060}00060\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{flight__session__manager_8h_a7a16509ce4896f7e58e2f1d5b493d12a}{process\_telemetry}}(\doxymbox{\hyperlink{structFlightSession}{FlightSession}}\&\ session,\ \textcolor{keywordtype}{double}\ fuel\_remianing);}
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{flight__session__manager_8h_source_l00070}00070\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{flight__session__manager_8h_ad411a6afd7321526c977d3ed27ee606c}{finalize\_session}}(\doxymbox{\hyperlink{structFlightSession}{FlightSession}}\&\ session);}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_flight_session}{FlightSession}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ int64\_t\ \ db\_row\_id;}
+\DoxyCodeLine{00027\ \ \ \ \ uint32\_t\ plane\_id;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ prev\_fuel;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ fuel\_sum;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ current\_avg;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ packet\_count;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ has\_baseline;}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_aircraft_stats}{AircraftStats}}\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{double}\ cumulative\_avg;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ flight\_count;}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{bool}\ init\_database();}
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ close\_database();}
+\DoxyCodeLine{00049\ \doxymbox{\hyperlink{struct_flight_session}{FlightSession}}\ start\_session(uint32\_t\ plane\_id);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{flight__session__manager_8h_a7a16509ce4896f7e58e2f1d5b493d12a}{process\_telemetry}}(\doxymbox{\hyperlink{struct_flight_session}{FlightSession}}\&\ session,\ \textcolor{keywordtype}{double}\ fuel\_remianing);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{flight__session__manager_8h_ad411a6afd7321526c977d3ed27ee606c}{finalize\_session}}(\doxymbox{\hyperlink{struct_flight_session}{FlightSession}}\&\ session);}
 
 \end{DoxyCode}

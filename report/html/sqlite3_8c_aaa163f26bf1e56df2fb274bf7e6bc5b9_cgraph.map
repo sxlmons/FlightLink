@@ -1,7 +1,0 @@
-<map id="walDecodeFrame" name="walDecodeFrame">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,129,57"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a2924627e99ca211030e954405a10f5e8" title=" " alt="" coords="190,5,302,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,33,176,28,171,30,130,38"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a19c69852e7fdedf0dac08453403f7487" title=" " alt="" coords="177,56,315,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,50,164,57,159,58,129,55"/>
-</map>

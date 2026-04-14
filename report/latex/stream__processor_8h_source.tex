@@ -1,0 +1,17 @@
+\doxysection{stream\+\_\+processor.\+h}
+\hypertarget{stream__processor_8h_source}{}\label{stream__processor_8h_source}\index{FlightLinkServer/FlightLinkServer/stream\_processor.h@{FlightLinkServer/FlightLinkServer/stream\_processor.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <WinSock2.h>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ stream\_processor.h\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ Per-\/connection\ read\ loop.\ Reads\ binary\ packets\ from\ the\ TCP\ stream,\ parses\ them\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ via\ direct\ memory\ mapping,\ and\ routes\ each\ message\ type\ to\ the\ appropriate\ handler.}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Processes\ a\ single\ client\ connection\ from\ first\ byte\ to}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ disconnection.\ Intended\ as\ the\ worker\ callback\ for\ ConnectionManager.}}
+\DoxyCodeLine{00011\ \textcolor{keywordtype}{void}\ process\_client(SOCKET\ client);}
+
+\end{DoxyCode}

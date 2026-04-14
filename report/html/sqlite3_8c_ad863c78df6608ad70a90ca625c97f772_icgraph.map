@@ -1,9 +1,0 @@
-<map id="seekAndWrite" name="seekAndWrite">
-<area shape="rect" id="Node000001" title=" " alt="" coords="306,31,408,57"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a83b00fec4238518b00e315fe0eff28e6" title=" " alt="" coords="162,5,258,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="288,33,258,30,258,24,293,32"/>
-<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a4385beabc5689db595bbe5a18b3c619a" title=" " alt="" coords="172,56,248,83"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="293,55,248,66,248,60,288,56"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#ad71f213fa385cc58f307cefd953c03ae" title=" " alt="" coords="5,5,114,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="144,20,115,21,114,16,149,18"/>
-</map>

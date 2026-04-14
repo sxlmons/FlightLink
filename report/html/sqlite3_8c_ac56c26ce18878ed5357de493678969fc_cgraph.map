@@ -1,9 +1,0 @@
-<map id="unixCheckReservedLock" name="unixCheckReservedLock">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,173,83"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a1c12cde690bd89f104de5cbad12a6bf5" title=" " alt="" coords="222,5,360,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,53,222,35,218,38,146,58"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a5838d235601dbd3c1fa993555c6bcc93" title=" " alt="" coords="221,56,361,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,67,208,69,203,70,173,72"/>
-<area shape="rect" id="Node000004" href="$sqlite3_8c.html#ac2eb7c86fbd6cbb4cccb664b746816ec" title=" " alt="" coords="238,107,344,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="146,81,225,102,220,104,145,86"/>
-</map>

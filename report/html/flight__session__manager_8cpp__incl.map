@@ -1,17 +1,15 @@
 <map id="FlightLinkServer/FlightLinkServer/flight_session_manager.cpp" name="FlightLinkServer/FlightLinkServer/flight_session_manager.cpp">
-<area shape="rect" id="Node000001" title="Implementation of flight session management and statistics tracking." alt="" coords="212,5,438,48"/>
-<area shape="rect" id="Node000002" href="$flight__session__manager_8h.html" title="Flight session state management and fuel consumption tracking." alt="" coords="168,96,338,123"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="309,47,276,86,273,82,304,50"/>
-<area shape="rect" id="Node000007" href="$sqlite3_8h.html" title=" " alt="" coords="380,96,451,123"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="349,46,393,86,388,85,347,51"/>
+<area shape="rect" id="Node000001" title="Implementation of flight session management and statistics tracking." alt="" coords="158,5,383,48"/>
+<area shape="rect" id="Node000002" href="$flight__session__manager_8h.html" title="Flight session state management and fuel consumption tracking." alt="" coords="114,96,283,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="254,47,221,86,218,82,249,50"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="307,96,377,123"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="290,46,323,84,318,84,288,51"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,171,66,197"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="216,126,81,170,80,165,214,121"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="171,126,79,166,77,161,169,121"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="90,171,200,197"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="237,122,178,164,175,159,231,124"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="191,122,165,160,161,156,187,124"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="224,171,282,197"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="255,121,255,156,251,154,251,125"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="209,121,237,159,232,158,207,126"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="305,171,376,197"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="269,121,317,161,311,160,267,126"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="400,171,468,197"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="420,121,429,157,425,154,417,125"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="224,121,305,163,300,163,222,126"/>
 </map>

@@ -1,7 +1,0 @@
-<map id="daysAfterJan01" name="daysAfterJan01">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,118,32"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#aeeefea84c7c62565ee8e5491f39c0bc4" title=" " alt="" coords="166,5,254,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,16,153,18,148,19,118,21"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a90d9c15f512fcd8d4c0516a9aca3275d" title=" " alt="" coords="302,5,401,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="254,16,289,19,284,19,254,21"/>
-</map>

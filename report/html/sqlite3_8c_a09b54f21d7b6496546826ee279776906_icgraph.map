@@ -1,9 +1,0 @@
-<map id="exprIsCoveredByIndex" name="exprIsCoveredByIndex">
-<area shape="rect" id="Node000001" title=" " alt="" coords="619,13,774,40"/>
-<area shape="rect" id="Node000002" href="$sqlite3_8c.html#a09693a1888eb89c53773c93a2f0406ee" title=" " alt="" coords="391,5,571,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="601,27,572,29,572,24,606,27"/>
-<area shape="rect" id="Node000003" href="$sqlite3_8c.html#a7fdfdec450857d156dc763118ed98f0e" title=" " alt="" coords="192,13,343,40"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="373,27,344,29,343,24,378,27"/>
-<area shape="rect" id="Node000004" href="$sqlite3_8c.html#a6846f48e41bba28064b5b05e3e7c55ef" title=" " alt="" coords="5,13,144,40"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="174,27,144,29,144,24,179,26"/>
-</map>
