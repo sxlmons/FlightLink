@@ -124,15 +124,18 @@ void process_telemetry(FlightSession& session, double fuel_remaining) {
 // Shared finalization logic. The two distinct session endings
 // (graceful FLIGHT_END and mid-flight interrupt) differ only in
 // the status string persisted to the DB and the label logged.
-void end_session(FlightSession& session,
-	const char* status,
-	const char* log_label)
+void end_session(FlightSession& session, const char* status, const char* log_label)
 {
+	if (session.finalized) 
+		return;
+
 	if (session.packet_count < 2) {
 		std::cout << "[flight] Session ended | plane_id: " << session.plane_id
 			<< " | not enough data for average" << std::endl;
 		return;
 	}
+
+	session.finalized = true;
 
 	const double avg_consumption = session.fuel_sum / (session.packet_count - 1);
 	double final_cumulative_avg;
