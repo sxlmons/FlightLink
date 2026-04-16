@@ -120,19 +120,25 @@ void process_telemetry(FlightSession& session, double fuel_remaining) {
 	}
 }
 
-void finalize_session(FlightSession& session) {
+
+// Shared finalization logic. The two distinct session endings
+// (graceful FLIGHT_END and mid-flight interrupt) differ only in
+// the status string persisted to the DB and the label logged.
+void end_session(FlightSession& session,
+	const char* status,
+	const char* log_label)
+{
 	if (session.packet_count < 2) {
 		std::cout << "[flight] Session ended | plane_id: " << session.plane_id
-			<< " | not enough data for average"
-			<< std::endl;
+			<< " | not enough data for average" << std::endl;
 		return;
 	}
 
-	double avg_consumption = session.fuel_sum / (session.packet_count - 1);
+	const double avg_consumption = session.fuel_sum / (session.packet_count - 1);
 	double final_cumulative_avg;
-	int final_flight_count;
+	int    final_flight_count;
 
-	std::cout << "[flight] Completed | plane_id: " << session.plane_id
+	std::cout << "[flight] " << log_label << " | plane_id: " << session.plane_id
 		<< " | avg consumption: " << avg_consumption
 		<< " | total consumed: " << session.fuel_sum
 		<< " | readings: " << session.packet_count
@@ -146,8 +152,7 @@ void finalize_session(FlightSession& session) {
 		final_cumulative_avg = stats.cumulative_avg;
 		final_flight_count = stats.flight_count;
 
-		std::cout << "[fleet]  Aircraft "
-			<< session.plane_id
+		std::cout << "[fleet]  Aircraft " << session.plane_id
 			<< " | cumulative avg: " << stats.cumulative_avg
 			<< " | flights: " << stats.flight_count
 			<< std::endl;
@@ -155,31 +160,38 @@ void finalize_session(FlightSession& session) {
 
 	{
 		std::lock_guard<std::mutex> lock(db_mutex);
+		std::string update_sql =
+			"UPDATE flight_sessions SET "
+			"fuel_sum = ?, current_avg = ?, packet_count = ?, status = '";
+		update_sql += status;
+		update_sql += "' WHERE id = ?;";
 
 		sqlite3_stmt* stmt = nullptr;
-		sqlite3_prepare_v2(g_db,
-			"UPDATE flight_sessions SET "
-			"fuel_sum = ?, current_avg = ?, packet_count = ?, status = 'completed' "
-			"WHERE id = ?;",
-			-1, &stmt, nullptr);
+		sqlite3_prepare_v2(g_db, update_sql.c_str(), -1, &stmt, nullptr);
 		sqlite3_bind_double(stmt, 1, session.fuel_sum);
 		sqlite3_bind_double(stmt, 2, avg_consumption);
 		sqlite3_bind_int(stmt, 3, session.packet_count);
 		sqlite3_bind_int64(stmt, 4, session.db_row_id);
-
 		sqlite3_step(stmt);
 		sqlite3_finalize(stmt);
 
 		sqlite3_stmt* stats_stmt = nullptr;
 		sqlite3_prepare_v2(g_db,
-			"INSERT OR REPLACE INTO aircraft_stats (plane_id, cumulative_avg, flight_count) "
-			"VALUES (?, ?, ?);",
+			"INSERT OR REPLACE INTO aircraft_stats "
+			"(plane_id, cumulative_avg, flight_count) VALUES (?, ?, ?);",
 			-1, &stats_stmt, nullptr);
 		sqlite3_bind_int64(stats_stmt, 1, static_cast<int64_t>(session.plane_id));
 		sqlite3_bind_double(stats_stmt, 2, final_cumulative_avg);
 		sqlite3_bind_int(stats_stmt, 3, final_flight_count);
-
 		sqlite3_step(stats_stmt);
 		sqlite3_finalize(stats_stmt);
 	}
+}
+
+void finalize_session(FlightSession& session) {
+	end_session(session, "completed", "Completed");
+}
+
+void interrupt_session(FlightSession& session) {
+	end_session(session, "interrupted", "Interrupted");
 }

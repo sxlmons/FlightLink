@@ -30,6 +30,7 @@ struct FlightSession {
     double   current_avg;
     int      packet_count;
     bool     has_baseline;
+    bool     finalized = false;
 };
 
 /**
@@ -67,4 +68,6 @@ void process_telemetry(FlightSession& session, double fuel_remianing);
  *
  * @param session Reference to the flight session to finalize
  */
+void end_session(FlightSession& session, const char* status, const char* log_label);
 void finalize_session(FlightSession& session);
+void interrupt_session(FlightSession& session);
