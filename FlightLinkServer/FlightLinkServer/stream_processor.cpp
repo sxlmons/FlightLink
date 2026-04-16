@@ -45,24 +45,18 @@ void process_client(SOCKET client) {
 		uint8_t msg_type;
 		if (!recv_exact(client, reinterpret_cast<char*>(&msg_type), 1)) {
 			std::cout << "[stream] Client disconnected." << std::endl;
-			finalize_session(session);
+			interrupt_session(session);
 			break;
 		}
-		/*
-		std::cout << "[stream] Got msg_type: 0x"
-			<< std::hex << std::setfill('0') << std::setw(2)
-			<< static_cast<int>(msg_type)
-			<< std::dec << std::endl;
-		*/
+
 		switch (msg_type) {
 		case MSG_FLIGHT_START: {
 			PacketHeader header;
 			if (!recv_exact(client, reinterpret_cast<char*>(&header), HEADER_PAYLOAD_SIZE)) {
 				std::cout << "[stream] disconnected during flight start." << std::endl;
-				finalize_session(session);
+				interrupt_session(session);
 				return;
 			}
-			// dump_bytes("flight_start payload", &header, HEADER_PAYLOAD_SIZE);
 			std::cout << "[stream] Parsed plane_id: " << header.plane_id << std::endl;
 
 			session = start_session(header.plane_id);
@@ -72,14 +66,10 @@ void process_client(SOCKET client) {
 			TelemetryData telemetry;
 			if (!recv_exact(client, reinterpret_cast<char*>(&telemetry), TELEMETRY_PAYLOAD_SIZE)) {
 				std::cout << "[stream] Disconnected during telemetry." << std::endl;
-				finalize_session(session);
+				interrupt_session(session);
 				return;
-			}
-			// dump_bytes("telemetry payload", &telemetry, TELEMETRY_PAYLOAD_SIZE);
-			/*std::cout << "[stream] Parsed plane_id: " << telemetry.plane_id
-				<< " | timestamp: " << telemetry.timestamp
-				<< " | fuel: " << telemetry.fuel_remaining << std::endl;  
-			*/
+			}  
+			
 			process_telemetry(session, telemetry.fuel_remaining);
 			break;
 		}
@@ -87,9 +77,9 @@ void process_client(SOCKET client) {
 			PacketHeader header;
 			if (!recv_exact(client, reinterpret_cast<char*>(&header), HEADER_PAYLOAD_SIZE)) {
 				std::cout << "[stream] Disconnected during flight end." << std::endl;
+				interrupt_session(session);
 				return;
 			}
-			// dump_bytes("flight_end payload", &header, HEADER_PAYLOAD_SIZE);
 
 			finalize_session(session);
 			break;
